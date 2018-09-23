@@ -123,7 +123,7 @@
 33{1{1{ASTRONOM{Astronomiya iləməşğul olan alim.{
 35{1{1{QABAQ{Əvvəl, irəli.{
 9{3{1{KASA{Çini, büllur, saxsı vəya metaldan qayrılmış ağzı gen qab.{
-3{46{1{SAYA{Bir rəngdə olan, birrəngli{
+3{46{1{SAYA{Bir rəngdə olan, birrəngliii{
 0{49{0{İNSAN{Adam{
 12{40{1{ÜMUMXALQ{Bütün xalq üçün ümumi, bütün xalqa aid.{
 1{45{1{QAPAN{Dişləyən, tutan{
