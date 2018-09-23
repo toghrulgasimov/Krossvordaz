@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Giris.unity
+    guid: b84ac0bfbf315224cb53c6ffab5e1390
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6cd5369c800189644a0568e1650d40ec
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Statistika.unity
+    guid: 2c394cbba5cf114449528183b5f63afb
+  m_configObjects: {}
