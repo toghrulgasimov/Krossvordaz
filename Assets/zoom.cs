@@ -8,8 +8,8 @@ public class zoom : MonoBehaviour
     private static readonly float ZoomSpeedTouch = 0.1f;
     private static readonly float ZoomSpeedMouse = 0.5f;
 
-    private static readonly float[] BoundsX = new float[] { -300.630394f, 113.8613f };
-    private static readonly float[] BoundsZ = new float[] { -101.59804f, 110.6701f };
+    private static readonly float[] BoundsX = new float[] { -300.630394f, 213.8613f };
+    private static readonly float[] BoundsZ = new float[] { -101.59804f, 210.6701f };
     private static readonly float[] ZoomBounds = new float[] { -1000f, 1000f };
 
     private Camera cam;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
+using UnityEngine.SceneManagement;
 
 
 public class GameController : MonoBehaviour {
@@ -18,19 +19,39 @@ public class GameController : MonoBehaviour {
         public int cursor = 0;
         public string written = "";
         public string komekci = "";
+        public Stack <int>ButtonStack = new Stack<int>();
+        public String StringRandomized;
+        
+        public String generateRandomList(String s)
+        {
+            HashSet<int> H = new HashSet<int>();
+            while(H.Count != s.Length)
+            {
+                int d = UnityEngine.Random.Range(0, s.Length);
 
+                H.Add(d);
+            }
+            String ans = "";
+            int c = 0;
+            foreach(int x in H)
+            {
+                ans += soz[x];
+            }
+            return ans;
+        }
 
         public Tapmaca(int x, int y, bool saga, string soz, string sual, int index)
         {
             this.x = x;
             this.y = y;
             this.soz = soz;
+            this.StringRandomized = generateRandomList(soz);
             this.sual = sual;
             this.saga = saga;
             this.index = index;
             this.objects = new GameObject[soz.Length][];
             for (int i = 0; i < soz.Length; i++) this.objects[i] = new GameObject[2];
-            komekci = enable(50);
+            
         }
         public string enable(int f)
         {
@@ -56,8 +77,9 @@ public class GameController : MonoBehaviour {
     public GameObject enemy;
     public GameObject cub;
     public GameObject[][][] Kvadratlar;
-    public int N = 5, M = 5;
-    public RectTransform panel1, panel2, panel3;
+    private int N, M;
+    public Button H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12;
+    public Button[] B;
     public Tapmaca[] T;
     public Tapmaca selected;
     public TextAsset textFile;
@@ -72,24 +94,24 @@ public class GameController : MonoBehaviour {
 
     public HashSet<int> TAPILANLARL;
     public int COUNTLEVEL;
-    public int QAZANDIGIMXAL = 0;
 
     public AudioClip Ac;
     public AudioSource As;
-
     public AudioClip Ackey;
     public AudioSource Askey;
-
     public AudioClip Actapdi;
     public AudioSource Astapdi;
-
     public AudioClip Ackecdi;
     public AudioSource Askecdi;
 
+    public Text AdamKec;
+    public RectTransform AdamKecpanel;
+    
+
     InterstitialAd interstitial;
+    
     public void Start()
     {
-
         #if UNITY_ANDROID
         string appId = "ca-app-pub-9026840340673035~9445396711";
         #elif UNITY_IPHONE
@@ -175,20 +197,38 @@ public class GameController : MonoBehaviour {
         if(w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
         {
             TAPILANLARL.Add(selected.index);
-            if(TAPILANLARL.Count%5 == 0)
+
+            if (PlayerPrefs.GetInt("xal") >= 200)
             {
-                //showi();
-                Invoke("showi", 3);
+                if (TAPILANLARL.Count % 3 == 0)
+                {
+                    //showi();
+                    Invoke("showi", 3);
+                }
+            }else
+            {
+                if (TAPILANLARL.Count % 4 == 0)
+                {
+                    //showi();
+                    Invoke("showi", 3);
+                }
             }
             saveGame();
             Astapdi.PlayOneShot(Actapdi);
+            
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
             StartCoroutine(UpdataServer());
             for (int i = 0; i < selected.objects.Length; i++)
             {
                 selected.objects[i][0].GetComponent<Renderer>().material.color = Color.green;
             }
-            for(int i = 0; i < T.Length; i++)
+            
+            if(TAPILANLARL.Count == T.Length-1)
+            {
+                //next level;
+                SceneManager.LoadScene(1);
+            }
+            for(int i = T.Length-2; i >= 0; i--)
             {
                 if(!TAPILANLARL.Contains(i))
                 {
@@ -215,7 +255,7 @@ public class GameController : MonoBehaviour {
     }
     public void loadGame()
     {
-        if (!PlayerPrefs.HasKey("game")) return;
+        if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
         string s = PlayerPrefs.GetString("game");
         string[] ar = s.Split('@');
         for(int i = 0; i < ar.Length-1; i++)
@@ -230,74 +270,97 @@ public class GameController : MonoBehaviour {
         }
     }
     IEnumerator UpdataServer()
-    {
+    {   //35.227.46.95
         string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score="+PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
-            Debug.Log("score from server" + www.text);
-        }
-    }
 
+            
+            if(!www.text.Equals("0"))
+            {
+                AdamKec.gameObject.SetActive(true);
+                AdamKecpanel.gameObject.SetActive(true);
+                AdamKec.text = www.text + " Adamı Keçdiniz";
+                yield return new WaitForSeconds(5);
+
+            }
+            AdamKec.gameObject.SetActive(false);
+            AdamKecpanel.gameObject.SetActive(false);
+
+            //Debug.Log("score from server" + www.text);
+        }
+
+        //
+        
+    }
+   
     public void menuload()
     {
         SceneManager.LoadScene(1);
     }
-    void keyclick(Button b)
+    void keyclick(int index)
     {
-        if (b.GetComponentInChildren<Text>().text.Equals("←"))
+        if (B[index].GetComponentInChildren<Text>().text.Equals("x"))
         {
             sil();
             Askey.PlayOneShot(Ackey);
+            if(selected.ButtonStack.Count>0)
+            {
+                int d = -1;
+                while (true)
+                {
+                    d = (int)selected.ButtonStack.Pop();
+                    if (selected.objects[d][0].GetComponent<Renderer>().material.color != Color.green) break;
+                    else B[d].gameObject.SetActive(true);
+                }
+                if(d != -1)
+                {
+                    Button p = B[d];
+                    p.gameObject.SetActive(true);
+                }
+                
+            }
         }
         else
         {
-            next(b.GetComponentInChildren<Text>().text[0]);
+            B[index].gameObject.SetActive(false);
+            selected.ButtonStack.Push(index);
+            next(B[index].GetComponentInChildren<Text>().text[0]);
         }
 
         
     }
     void Awake()
     {
-        
+        //PlayerPrefs.DeleteAll();
+
+        AdamKec.gameObject.SetActive(false);
+        AdamKecpanel.gameObject.SetActive(false);
+
         TAPILANLARL = new HashSet<int>();
         if (!PlayerPrefs.HasKey("xal"))
         {
             PlayerPrefs.SetInt("xal", 0);
         }
-        if (!PlayerPrefs.HasKey("qizil"))
-        {
-            PlayerPrefs.SetInt("qizil", 20);
-        }
+        
         if (!PlayerPrefs.HasKey("level"))
         {
             PlayerPrefs.SetInt("level", 1);
         }
-        //Xaltext.text = "Xal " + PlayerPrefs.GetInt("xal");
-        //Qiziltext.text = "Qizil " + PlayerPrefs.GetInt("qizil");
+        
 
         // call with level
         readMission();
+
+        //Debug.Log("Tapmacalarin sayi------------------------------" + T.Length);
+        B = new Button[] { H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12};
+        for(int i = 0; i < 12; i++)
+        {
+            int k = i;
+            B[i].onClick.AddListener(() => keyclick(k));
+        }
         
-        //Debug.Log("Tapmacalarin sayi" + T.Length);
-        Button[] buttons1 = panel1.GetComponentsInChildren<Button>();
-        Button[] buttons2 = panel2.GetComponentsInChildren<Button>();
-        Button[] buttons3 = panel3.GetComponentsInChildren<Button>();
-        for(int i = 0; i < buttons1.Length; i++)
-        {
-            Button K = buttons1[i];
-            buttons1[i].onClick.AddListener(() => keyclick(K));
-        }
-        for (int i = 0; i < buttons2.Length; i++)
-        {
-            Button K = buttons2[i];
-            buttons2[i].onClick.AddListener(() => keyclick(K));
-        }
-        for (int i = 0; i < buttons3.Length; i++)
-        {
-            Button K = buttons3[i];
-            buttons3[i].onClick.AddListener(() => keyclick(K));
-        }
 
         Kvadratlar = new GameObject[N][][];
         string s = "QÜERTYUİOPÖĞASDFGHJKLIƏZXCVBNMÇŞ-";
@@ -322,7 +385,7 @@ public class GameController : MonoBehaviour {
                 c.transform.position = new Vector3(x, y, 12);
             }
         }
-        for (int i = 0; i < T.Length; i++)
+        for (int i = 0; i < T.Length-1; i++)
         {
             int x = T[i].x, y = T[i].y;
 
@@ -344,13 +407,23 @@ public class GameController : MonoBehaviour {
 
         }
         loadGame();
-        change(T[0],false);
+        change(T[12],false);
     }
     public void readMission()
     {
+        //PlayerPrefs.SetInt("level", 1);
         int levelcurrent = PlayerPrefs.GetInt("level");
         string text = textFile.text;
-
+        if(levelcurrent == 1)
+        {
+            N = 50; M = 50;
+            //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV2");
+        }
+        else if(levelcurrent == 2)
+        {
+            N = 50; M = 50;
+            //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
+        }
         string[] mm = text.Split('@');
         //Debug.Log("Umumumi oyunlarin sayi " + (mm.Length - 1));
 
@@ -373,7 +446,7 @@ public class GameController : MonoBehaviour {
         string[] kr = mm[levelcurrent].Split('\n');
         T = new Tapmaca[kr.Length - 2];
 
-        for (int i = 0; i < T.Length; i++)
+        for (int i = 0; i < T.Length-1; i++)
         {
             string[] a = kr[i + 1].Split('{');
             //if (a[0][0] == ' ') a[0] = a[0].Substring(1);
@@ -399,6 +472,9 @@ public class GameController : MonoBehaviour {
     }
     public void change(Tapmaca t, bool v)
     {
+        
+        //step.enabled = true;
+        //Debug.Log("ANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
         if (TAPILANLARL.Contains(t.index)) return;
         textSual.text = t.sual;
         for(int i = t.cursor; i < t.objects.Length; i++)
@@ -417,6 +493,7 @@ public class GameController : MonoBehaviour {
         
         if (selected != null && !TAPILANLARL.Contains(selected.index))
         {
+            
             for (int i = 0; i < selected.objects.Length; i++)
             {
                 if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
@@ -431,8 +508,6 @@ public class GameController : MonoBehaviour {
             if(t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
             {
                 t.objects[i][0].GetComponent<Renderer>().material.color = colorsec;
-                //Debug.Log("Color Changeddd" + i);
-                //Destroy(t.objects[i]);
             }
 
 
@@ -450,12 +525,55 @@ public class GameController : MonoBehaviour {
                 }
             }
         }
-        //text.text = selected.sual + "-> " + selected.disable(10);
-        //text.text = selected.sual;
+
+
+
+        for(int i = 0; i <selected.soz.Length; i++)
+        {
+            //B[i].GetComponent<Text>().text = selected.soz[i]+"";
+            B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
+            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.green && false)
+            {
+                String h = selected.objects[i][1].GetComponent<TextMesh>().text;
+                for (int j = 0; j < 11; j++)
+                {
+                    if (!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
+                    {
+                        //B[j].gameObject.SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                if (i > selected.cursor)
+                    B[i].gameObject.SetActive(true);
+                
+                if(selected.objects[i][1].GetComponent<TextMesh>().text == "") B[i].gameObject.SetActive(true);
+                String h = selected.objects[i][1].GetComponent<TextMesh>().text;
+                for(int j = 0; j < 11; j++)
+                {
+                    if(!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
+                    {
+                        B[j].gameObject.SetActive(true);
+                    }
+                }
+                //cursora qeder yazilan butun herfleri gizle
+            }
+        }
+        foreach (int y in selected.ButtonStack)
+        {
+            //B[y].gameObject.SetActive(false);
+        }
+        for(int k = selected.soz.Length; k < 11; k++)
+        {
+            B[k].gameObject.SetActive(false);
+            //Debug.Log(k + "  ------------Deaktivleshdi" + selected.soz);
+        }
+
+
     }
     
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
