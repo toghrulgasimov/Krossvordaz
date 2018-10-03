@@ -433,4 +433,145 @@
 0{23{0{ALÇA{Cır və peyvənd cinsləri olan çəyirdəkli turş və ya şirin yumru bir meyvə.{
 44{28{0{ARZU{  Bir şeyin olmasını ürəkdən istəmə; istək, dilək, əməl, həsrət.{
 10{12{1{ALOV{Yanan bir şeydən çıxan od.{
-
+@
+0{1{0{GENERATOR{ xüs.  Mexaniki enerjini elektrik enerjisinə çevirən maşın.{
+5{0{1{HAQQ{   Doğru, düz, düzgün,həqiqi.{
+2{3{0{ƏLAQƏ{ Qarşılıqlı münasibət,bir-biri ilə bağlılıq.{
+3{0{1{REFLEKTOR{inikas etmək,əks etmək {
+1{8{0{DƏRƏCƏ{   Bir şeyin müqayisəli kəmiyyəti, səviyyəsi.{
+6{7{1{MƏZHƏKƏ{  Gülməli,güldürücü danışıq, söhbət, hərəkət, oyun; əhvalat,lətifə.{
+5{11{0{MƏXSUS{   Yalnız birinə aid olan.{
+1{8{1{DOLA{ dovla.{
+8{9{1{RESPUBLİKA{Ali hakimiyyət orqanları xalq tərəfindən müəyyən müddətə seçilən dövlət idarə forması{
+3{18{0{XARABA{   Dağılmış, uçulmuş,viranə qalmış şəhərin, tikilinin və s.{
+1{16{0{SXOLASTİK{ Sxolastika{
+4{12{1{QOCALMAQ{  qocalıq yaşına dolmaq{
+6{7{0{MEYVƏ{   Bəzi ağacların, kolların yeməli, şirəli məhsulu.{
+1{16{1{SÜMÜK{  İnsan və onurğalı heyvan skeletinin ayrı-ayrı tərkib hissəsi.{
+10{9{1{İNSAN{   Adam, bəşər.{
+10{2{1{MƏSƏLƏ{   Həll olunması, yerinə yetirilməsi lazım olan iş.{
+6{5{0{SƏRSƏMLƏMƏK{ Hər hansı bir səbəbdən ağlını itirmək, gicəlmək, dəli kimi olmaq,zehni qarışmaq.{
+9{3{0{KƏSMƏ{ kəsilmiş {
+15{3{1{ÜRƏKLƏNMƏK{ Cəsarətlənmək, cəsarəti artmaq, cəsarət etmək, cəsarəti özünə qayıtmaq.{
+13{7{0{ALLAHQURUCU{  Allahqurucu luqtərəfdarı.{
+12{11{0{ƏMTƏƏŞÜNAS{ [ əmtəə və fars....şünas]{
+21{9{1{DOST{   yoldaş{
+21{9{0{DOYDURULMAQ{Tox hala gətirmək{
+26{6{1{SƏRRAST{ Duz, düzgün,dəqiq, hədəfi düz vuran.{
+28{3{1{QARAMAL{ Buynuzlu iri ev heyvanı(öküz, camış, inək).{
+21{4{0{HEYVANDAR{ [ər. heyvan və fars....dar]{
+12{9{0{UZUN{  İki ucunun arası çox, çox olan(qısa ziddi).{
+19{9{1{YÖNƏLTMƏK{ İstiqamət vermək, istiqamətləndirmək,istiqamət göstərmək.{
+30{6{1{SUVAŞQAN{ Yapışan, yapışqan.{
+15{16{0{SƏKSƏN{həştad.{
+16{13{1{ETMƏK{  Bir işi yerinə yetirmək,əmələ gətirmək, görmək{
+28{12{0{UZAQLAŞMAQ{  Daha uzağa getmek{
+24{2{1{HAVA{  Səslərin, müəyyən musiqi vəhdəti əmələ gətirən ardıcıllığı; musiqi ahəngi, melodiya.{
+35{6{1{DOYDURMAQ{  Tox hala gətirmək{
+33{10{1{İLAHİYYAT{  Dini ehkamlardan bəhs edən sxolastik elm; din elmləri.{
+17{9{1{ŞÜŞƏ{  Kvarslı qumu əridib kimyəvi üsulla işləmək nəticəsində alınan sərt, şəffaf material.{
+29{17{0{QALXAN{ köhn. Qədim müharibələrdə qılınc və s.{
+19{1{1{QOHUMLU{ Qohumları olan.{
+37{2{1{LEQALLAŞMAQ{ Leqal vəziyyətə keçmək,leqal şəkil almaq, gizli vəziyyətdən açıq vəziyyətə keçmək.{
+18{2{0{KOMA{ tib. Bəzi xəstəliklər nəticəsində özündəngetmə{
+30{16{1{ZAVİYƏNİŞİN{ [ər. zaviyə və fars....nişin]  köhn.{
+26{24{0{BÜZÜŞDÜRÜCÜ{ Ağzın, dilin selikliqişasını yığan{
+23{22{0{KOMANDAN{Komandir{
+23{26{0{PARÇALANMAQ{Parça-parça olmaq{
+24{25{1{ŞADLANMAQ{ Şad olmaq, sevinmək,fərəhlənmək{
+11{14{0{DÖVLƏT{  Ölkənin hakim sinfinin,mövcud idarə üsulunu qorumaq və başqa siniflərin müqavimətini aradan qaldırmaq məqsədini daşıyan siyasi təşkilatı{
+19{33{0{QULLUQÇU{  Zehni əməyin müxtəlif sahələrində muzd ilə işləyən işçi{
+15{29{0{RAHATLANMAQ{  Rahatlıq tapmaq{
+0{10{0{İLAN{  Bədəni uzun və qıvrılanayaqsız, adətən zəhərli dişləri olan sürünən heyvan.{
+16{25{1{QƏDDAR{Rəhmsiz{
+12{27{0{HAVADAR{ Birinin tərəfini saxlayan, ona tərəf çıxan,onu müdafiə edən; tərəfgir, tərəfkeş, tərəfdar.{
+21{31{0{ELƏMƏK{“Etmək” felinin üslubi variantı{
+13{20{1{QARAYAXA{  İstədiyindən əl çəkməyən,tutduğunu buraxmayan, qır-saqqızolub adamı təngə gətirən.{
+10{21{0{ÇALA{ Çökək yer, çuxur yer{
+10{23{0{CAVAB{   Şifahi və ya yazılı suala,sorğuya və s.{
+36{18{1{YORĞANÜZÜ{ Yorğanın üzünə çəkilən adi və ya naxışlı parça.{
+9{25{0{BAXMAQ{  Bir şeyi görmək üçün gözlərini ona dikmək{
+16{25{0{QAYNAQ{ Bir şeyin qaynayıb çıxdığı yer; mənbə.{
+34{20{0{ŞƏRƏF{   İnsanın ictimai və şəxsi davranışında tutduğu mənəvi-əxlaqi prinsiplərin məcmusu; mənəvi yüksəklik, ululuq,heysiyyət.{
+20{21{1{RƏFTAR{  Birisinə və ya bir şeyəqarşı göstərilən münasibət{
+31{3{0{XRONOMETR{ Astronomların, geodeziyaçıların,dənizçilərin işlətdiyi xüsusi dəqiq saat növü.{
+0{6{0{MƏKTUB{  Hər hansı bir məqsədlə,yaxud bir şeyi xəbər verib bildirmək üçün yazılıb poçt və ya başqa vasitə ilə birinə göndərilən kağız.{
+32{2{1{ÖRTÜ{  Başa örtülən hər hansı birşey.{
+19{33{1{QURULUŞ{  İctimai, dövlət sistem üsulu,idarə üsulu.{
+16{37{0{TƏHLÜKƏ{   Qorxu törədən hal{
+25{15{1{NƏFƏSALMA{ Ciyərlə havanın içəri alınması. {
+12{35{0{XƏYALPƏRVƏR{xəyalpərəst.{
+13{29{1{GÜLÜMSƏMƏK{  Gülər kimi olmaq,təbəssüm etmək{
+39{2{1{ORDU{  Dövlətin silahlı qüvvələri{
+11{37{0{ƏRƏB{  Ön Asiyada və Şimali Afrikada yaşayan, sami dilləri qrupuna daxil olan xalq və bu xalqa mənsub adam.{
+15{31{1{TƏKRAR{  Bir işi bir daha, yenidən görmə{
+12{32{0{GÜNƏŞ{  Planet sisteminin işıq və istilik verən, közərmiş böyük şar{
+11{17{1{QAYDA{   Nizam, səliqə{
+5{30{0{TƏNASÜBSÜZ{ Tənasübü, uyğunluğuolmayan;{
+7{27{1{İLANBAŞIOTU{ bot. Alp zonasındadaşlı yamaclarda bitən boz tükcüklərlə örtülü çoxillik ot bitki.{
+16{22{0{GÖVDƏ{  Bədən{
+4{32{0{QABA{  Kobud, sərt, cod. {
+1{13{0{AVTO{ Avtomobil{
+2{28{0{ÜZÜGÜLƏR{ gülərüzlü{
+21{20{0{HEYRAN{  Gözəl və ya əzəmətli bir şey qarşısında vurulmuşcasına çaşıb qalma{
+21{18{0{MÖHKƏM{   Davamlı, bərk{
+4{22{1{CÜRBƏCÜR{ Müxtəlif{
+17{39{0{QOŞALAŞMAQ{ Qoşa olmaq, cüt olmaq{
+1{23{0{ÜSTÜN{  Bənzərlərinə görə dahayaxşı, daha yüksək səviyyədə olan, onları geridə buraxan.{
+1{26{0{GƏRƏK{ Gərəkdir, lazımdır{
+33{22{0{ZAMAZKA{[rus.] köhn. Şüşə ilə çərçivəaralarını və rəng çəkməzdən əvvəl dəlikdeşikləri tutmaq və ümumiyyətlə, hamarolmayan yerləri hamar etmək üçün işlədilən özlü maddə.{
+4{32{1{QOPARMAQ{  Dartaraq və ya çəkərəkbir şeyin bir hissəsini ayırmaq{
+13{0{1{MƏLƏ{  zool. Çox bərk sancan qanadsız,zəhərli bir cücü. Taxtabiti.{
+10{29{1{ZÜLM{  Ədalət və insafa zidd olan hal və hərəkət{
+3{38{0{VAXT{ [ər. vəqt]  Cərəyan edən bir işin, hadisənin və s.{
+10{18{0{SATMAQ{  Pul alaraq əvəzində bir şey vermək.{
+1{35{0{BOĞAZ{ Boynunda balası olan{
+26{35{1{ALMAQ{  Əlinə götürmək, əl ilə tutub götürmək, qaldırmaq.{
+39{21{1{SAYMAZYANA{saymazlıqla{
+12{1{0{TƏRK{ qoyub getmək, çıxıb getmək{
+22{16{0{ZƏHƏR{   Canlı orqanizmi zəhərləndirə bilən maddə{
+28{19{1{QURD{ zool. Yumşaq bədənli, uzunsov,ayaqsız, sürünərək hərəkət edən kiçik heyvan.{
+32{29{0{QUDURĞAN{ Azğın, həddini azmış{
+24{36{0{QULA{  Açıq-sarı rəngli at{
+28{12{1{ULDUZ{  Öz təbiəti etibarilə günəşə bənzəyən və gecələr göydə parıldayaraq nöqtə kimi görünən göy cismi.{
+32{29{1{QORXMAZ{ Heç şeydən qorxmayan{
+28{31{0{QABAR{  Bədəndə dərinin altında əmələ gələn suluq.{
+23{11{0{ŞƏXS{  Cəmiyyətdə ayrıca adam;{
+23{13{1{DƏRƏ{  İki dağ və ya təpə arasında,eləcə də düzənlikdə uzun dərin çuxur{
+27{34{0{YAXALATMAQ{icb. Tutdurmaq, həbs etdirmək{
+1{35{1{BAXAN{  Nəzarət edən, idarə edən..{
+38{13{1{ETNOQRAF{[yun. ethnos və grapho]Etnoqrafiya mütəxəssisi.{
+12{13{1{HÖKM{   Əmr, buyruq, sərəncam.{
+35{31{1{FƏRASƏT{  Dərhal anlama, başadüşmə, dərk etmə.ayıqlıq.{
+29{28{1{DAHA{Sifətlərdən əvvəl gələrək çoxaltma dərəcəsi əmələ gətirir.{
+28{37{0{KARBÜRATOR{ xüs. Daxilində karbürasiya əmələ gələn cihaz{
+29{36{1{PART{ Partlayan, yaxud atılan və yaxudda yerə düşən ağır bir şeydən çıxan səs.{
+6{15{1{ASFALT{  Təbii və ya süni surətdə hasil edilən qara rəngli, bərk{
+34{32{0{XƏTT{  Yazarkən hərfləri təsvir etmə tərzi{
+37{35{1{QARA{  Bütün rənglərin ən tündü{
+24{2{0{HƏRƏ{əvəz. Toplu halında olan adamlardan hər biri;{
+27{29{0{UŞAQ{  Azyaşlı oğlan, ya qız;{
+18{19{1{QÜVVƏ{   Bir işi görə bilmək qabiliyyəti,iqtidarı, bacarığı.{
+15{20{0{DÜYÜN{ Toy, şənlik.{
+2{28{1{ÜRƏK{  İnsanda qan dövranının, döşboşluğunun sol tərəfində yerləşən əzələli kisəşəklində mərkəzi orqanı;{
+34{1{1{SONRA{ zərf Bir işin, hadisənin baş verməsində zaman ardıcıllığı göstərən zamanzərfi.{
+5{20{0{ATMAQ{  Bir şeyi əlindən buraxaraq yaxına, ya uzağa tullamaq{
+0{30{0{ADƏT{   Hər hansı bir xalqın həyatında qədimdən bəri qəbul edilmiş vəkök salmış ənənə, rəsm.{
+1{33{0{FOTO{[yun. phos – işıq]  fotoqrafiya{
+33{8{0{HEYVAN{   İnsanı çıxmaqla hərcür canlı məxluq.{
+2{21{1{ƏFSANƏ{   Nəsillərdən nəsillərə ağızda dolaşan və mövzusu çox zaman fövqəladə xarakter daşıyan hekayə{
+31{15{0{DÜYÜ{ İsti iqlimdə sulu yerlərdə (xırlarda)yetişdirilən ağ rəngli dənli bitki{
+26{0{1{BURUN{  İnsan və heyvanın üzündəiybilmə və tənəffüs orqanı.{
+25{7{0{RƏHM{  Acıma, yazığı gəlmə{
+37{27{1{DOĞU{ Gündoğan, günçıxan;{
+26{14{0{MƏDƏ{ İnsanda və heyvanlardaqarın boşluğunun yuxarı hissəsində yerləşən həzm orqanı.{
+36{15{0{XANƏ{   Ev, məskən. ..{
+28{39{0{STANDART{  Öz ölçüsünə, formasına,keyfiyyətinə görə tələbata cavab verənhər hansı bir şeyin nümunəsi.{
+33{36{1{ORTA{  Bir şeyin kənarlarından, uclarından az-çox bərabər dərəcədə aralı olan yer;{
+36{18{0{YARI{ Tən bölünmüş iki hissədən biri.{
+32{23{1{GÜNAH{   Dini-əxlaqi normaların pozulması, dincə qəbahət sayılan iş (savabəksi).{
+21{14{0{AZƏR{ azərbaycanlı.{
+34{27{1{HƏDD{   Sərhəd{
+35{6{0{DOLU{ Havada donub tökülən yağmur dənələri.{
+6{36{0{ƏTRAF{ [ər. “tərəf” söz. cəmi] {
+9{34{1{AYAQ{  İnsan və heyvanın yeriməsinə xidmət edən bədən üzvü.{

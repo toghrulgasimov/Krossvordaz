@@ -109,10 +109,30 @@ public class GameController : MonoBehaviour {
     
 
     InterstitialAd interstitial;
-    
+
+    //public RawImage img;
+
+    IEnumerator imgf(string url)
+    {
+        // Start a download of the given URL
+        //url = "https://4bilder-1wort.net/data/images/8081.jpg";
+        using (WWW www = new WWW(url))
+        {
+            // Wait for download to complete
+            yield return www;
+
+            // assign texture
+            //Renderer renderer = img.renderer;
+            
+            //img.texture = www.texture;
+        }
+    }
     public void Start()
     {
-        #if UNITY_ANDROID
+        
+        
+
+#if UNITY_ANDROID
         string appId = "ca-app-pub-9026840340673035~9445396711";
         #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
@@ -334,7 +354,7 @@ public class GameController : MonoBehaviour {
     void Awake()
     {
         //PlayerPrefs.DeleteAll();
-
+        //PlayerPrefs.SetInt("score", 322);
         AdamKec.gameObject.SetActive(false);
         AdamKecpanel.gameObject.SetActive(false);
 
@@ -411,19 +431,27 @@ public class GameController : MonoBehaviour {
     }
     public void readMission()
     {
-        //PlayerPrefs.SetInt("level", 1);
+        //PlayerPrefs.SetInt("level", 3);
         int levelcurrent = PlayerPrefs.GetInt("level");
         string text = textFile.text;
+
         if(levelcurrent == 1)
         {
             N = 50; M = 50;
             //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV2");
+            //img.gameObject.SetActive(false);
         }
         else if(levelcurrent == 2)
         {
             N = 50; M = 50;
+            //img.gameObject.SetActive(false);
             //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
         }
+        else if(levelcurrent == 3)
+        {
+            N = 40; M = 40;
+        }
+
         string[] mm = text.Split('@');
         //Debug.Log("Umumumi oyunlarin sayi " + (mm.Length - 1));
 
@@ -476,7 +504,17 @@ public class GameController : MonoBehaviour {
         //step.enabled = true;
         //Debug.Log("ANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
         if (TAPILANLARL.Contains(t.index)) return;
-        textSual.text = t.sual;
+        if(t.sual.StartsWith("/da"))
+        {
+            textSual.text = "";
+            string url = "https://4bilder-1wort.net" + t.sual;
+            //StartCoroutine(imgf(url));
+        }
+        else
+        {
+            textSual.text = t.sual;
+        }
+        
         for(int i = t.cursor; i < t.objects.Length; i++)
         {
             if(t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)

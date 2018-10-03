@@ -50,7 +50,8 @@ public class menu : MonoBehaviour {
     }
     
 	void Start () {
-        if (PlayerPrefs.GetInt("score") >= 200 && !PlayerPrefs.HasKey("level2xeta"))
+        Debug.Log(PlayerPrefs.GetInt("score"));
+        if (PlayerPrefs.GetInt("score") >= 200 && PlayerPrefs.GetInt("score") < 320 && !PlayerPrefs.HasKey("level2xeta"))
         {
             PlayerPrefs.SetInt("level2xeta", 1);
             string name = PlayerPrefs.GetString("name");
@@ -61,6 +62,19 @@ public class menu : MonoBehaviour {
             PlayerPrefs.SetString("name", name);
             PlayerPrefs.SetInt("xal", xal);
             PlayerPrefs.SetInt("level", 2);
+
+        }
+        if (PlayerPrefs.GetInt("score") >= 320 && !PlayerPrefs.HasKey("level3sekilisil"))
+        {
+            PlayerPrefs.SetInt("level3sekilisil", 1);
+            string name = PlayerPrefs.GetString("name");
+            int level = PlayerPrefs.GetInt("level");
+            int xal = PlayerPrefs.GetInt("xal");
+            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetString("game", "");
+            PlayerPrefs.SetString("name", name);
+            PlayerPrefs.SetInt("xal", xal);
+            PlayerPrefs.SetInt("level", 3);
 
         }
         StartCoroutine(init());
