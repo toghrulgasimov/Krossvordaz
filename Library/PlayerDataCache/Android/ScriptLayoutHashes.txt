@@ -166,9 +166,9 @@ dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.zoom
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-db1e08a2c823418b1a5b8f6156057cf9 Assembly-CSharp.dll:.menu
+21441a88c343a35512293ef503edc259 Assembly-CSharp.dll:.menu
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-8ea139de28210a6053552ae046f9c4f2 Assembly-CSharp.dll:.GameController
+d973c74205c4390328e33365252da764 Assembly-CSharp.dll:.GameController
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh

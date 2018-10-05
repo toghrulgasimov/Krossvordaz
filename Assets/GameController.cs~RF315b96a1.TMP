@@ -1,15 +1,14 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
-using System.IO;
+using UnityEngine.SceneManagement;
 
 
-public class GameController : MonoBehaviour
-{
+public class GameController : MonoBehaviour {
     public class Tapmaca
     {
         public string soz;
@@ -20,13 +19,13 @@ public class GameController : MonoBehaviour
         public int cursor = 0;
         public string written = "";
         public string komekci = "";
-        public Stack<int> ButtonStack = new Stack<int>();
+        public Stack <int>ButtonStack = new Stack<int>();
         public String StringRandomized;
 
         public String generateRandomList(String s)
         {
             HashSet<int> H = new HashSet<int>();
-            while (H.Count != s.Length)
+            while(H.Count != s.Length)
             {
                 int d = UnityEngine.Random.Range(0, s.Length);
 
@@ -34,7 +33,7 @@ public class GameController : MonoBehaviour
             }
             String ans = "";
             int c = 0;
-            foreach (int x in H)
+            foreach(int x in H)
             {
                 ans += soz[x];
             }
@@ -83,6 +82,7 @@ public class GameController : MonoBehaviour
     public Button[] B;
     public Tapmaca[] T;
     public Tapmaca selected;
+    public TextAsset textFile;
     public Text textSual;
 
     public static Color32 coloric = new Color32(255, 255, 255, 255);
@@ -134,11 +134,11 @@ public class GameController : MonoBehaviour
 
 #if UNITY_ANDROID
         string appId = "ca-app-pub-9026840340673035~9445396711";
-#elif UNITY_IPHONE
+        #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
-#else
+        #else
             string appId = "unexpected_platform";
-#endif
+        #endif
 
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
@@ -147,13 +147,13 @@ public class GameController : MonoBehaviour
     }
     private void RequestInterstitial()
     {
-#if UNITY_ANDROID
+        #if UNITY_ANDROID
         string adUnitId = "ca-app-pub-9026840340673035/4960879307";
-#elif UNITY_IPHONE
+        #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
-#else
+        #else
         string adUnitId = "unexpected_platform";
-#endif
+        #endif
 
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);
@@ -175,16 +175,16 @@ public class GameController : MonoBehaviour
     public void sil()
     {
 
-        if (selected.objects[selected.cursor][1].GetComponent<TextMesh>().text != "")
+        if(selected.objects[selected.cursor][1].GetComponent<TextMesh>().text != "")
         {
             selected.objects[selected.cursor][1].GetComponent<TextMesh>().text = "";
         }
         else
         {
             selected.objects[selected.cursor][0].GetComponent<Renderer>().material.color = colorsec;
-            for (int i = selected.cursor - 1; i >= 0; i--)
+            for (int i = selected.cursor-1; i >= 0; i--)
             {
-                if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
                 {
                     selected.cursor = i;
                     break;
@@ -192,18 +192,6 @@ public class GameController : MonoBehaviour
             }
             selected.objects[selected.cursor][0].GetComponent<Renderer>().material.color = colorcur;
             selected.objects[selected.cursor][1].GetComponent<TextMesh>().text = "";
-        }
-    }
-    public void nextMissia()
-    {
-        if (TAPILANLARL.Count >= T.Length * 84 / 100.0)
-        {
-            //next level;
-            if (PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
-            {
-                PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-                //SceneManager.LoadScene(1);
-            }
         }
     }
     public void next(char a)
@@ -214,7 +202,7 @@ public class GameController : MonoBehaviour
         selected.objects[selected.cursor][0].GetComponent<Renderer>().material.color = colorsec;
         for (int i = selected.cursor + 1; i < selected.soz.Length; i++)
         {
-            if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+            if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
             {
                 selected.cursor = i;
                 break;
@@ -222,23 +210,22 @@ public class GameController : MonoBehaviour
         }
         selected.objects[selected.cursor][0].GetComponent<Renderer>().material.color = colorcur;
         string w = "";
-        for (int i = 0; i < selected.objects.Length; i++)
+        for(int i = 0; i < selected.objects.Length; i++)
         {
             w += selected.objects[i][1].GetComponent<TextMesh>().text;
         }
-        if (w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
+        if(w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
         {
             TAPILANLARL.Add(selected.index);
 
             if (PlayerPrefs.GetInt("xal") >= 200)
             {
-                if (TAPILANLARL.Count % 4 == 0)
+                if (TAPILANLARL.Count % 3 == 0)
                 {
                     //showi();
                     Invoke("showi", 3);
                 }
-            }
-            else
+            }else
             {
                 if (TAPILANLARL.Count % 4 == 0)
                 {
@@ -253,20 +240,23 @@ public class GameController : MonoBehaviour
             StartCoroutine(UpdataServer());
             for (int i = 0; i < selected.objects.Length; i++)
             {
-                selected.objects[i][0].GetComponent<Renderer>().material.color = Color.green;
+                selected.objects[i][0].GetComponent<Renderer>().material.color = Color.blue;
             }
 
-            nextMissia();
-            for (int i = T.Length - 2; i >= 0; i--)
+            if(TAPILANLARL.Count == T.Length-1)
             {
-                if (!TAPILANLARL.Contains(i))
+                //next level;
+                SceneManager.LoadScene(1);
+            }
+            for(int i = T.Length-2; i >= 0; i--)
+            {
+                if(!TAPILANLARL.Contains(i))
                 {
                     change(T[i], false);
                     break;
                 }
             }
-        }
-        else
+        }else
         {
             Askey.PlayOneShot(Ackey);
         }
@@ -276,7 +266,7 @@ public class GameController : MonoBehaviour
     {
 
         string yaddas = "";
-        foreach (int x in TAPILANLARL)
+        foreach(int x in TAPILANLARL)
         {
             yaddas += x + "@";
         }
@@ -288,26 +278,26 @@ public class GameController : MonoBehaviour
         if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
         string s = PlayerPrefs.GetString("game");
         string[] ar = s.Split('@');
-        for (int i = 0; i < ar.Length - 1; i++)
+        for(int i = 0; i < ar.Length-1; i++)
         {
             int index = int.Parse(ar[i]);
             TAPILANLARL.Add(index);
-            for (int j = 0; j < T[index].soz.Length; j++)
+            for(int j = 0; j < T[index].soz.Length; j++)
             {
-                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.green;
-                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] + "";
+                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.blue;
+                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] +"";
             }
         }
     }
     IEnumerator UpdataServer()
     {   //35.227.46.95
-        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score="+PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
 
 
-            if (!www.text.Equals("0"))
+            if(!www.text.Equals("0"))
             {
                 AdamKec.gameObject.SetActive(true);
                 AdamKecpanel.gameObject.SetActive(true);
@@ -335,16 +325,16 @@ public class GameController : MonoBehaviour
         {
             sil();
             Askey.PlayOneShot(Ackey);
-            if (selected.ButtonStack.Count > 0)
+            if(selected.ButtonStack.Count>0)
             {
                 int d = -1;
                 while (true)
                 {
                     d = (int)selected.ButtonStack.Pop();
-                    if (selected.objects[d][0].GetComponent<Renderer>().material.color != Color.green) break;
+                    if (selected.objects[d][0].GetComponent<Renderer>().material.color != Color.blue) break;
                     else B[d].gameObject.SetActive(true);
                 }
-                if (d != -1)
+                if(d != -1)
                 {
                     Button p = B[d];
                     p.gameObject.SetActive(true);
@@ -363,26 +353,29 @@ public class GameController : MonoBehaviour
     }
     void Awake()
     {
-        
         //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetString("game", "");
-        //PlayerPrefs.SetInt("level", 3);
-
+        //PlayerPrefs.SetInt("score", 322);
         AdamKec.gameObject.SetActive(false);
         AdamKecpanel.gameObject.SetActive(false);
 
         TAPILANLARL = new HashSet<int>();
-        
+        if (!PlayerPrefs.HasKey("xal"))
+        {
+            PlayerPrefs.SetInt("xal", 0);
+        }
 
-        
+        if (!PlayerPrefs.HasKey("level"))
+        {
+            PlayerPrefs.SetInt("level", 1);
+        }
 
 
         // call with level
-        readMission2();
-        nextMissia();
+        readMission();
+
         //Debug.Log("Tapmacalarin sayi------------------------------" + T.Length);
-        B = new Button[] { H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12 };
-        for (int i = 0; i < 12; i++)
+        B = new Button[] { H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12};
+        for(int i = 0; i < 12; i++)
         {
             int k = i;
             B[i].onClick.AddListener(() => keyclick(k));
@@ -392,11 +385,11 @@ public class GameController : MonoBehaviour
         Kvadratlar = new GameObject[N][][];
         string s = "QÜERTYUİOPÖĞASDFGHJKLIƏZXCVBNMÇŞ-";
         int ch = 0;
-        for (float x = 0, i = 0; i < N; x += 2.2f, i++)
+        for (float x = 0, i=0; i < N; x+=2.2f, i++)
         {
             Kvadratlar[(int)i] = new GameObject[M][];
 
-            for (float y = M * 2.2f, j = 0; j < M; y -= 2.4f, j++)
+            for (float y = M*2.2f, j=0; j < M; y-=2.4f, j++)
             {
                 Kvadratlar[(int)i][(int)j] = new GameObject[2];
                 GameObject t = Instantiate(enemy);
@@ -412,10 +405,9 @@ public class GameController : MonoBehaviour
                 c.transform.position = new Vector3(x, y, 12);
             }
         }
-        for (int i = 0; i < T.Length - 1; i++)
+        for (int i = 0; i < T.Length-1; i++)
         {
             int x = T[i].x, y = T[i].y;
-            Debug.Log(i);
 
             for (int j = 0; j < T[i].soz.Length; j++)
             {
@@ -425,7 +417,7 @@ public class GameController : MonoBehaviour
                 //T[i].objects[j].GetComponentInChildren<Image>().color = coloric;
                 Tapmaca para = T[i];
                 T[i].objects[j][1].GetComponent<TextMesh>().text = "";
-                T[i].objects[j][1].GetComponent<TextMesh>().color = Color.black;
+                T[i].objects[j][1].GetComponent<TextMesh>().color = Color.white;
                 T[i].objects[j][0].GetComponent<Renderer>().material.color = Color.white;
                 T[i].objects[j][0].name = i + "";
                 T[i].objects[j][1].name = i + "";
@@ -441,7 +433,7 @@ public class GameController : MonoBehaviour
 
             for (float y = M * 2.2f, j = 0; j < M; y -= 2.4f, j++)
             {
-                if (Kvadratlar[(int)i][(int)j][0].GetComponent<Renderer>().material.color != Color.white)
+                if(Kvadratlar[(int)i][(int)j][0].GetComponent<Renderer>().material.color != Color.white)
                 {
                     Kvadratlar[(int)i][(int)j][0].SetActive(false);
                 }
@@ -449,31 +441,54 @@ public class GameController : MonoBehaviour
         }
 
         loadGame();
-        change(T[12], false);
+        change(T[12],false);
     }
-    string readFile()
+    public void readMission()
     {
-        string FILE_PATH = Application.persistentDataPath + "/MYFILENAME.txt";
-        StreamReader inp_stm = new StreamReader(FILE_PATH);
-        string ans = "";
-        while (!inp_stm.EndOfStream)
+        //PlayerPrefs.SetInt("level", 3);
+        int levelcurrent = PlayerPrefs.GetInt("level");
+        string text = textFile.text;
+
+        if(levelcurrent == 1)
         {
-            ans += inp_stm.ReadLine()+"\n";
+            N = 50; M = 50;
+            //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV2");
+            //img.gameObject.SetActive(false);
+        }
+        else if(levelcurrent == 2)
+        {
+            N = 50; M = 50;
+            //img.gameObject.SetActive(false);
+            //Debug.Log("LEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
+        }
+        else if(levelcurrent == 3)
+        {
+            N = 40; M = 40;
         }
 
-        inp_stm.Close();
-        return ans;
-    }
-    public void readMission2()
-    {
-        string s = readFile();
-        string[] kr = s.Split('\n');
+        string[] mm = text.Split('@');
+        //Debug.Log("Umumumi oyunlarin sayi " + (mm.Length - 1));
+
+        for (int i = 1; i < mm.Length; i++)
+        {
+            // butunt tapmacalar // 1den bashlayir
+            //Debug.Log("Uzunluqq " + mm[i].Split('\n').Length);
+            string[] ar = mm[i].Split('\n');
+            for (int j = 1; j < ar.Length - 1; j++)
+            {
+                //Debug.Log(j + " " + ar[j]);
+            }
+
+        }
+
+        COUNTLEVEL = mm.Length - 1;
+        levelcurrent = Mathf.Min(levelcurrent, COUNTLEVEL);
+
+        //Debug.Log("Currentttt Level" + levelcurrent);
+        string[] kr = mm[levelcurrent].Split('\n');
         T = new Tapmaca[kr.Length - 2];
-        string[] nm = kr[0].Split(' ');
-        N = int.Parse(nm[0]);
-        M = int.Parse(nm[1]);
-        Debug.Log(N + " -- " + M);
-        for (int i = 0; i < T.Length; i++)
+
+        for (int i = 0; i < T.Length-1; i++)
         {
             string[] a = kr[i + 1].Split('{');
             //if (a[0][0] == ' ') a[0] = a[0].Substring(1);
@@ -487,27 +502,23 @@ public class GameController : MonoBehaviour
             string ulduz = ""; for (int ii = 0; ii < soz.Length; ii++) ulduz += "*";
             sual = sual.Replace(SOZ, ulduz);
             string suans = "";
-            for (int j = 0; j < SU.Length; j++)
+            for(int j = 0; j < SU.Length; j++)
             {
                 if (SU[j] == '*') suans += "*";
                 else suans += sual[j];
             }
             int iii = i;
             T[i] = new Tapmaca(x, y, saga, soz, sual, iii);
-            //Debug.Log(soz);
 
         }
-        
-
     }
-    
     public void change(Tapmaca t, bool v)
     {
 
         //step.enabled = true;
         //Debug.Log("ANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
         if (TAPILANLARL.Contains(t.index)) return;
-        if (t.sual.StartsWith("/da"))
+        if(t.sual.StartsWith("/da"))
         {
             textSual.text = "";
             string url = "https://4bilder-1wort.net" + t.sual;
@@ -518,9 +529,9 @@ public class GameController : MonoBehaviour
             textSual.text = t.sual;
         }
 
-        for (int i = t.cursor; i < t.objects.Length; i++)
+        for(int i = t.cursor; i < t.objects.Length; i++)
         {
-            if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+            if(t.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
             {
                 t.cursor = i;
                 break;
@@ -537,7 +548,7 @@ public class GameController : MonoBehaviour
 
             for (int i = 0; i < selected.objects.Length; i++)
             {
-                if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
                 {
                     selected.objects[i][0].GetComponent<Renderer>().material.color = coloric;
                 }
@@ -546,20 +557,20 @@ public class GameController : MonoBehaviour
         selected = t;
         for (int i = 0; i < t.objects.Length; i++)
         {
-            if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+            if(t.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
             {
                 t.objects[i][0].GetComponent<Renderer>().material.color = colorsec;
             }
 
 
         }
-        if (t.objects[t.cursor][0].GetComponent<Renderer>().material.color != Color.green)
+        if (t.objects[t.cursor][0].GetComponent<Renderer>().material.color != Color.blue)
             t.objects[t.cursor][0].GetComponent<Renderer>().material.color = colorcur;
         else
         {
-            for (int i = 0; i < selected.soz.Length; i++)
+            for(int i = 0; i < selected.soz.Length; i++)
             {
-                if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.blue)
                 {
                     selected.cursor = i;
                     break;
@@ -569,11 +580,11 @@ public class GameController : MonoBehaviour
 
 
 
-        for (int i = 0; i < selected.soz.Length; i++)
+        for(int i = 0; i <selected.soz.Length; i++)
         {
             //B[i].GetComponent<Text>().text = selected.soz[i]+"";
             B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
-            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.green && false)
+            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.blue && false)
             {
                 String h = selected.objects[i][1].GetComponent<TextMesh>().text;
                 for (int j = 0; j < 11; j++)
@@ -589,11 +600,11 @@ public class GameController : MonoBehaviour
                 if (i > selected.cursor)
                     B[i].gameObject.SetActive(true);
 
-                if (selected.objects[i][1].GetComponent<TextMesh>().text == "") B[i].gameObject.SetActive(true);
+                if(selected.objects[i][1].GetComponent<TextMesh>().text == "") B[i].gameObject.SetActive(true);
                 String h = selected.objects[i][1].GetComponent<TextMesh>().text;
-                for (int j = 0; j < 11; j++)
+                for(int j = 0; j < 11; j++)
                 {
-                    if (!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
+                    if(!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
                     {
                         B[j].gameObject.SetActive(true);
                     }
@@ -605,7 +616,7 @@ public class GameController : MonoBehaviour
         {
             //B[y].gameObject.SetActive(false);
         }
-        for (int k = selected.soz.Length; k < 11; k++)
+        for(int k = selected.soz.Length; k < 11; k++)
         {
             B[k].gameObject.SetActive(false);
             //Debug.Log(k + "  ------------Deaktivleshdi" + selected.soz);
@@ -624,8 +635,8 @@ public class GameController : MonoBehaviour
             //Input.GetTouch(0).position
 
             //0.6828691
-            float f = Input.mousePosition[1] / Screen.height;
-            if (f > 0.2414773f)
+            float f = Input.mousePosition[1] / Screen.height ;
+            if(f>0.2414773f)
             {
                 //Debug.Log(f);
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -641,7 +652,7 @@ public class GameController : MonoBehaviour
                     {
                         //Debug.Log("This isn't a Player");
                     }
-                    //hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.green;
+                    //hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
 
                     try
                     {
@@ -659,4 +670,4 @@ public class GameController : MonoBehaviour
 
         }
     }
-}
+    }

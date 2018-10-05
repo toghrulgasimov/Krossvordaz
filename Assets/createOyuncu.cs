@@ -24,10 +24,11 @@ public class createOyuncu : MonoBehaviour {
             {
                 PlayerPrefs.SetString("name", input.text);
                 PlayerPrefs.SetInt("score", 0);
+                PlayerPrefs.SetInt("level", 1);
                 SceneManager.LoadScene(1);
             }else
             {
-                info.text = "Bu ad Mövcuddur";
+                info.text = "Bu ad Mövcuddur başqa ad seçin";
             }
 
         }

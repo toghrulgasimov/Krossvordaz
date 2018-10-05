@@ -108,7 +108,6 @@
     <Compile Include="Assets\menu.cs" />
     <Compile Include="Assets\statistika.cs" />
     <Compile Include="Assets\zoom.cs" />
-    <None Include="Assets\missialar.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

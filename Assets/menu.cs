@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 public class menu : MonoBehaviour {
 
     public Text scoret;
+    public Text levelt;
+    public Text admin;
     public Text reytinqt, r1,r2,r3,r4,r5,r6,r7,r8;
     public Button X;
     IEnumerator init()
@@ -42,41 +45,95 @@ public class menu : MonoBehaviour {
 
         }
         scoret.text = "Xal\n" + PlayerPrefs.GetInt("score");
+        levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
+
+    }
+
+    IEnumerator callmission()
+    {
+
+        X.gameObject.SetActive(false);
+        //35.227.46.95
+        if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
+        {
+            string url = "http://35.227.46.95/newmissia?l=" + PlayerPrefs.GetInt("level");
+            using (WWW www = new WWW(url))
+            {
+                yield return www;
+
+                if(!www.text.Equals("soon"))
+                {
+                    //Debug.Log("--------------------------------------");
+                    PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
+                    //write to file
+                    //Debug.Log(www.text);
+                    WriteToFile(www.text);
+                    PlayerPrefs.SetString("game", "");
+                    X.gameObject.SetActive(true);
+                    X.GetComponentInChildren<Text>().text = "Başla";
+                    X.gameObject.SetActive(true);
+                }
+                else
+                {
+                    X.gameObject.SetActive(true);
+                    X.GetComponentInChildren<Text>().text = "Hazırlanir";
+                }
+
+            }
+            
+        }
+        else
+        {
+            X.gameObject.SetActive(true);
+            X.GetComponentInChildren<Text>().text = "Başla";
+        }
+    
         
+    }
+
+    IEnumerator checkversia()
+    {
+
+        PlayerPrefs.SetString("versia", "1.9");
+        //35.227.46.95
+        string url = "http://35.227.46.95/versia";
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            if(PlayerPrefs.GetString("versia").Equals(www.text))
+            {
+                admin.gameObject.SetActive(false);
+            }else
+            {
+                admin.gameObject.SetActive(true);
+            }
+
+
+        }
+
+
+
     }
     public void basla()
     {
         SceneManager.LoadScene(2);
     }
-    
-	void Start () {
-        Debug.Log(PlayerPrefs.GetInt("score"));
-        if (PlayerPrefs.GetInt("score") >= 200 && PlayerPrefs.GetInt("score") < 320 && !PlayerPrefs.HasKey("level2xeta"))
-        {
-            PlayerPrefs.SetInt("level2xeta", 1);
-            string name = PlayerPrefs.GetString("name");
-            int level = PlayerPrefs.GetInt("level");
-            int xal = PlayerPrefs.GetInt("xal");
-            //PlayerPrefs.DeleteAll();
-            PlayerPrefs.SetString("game", "");
-            PlayerPrefs.SetString("name", name);
-            PlayerPrefs.SetInt("xal", xal);
-            PlayerPrefs.SetInt("level", 2);
 
-        }
-        if (PlayerPrefs.GetInt("score") >= 320 && !PlayerPrefs.HasKey("level3sekilisil"))
-        {
-            PlayerPrefs.SetInt("level3sekilisil", 1);
-            string name = PlayerPrefs.GetString("name");
-            int level = PlayerPrefs.GetInt("level");
-            int xal = PlayerPrefs.GetInt("xal");
-            //PlayerPrefs.DeleteAll();
-            PlayerPrefs.SetString("game", "");
-            PlayerPrefs.SetString("name", name);
-            PlayerPrefs.SetInt("xal", xal);
-            PlayerPrefs.SetInt("level", 3);
+    public void WriteToFile(string str)
+    {
+        string FILE_PATH = Application.persistentDataPath + "/MYFILENAME.txt";
+        
+        StreamWriter sr = System.IO.File.CreateText(FILE_PATH);
+        sr.Write(str);
+        
+        sr.Close();
+    }
+    void Start () {
+        //X.gameObject.SetActive(false);
+        admin.gameObject.SetActive(false);
 
-        }
+        StartCoroutine(callmission());
+        StartCoroutine(checkversia());
         StartCoroutine(init());
     }
 	
