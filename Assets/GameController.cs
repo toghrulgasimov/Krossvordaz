@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
     public Button[] B;
     public Tapmaca[] T;
     public Tapmaca selected;
-    public Text textSual;
+    public Text textSual, info;
 
     public static Color32 coloric = new Color32(255, 255, 255, 255);
     public static Color32 coloryazildi = new Color32(0, 255, 255, 255);
@@ -103,6 +103,8 @@ public class GameController : MonoBehaviour
     public AudioSource Astapdi;
     public AudioClip Ackecdi;
     public AudioSource Askecdi;
+
+    public Button adminnext, adminnextl, adminnextl2;
 
     public Text AdamKec;
     public RectTransform AdamKecpanel;
@@ -194,6 +196,7 @@ public class GameController : MonoBehaviour
             selected.objects[selected.cursor][1].GetComponent<TextMesh>().text = "";
         }
     }
+    public bool avakebitib = false;
     public void nextMissia()
     {
         if (TAPILANLARL.Count >= T.Length * 84 / 100.0)
@@ -203,7 +206,17 @@ public class GameController : MonoBehaviour
             {
                 PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
                 //SceneManager.LoadScene(1);
+                if(avakebitib)
+                    Askecdi.PlayOneShot(Ackecdi);
+            }else
+            {
+                if (avakebitib)
+                    Astapdi.PlayOneShot(Actapdi);
             }
+        }else
+        {
+            if (avakebitib)
+                Astapdi.PlayOneShot(Actapdi);
         }
     }
     public void next(char a)
@@ -229,7 +242,7 @@ public class GameController : MonoBehaviour
         if (w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
         {
             TAPILANLARL.Add(selected.index);
-
+            info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
             if (PlayerPrefs.GetInt("xal") >= 200)
             {
                 if (TAPILANLARL.Count % 4 == 0)
@@ -247,7 +260,6 @@ public class GameController : MonoBehaviour
                 }
             }
             saveGame();
-            Astapdi.PlayOneShot(Actapdi);
 
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
             StartCoroutine(UpdataServer());
@@ -269,6 +281,7 @@ public class GameController : MonoBehaviour
         else
         {
             Askey.PlayOneShot(Ackey);
+
         }
 
     }
@@ -324,6 +337,19 @@ public class GameController : MonoBehaviour
         //
 
     }
+    IEnumerator online()
+    {   //35.227.46.95
+        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+        }
+
+    }
+    void FixedUpdate()
+    {
+        StartCoroutine(online());
+    }
 
     public void menuload()
     {
@@ -361,25 +387,64 @@ public class GameController : MonoBehaviour
 
 
     }
+
+
+    public void adminn1()
+    {
+        for(int i = 1; i < T.Length; i++)
+        {
+            if(!TAPILANLARL.Contains(i))
+            {
+                change(T[i], false);
+                break;
+            }
+        }
+        for(int i = 0; i < selected.soz.Length; i++)
+        {
+            if(selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                next(selected.soz[i]);
+        }
+    }
+    public void adminn3()
+    {
+        //PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") - 1);
+    }
+    public void adminn2()
+    {
+        PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level")+1);
+
+    }
+    public void notadmin()
+    {
+        adminnext.gameObject.SetActive(false);
+        adminnextl.gameObject.SetActive(false);
+        adminnextl2.gameObject.SetActive(false);
+    }
     void Awake()
     {
-        
+        notadmin();
+        adminnext.onClick.AddListener(adminn1);
+        adminnextl.onClick.AddListener(adminn2);
+        adminnextl2.onClick.AddListener(adminn3);
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetString("game", "");
-        //PlayerPrefs.SetInt("level", 3);
+        //PlayerPrefs.SetInt("level", 2);
+        //PlayerPrefs.SetInt("score", 87);
 
         AdamKec.gameObject.SetActive(false);
         AdamKecpanel.gameObject.SetActive(false);
 
         TAPILANLARL = new HashSet<int>();
-        
 
-        
+
+
 
 
         // call with level
         readMission2();
         nextMissia();
+        
+        avakebitib = true;
         //Debug.Log("Tapmacalarin sayi------------------------------" + T.Length);
         B = new Button[] { H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12 };
         for (int i = 0; i < 12; i++)
@@ -449,6 +514,7 @@ public class GameController : MonoBehaviour
         }
 
         loadGame();
+        info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
         change(T[12], false);
     }
     string readFile()
@@ -497,10 +563,13 @@ public class GameController : MonoBehaviour
             //Debug.Log(soz);
 
         }
-        
 
+        for(int i = 0; i < 100; i++)
+        {
+            //TAPILANLARL.Add(i);
+        }
     }
-    
+
     public void change(Tapmaca t, bool v)
     {
 

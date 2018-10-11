@@ -63,6 +63,9 @@ public class menu : MonoBehaviour {
 
                 if(!www.text.Equals("soon"))
                 {
+                    if(www.text.Length > 100)
+                    {
+                        
                     //Debug.Log("--------------------------------------");
                     PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
                     //write to file
@@ -72,6 +75,7 @@ public class menu : MonoBehaviour {
                     X.gameObject.SetActive(true);
                     X.GetComponentInChildren<Text>().text = "Başla";
                     X.gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
@@ -90,11 +94,11 @@ public class menu : MonoBehaviour {
     
         
     }
-
+    
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "1.9");
+        PlayerPrefs.SetString("versia", "2.1");
         //35.227.46.95
         string url = "http://35.227.46.95/versia";
         using (WWW www = new WWW(url))
@@ -105,6 +109,7 @@ public class menu : MonoBehaviour {
                 admin.gameObject.SetActive(false);
             }else
             {
+                if(www.text.Length >=2)
                 admin.gameObject.SetActive(true);
             }
 
@@ -113,6 +118,20 @@ public class menu : MonoBehaviour {
 
 
 
+    }
+
+    IEnumerator online()
+    {   //35.227.46.95
+        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+        }
+
+    }
+    void FixedUpdate()
+    {
+        StartCoroutine(online());
     }
     public void basla()
     {
