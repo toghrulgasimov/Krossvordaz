@@ -407,7 +407,10 @@ public class GameController : MonoBehaviour
     }
     public void adminn3()
     {
-        //PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") - 1);
+        PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") - 1);
+        PlayerPrefs.SetString("level" + PlayerPrefs.GetInt("level"), "");
+
+
     }
     public void adminn2()
     {
@@ -422,7 +425,7 @@ public class GameController : MonoBehaviour
     }
     void Awake()
     {
-        notadmin();
+        //notadmin();
         adminnext.onClick.AddListener(adminn1);
         adminnextl.onClick.AddListener(adminn2);
         adminnextl2.onClick.AddListener(adminn3);
