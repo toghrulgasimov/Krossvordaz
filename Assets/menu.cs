@@ -12,6 +12,8 @@ public class menu : MonoBehaviour {
     public Text admin;
     public Text reytinqt, r1,r2,r3,r4,r5,r6,r7,r8;
     public Button X;
+    public RectTransform border;
+    public GameObject prefab;
     IEnumerator init()
     {
 
@@ -34,10 +36,38 @@ public class menu : MonoBehaviour {
 
                 int rey = int.Parse(a[0])+1;
                 Text[] T = new Text[] { r1, r2, r3, r4, r5, r6, r7, r8 };
+                int p = 25;
                 for(int i = 1; i < a.Length-1; i += 2)
                 {
-                    T[i/2].text = (i/2+1) + " " + a[i] + " " + a[i + 1] + " Xal";
-                    //Debug.Log(i + "1 " + a[i] + " " + a[i + 1] + " Xal");
+                    GameObject o = Instantiate(prefab);
+                    o.transform.SetParent(border, false);
+                    Text t = o.GetComponent<Text>();
+                    t.fontSize = p;
+                    p -= 5;
+                    p = Mathf.Max(15, p);
+                    if(i == 1)
+                    {
+                        t.color = new Color(255, 0, 0, p);
+                    }
+                    else if(i == 3)
+                    {
+                        t.color = new Color(100, 0, 0, p);
+                    }
+                    else if(i == 5)
+                    {
+                        t.color = new Color(50, 0, 0, p);
+                    }
+                    else
+                    {
+                        t.color = new Color(0, 0, 0, p);
+                    }
+
+                    //p -= 30;
+                    string s = (i / 2 + 1) + ". " + a[i] + " " + a[i + 1] + " Xal";
+                    string[] ars = s.Split('\n');
+                    s = string.Join("AAAA",ars);
+                    t.text = s;
+                    //t.w
                 }
                 PlayerPrefs.SetInt("reyting", rey);
                 reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
@@ -70,7 +100,7 @@ public class menu : MonoBehaviour {
                     PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
                     //write to file
                     //Debug.Log(www.text);
-                    WriteToFile(www.text);
+                    WriteToFile(Application.persistentDataPath + "/MYFILENAME.txt",www.text);
                     PlayerPrefs.SetString("game", "");
                     X.gameObject.SetActive(true);
                     X.GetComponentInChildren<Text>().text = "Başla";
@@ -94,11 +124,29 @@ public class menu : MonoBehaviour {
     
         
     }
-    
+    IEnumerator callYarish()
+    {
+        
+        //35.227.46.95
+        string url = "http://35.227.46.95/yarish";
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+            if (www.text.Length > 2)
+            {
+                WriteToFile(Application.persistentDataPath + "/YARISH.txt", www.text);
+            }
+
+        }
+
+
+    }
+
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "2.1");
+        PlayerPrefs.SetString("versia", "2.3");
         //35.227.46.95
         string url = "http://35.227.46.95/versia";
         using (WWW www = new WWW(url))
@@ -135,12 +183,18 @@ public class menu : MonoBehaviour {
     }
     public void basla()
     {
+        PlayerPrefs.SetInt("yarish", 0);
+        SceneManager.LoadScene(2);
+    }
+    public void baslayarish()
+    {
+        
+        PlayerPrefs.SetInt("yarish", 1);
         SceneManager.LoadScene(2);
     }
 
-    public void WriteToFile(string str)
+    public void WriteToFile(string FILE_PATH, string str)
     {
-        string FILE_PATH = Application.persistentDataPath + "/MYFILENAME.txt";
         
         StreamWriter sr = System.IO.File.CreateText(FILE_PATH);
         sr.Write(str);
@@ -148,10 +202,12 @@ public class menu : MonoBehaviour {
         sr.Close();
     }
     void Start () {
+        Debug.Log(SystemInfo.deviceUniqueIdentifier);
         //X.gameObject.SetActive(false);
         admin.gameObject.SetActive(false);
 
         StartCoroutine(callmission());
+        StartCoroutine(callYarish());
         StartCoroutine(checkversia());
         StartCoroutine(init());
     }

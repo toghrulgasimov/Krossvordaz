@@ -12,27 +12,34 @@ public class createOyuncu : MonoBehaviour {
     public Text info;
     IEnumerator yoxla()
     {
-        
-        
-        string url = "35.227.46.95/?name=" + input.text;
-        using (WWW www = new WWW(url))
+
+        if (input.text.Equals("")) {
+            info.text = "Adınızı daxil edin";
+        }else
         {
-            yield return www;
+            string url = "35.227.46.95/?name=" + input.text;
+            using (WWW www = new WWW(url))
+            {
+                yield return www;
 
-            Debug.Log(www.text);
-            if(www.text.Equals("1"))
-            {
-                PlayerPrefs.SetString("name", input.text);
-                PlayerPrefs.SetInt("score", 0);
-                PlayerPrefs.SetInt("level", 1);
-                SceneManager.LoadScene(1);
-            }else
-            {
-                info.text = "Bu ad Mövcuddur başqa ad seçin";
+                Debug.Log(www.text);
+                if (www.text.Equals("1"))
+                {
+                    PlayerPrefs.SetString("name", input.text);
+                    PlayerPrefs.SetInt("score", 0);
+                    PlayerPrefs.SetInt("level", 1);
+                    SceneManager.LoadScene(1);
+                }
+                else
+                {
+                    info.text = input.text + " Mövcuddur başqa ad seçin";
+                }
+
             }
-
         }
+        
     }
+    
     public void FF()
     {
         input.shouldHideMobileInput = true;
@@ -40,6 +47,7 @@ public class createOyuncu : MonoBehaviour {
     }
     private void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         input.shouldHideMobileInput = true;
         if (PlayerPrefs.HasKey("name"))
         {
