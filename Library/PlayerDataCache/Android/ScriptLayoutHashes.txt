@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/toghr/Desktop/testson23.apk
+C:/Users/toghr/Desktop/testson23link.apk
 SceneListBegin?
 Assets/Scenes/Giris.unity
 Assets/Scenes/Menu.unity

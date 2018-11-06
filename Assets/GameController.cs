@@ -333,7 +333,8 @@ public class GameController : MonoBehaviour
     }
     IEnumerator UpdataServer()
     {   //35.227.46.95
-        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        //127.0.0.1
+        string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -358,7 +359,8 @@ public class GameController : MonoBehaviour
     }
     IEnumerator UpdataServerYarish()
     {   //35.227.46.95
-        string url = "http://35.227.46.95/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+        //127.0.0.1
+        string url = "http://127.0.0.1/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -383,10 +385,15 @@ public class GameController : MonoBehaviour
     }
     IEnumerator online()
     {   //35.227.46.95
-        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
+        //127.0.0.1
+        string url = "http://127.0.0.1/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
+            if(www.text.StartsWith("com"))
+            {
+                Application.OpenURL("market://details?id="+www.text);
+            }
         }
 
     }
@@ -833,6 +840,7 @@ public class GameController : MonoBehaviour
             {
                 //Debug.Log(x + " " + y + " " + T[i].soz + " " + );
                 T[i].objects[j] = Kvadratlar[x][y];
+                Debug.Log(x + "," + y+","+i+","+j);
                 //T[i].byttons[j].GetComponentInChildren<Text>().text = T[i].soz[j] + "";
                 //T[i].objects[j].GetComponentInChildren<Image>().color = coloric;
                 Tapmaca para = T[i];

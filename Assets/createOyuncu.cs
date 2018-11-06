@@ -17,7 +17,8 @@ public class createOyuncu : MonoBehaviour {
             info.text = "Adınızı daxil edin";
         }else
         {
-            string url = "35.227.46.95/?name=" + input.text;
+            //
+            string url = "127.0.0.1/?name=" + input.text;
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -48,6 +49,7 @@ public class createOyuncu : MonoBehaviour {
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();
+        //Application.OpenURL("market://details?id=com.by.connaction.connectionname");
         input.shouldHideMobileInput = true;
         if (PlayerPrefs.HasKey("name"))
         {
