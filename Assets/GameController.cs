@@ -260,6 +260,7 @@ public class GameController : MonoBehaviour
             {
                 Astapdi.PlayOneShot(Actapdi);
                 saveGameYarish();
+                StartCoroutine(UpdataServerYarish());
             }
             for (int i = T.Length - 2; i >= 0; i--)
             {
@@ -334,7 +335,7 @@ public class GameController : MonoBehaviour
     IEnumerator UpdataServer()
     {   //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -360,7 +361,7 @@ public class GameController : MonoBehaviour
     IEnumerator UpdataServerYarish()
     {   //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+        string url = "http://35.227.46.95/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -386,7 +387,7 @@ public class GameController : MonoBehaviour
     IEnumerator online()
     {   //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;

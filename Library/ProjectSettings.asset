@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.4
+  bundleVersion: 2.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,13 +156,13 @@ PlayerSettings:
     Android: com.sadas.asdasd2
     Standalone: com.guilearn.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 27
+  AndroidBundleVersionCode: 32
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
-  iPhoneStrippingLevel: 0
+  iPhoneStrippingLevel: 3
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
@@ -242,7 +242,7 @@ PlayerSettings:
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
   templatePackageId: com.unity.3d@1.0.2
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  AndroidTargetArchitectures: 5
+  AndroidTargetArchitectures: 4
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: e02d4945734fa2649956ef726f05e983, type: 3}
   AndroidKeystoreName: C:/Users/toghr/UnityProjects/Krossvordaz/Krossvor2.keystore

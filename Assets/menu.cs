@@ -20,7 +20,7 @@ public class menu : MonoBehaviour {
 
         //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/countaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.227.46.95/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -87,7 +87,7 @@ public class menu : MonoBehaviour {
         //35.227.46.95
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
-            string url = "http://127.0.0.1/newmissia?l=" + PlayerPrefs.GetInt("level");
+            string url = "http://35.227.46.95/newmissia?l=" + PlayerPrefs.GetInt("level");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -130,7 +130,7 @@ public class menu : MonoBehaviour {
 
         //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/yarish";
+        string url = "http://35.227.46.95/yarish";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -148,10 +148,10 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "2.4");
+        PlayerPrefs.SetString("versia", "2.5");
         //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/versia";
+        string url = "http://35.227.46.95/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -174,7 +174,7 @@ public class menu : MonoBehaviour {
     IEnumerator online()
     {   //35.227.46.95
         //127.0.0.1
-        string url = "http://127.0.0.1/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
