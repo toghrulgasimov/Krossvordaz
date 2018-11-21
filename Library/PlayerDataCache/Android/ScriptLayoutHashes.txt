@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/toghr/Desktop/testson23linkfast86reduce.apk
+C:/Users/toghr/Desktop/testsonlinkfast29test.apk
 SceneListBegin?
 Assets/Scenes/Giris.unity
 Assets/Scenes/Menu.unity
@@ -168,7 +168,7 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 4e46d1f0f61b77e1070c4ca48a55363c Assembly-CSharp.dll:.menu
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-bb246082f730377846ca2856aa2a79cb Assembly-CSharp.dll:.GameController
+822baee8d0d3a27176aa3839719a9a3c Assembly-CSharp.dll:.GameController
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh

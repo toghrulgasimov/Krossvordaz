@@ -37,7 +37,7 @@ public class menu : MonoBehaviour {
 
                 int rey = int.Parse(a[0])+1;
                 Text[] T = new Text[] { r1, r2, r3, r4, r5, r6, r7, r8 };
-                int p = 25;
+                int p = 45;
                 for(int i = 1; i < a.Length-1; i += 2)
                 {
                     GameObject o = Instantiate(prefab);
@@ -45,7 +45,7 @@ public class menu : MonoBehaviour {
                     Text t = o.GetComponent<Text>();
                     t.fontSize = p;
                     p -= 5;
-                    p = Mathf.Max(15, p);
+                    p = Mathf.Max(23, p);
                     if(i == 1)
                     {
                         t.color = new Color(255, 0, 0, p);
@@ -148,7 +148,7 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "2.5");
+        PlayerPrefs.SetString("versia", "2.8");
         //35.227.46.95
         //127.0.0.1
         string url = "http://35.227.46.95/versia";
@@ -211,6 +211,7 @@ public class menu : MonoBehaviour {
     }
     void Start () {
         Debug.Log(SystemInfo.deviceUniqueIdentifier);
+        //PlayerPrefs.DeleteAll();
         //X.gameObject.SetActive(false);
         admin.gameObject.SetActive(false);
 

@@ -88,9 +88,9 @@ public class GameController : MonoBehaviour
 
     public static Color32 coloric = new Color32(255, 255, 255, 255);
     public static Color32 coloryazildi = new Color32(0, 255, 255, 255);
-    public static Color32 colorsec = new Color32(0, 255, 255, 255);
+    public static Color32 colorsec = new Color32(79, 117, 93, 255);
     public static Color32 colordolu = new Color32(0, 0, 0, 255);
-    public static Color32 colorcur = new Color32(244, 181, 65, 255);
+    public static Color32 colorcur = new Color32(0, 0, 145 , 255);
     public static Color32 colorcol = new Color32(186, 195, 211, 255);
 
     public HashSet<int> TAPILANLARL;
@@ -109,16 +109,19 @@ public class GameController : MonoBehaviour
 
     public Text AdamKec;
     public RectTransform AdamKecpanel;
+    public Text Intelekt;
 
     public RectTransform p1,p2,p3,p4;
     public Text YarishText;
+
+    public RectTransform rat;
 
 
     InterstitialAd interstitial;
 
     //public RawImage img;
 
-    
+    public bool interfailed = true;
     public void Start()
     {
 
@@ -146,19 +149,28 @@ public class GameController : MonoBehaviour
 #else
         string adUnitId = "unexpected_platform";
 #endif
-
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);
+        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        interstitial.OnAdOpening += HandleOnAdOpened;
+        interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         interstitial.LoadAd(request);
+
     }
     private void showi()
     {
         Debug.Log("showiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-        if (interstitial.IsLoaded())
+        int dif = 4;
+        if(PlayerPrefs.HasKey("reklam"))
         {
+            dif = PlayerPrefs.GetInt("reklam");
+        }
+        if (interstitial.IsLoaded() && Math.Abs(DateTime.Now.Minute - kohne) >= dif)
+        {
+            kohne = DateTime.Now.Minute;
             interstitial.Show();
             interstitial.Destroy();
             this.RequestInterstitial();
@@ -168,6 +180,26 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         showi();
+    }
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+       Debug.Log(args.Message+"fffffffffffffffffffffffffff");
+        interfailed = true;
+        StartCoroutine(reklamfail());
+    }
+    public void HandleOnAdOpened(object sender, EventArgs args)
+    {
+        StartCoroutine(reklamsucces());
+    }
+    public void HandleOnAdLeavingApplication(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLeavingApplication event received");
+        StartCoroutine(reklamopen());
+    }
+    public void HandleOnAdLoaded(object sender, EventArgs args)
+    {
+        interfailed = false;
+        StartCoroutine(reklamload());
     }
 
     public void sil()
@@ -237,9 +269,15 @@ public class GameController : MonoBehaviour
         }
         if (w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
         {
+            
+            for (int i = 0; i < selected.soz.Length; i++)
+            {
+                selected.objects[i][0].transform.Translate(new Vector3(0, 0, 1F));
+                selected.objects[i][1].transform.Translate(new Vector3(0, 0, 1F));
+            }
             TAPILANLARL.Add(selected.index);
             info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
-            if (TAPILANLARL.Count % 4 == 0)
+            if (true)
             {
                 StartCoroutine(showi2());
             }
@@ -247,6 +285,7 @@ public class GameController : MonoBehaviour
 
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
             StartCoroutine(UpdataServer());
+            StartCoroutine(CountCollection());
             for (int i = 0; i < selected.objects.Length; i++)
             {
                 selected.objects[i][0].GetComponent<Renderer>().material.color = Color.green;
@@ -346,6 +385,8 @@ public class GameController : MonoBehaviour
                 AdamKec.gameObject.SetActive(true);
                 AdamKecpanel.gameObject.SetActive(true);
                 AdamKec.text = www.text + " Adamı Keçdiniz";
+                int rey = int.Parse(www.text);
+                PlayerPrefs.SetInt("reyting", PlayerPrefs.GetInt("reyting") - rey);
                 yield return new WaitForSeconds(5);
 
             }
@@ -396,6 +437,106 @@ public class GameController : MonoBehaviour
                 Application.OpenURL("market://details?id="+www.text);
             }
         }
+
+    }
+    IEnumerator getvariables()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/variable?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            if (!www.text.Equals(""))
+            {
+                try
+                {
+                    int mi = int.Parse(www.text);
+                    PlayerPrefs.SetInt("reklam", mi);
+                }catch(Exception e) { }
+            }
+        }
+
+    }
+    IEnumerator reklamfail()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/reklamfail?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            
+        }
+
+    }
+    IEnumerator reklamsucces()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+        }
+
+    }
+    IEnumerator reklamopen()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/reklamopen?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+        }
+
+    }
+    IEnumerator reklamload()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/reklamload?name=" + PlayerPrefs.GetString("name");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+        }
+
+    }
+    IEnumerator CountCollection()
+    {   //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+
+            if (!www.text.Equals(""))
+            {
+                double si = int.Parse(www.text + "") * 1.0;
+                double rating = PlayerPrefs.GetInt("reyting") * 1.0;
+                
+                //0 -350
+                double t = 1 - rating / si;
+                t = 350 * t;
+                Debug.Log("RAAAAATING" + "----" + PlayerPrefs.GetInt("reyting"));
+                Debug.Log("size" + "----" + si);
+                Debug.Log("RAAAAATING" + "----" + t);
+                int ans = 350 - (int)t;
+                Debug.Log("RAAAAATING" + "----" + t);
+                rat.offsetMax = new Vector2(rat.offsetMax.x, -ans);
+                Image img = rat.gameObject.GetComponent<Image>();
+                img.color = Color.Lerp(Color.red, Color.green, ans * 1f / 350f);
+                float ff = (100 - ans * 100f / 350f);
+                string pr = ff.ToString("F2")+"";
+                Intelekt.text = "İntellekt " + pr + "%";
+
+            }
+            
+
+            //Debug.Log("score from server" + www.text);
+        }
+
+        //
 
     }
     string readFile(string FILE_PATH)
@@ -532,6 +673,9 @@ public class GameController : MonoBehaviour
                 {
                     selected.objects[i][0].GetComponent<Renderer>().material.color = coloric;
                 }
+                selected.objects[i][0].transform.Translate(new Vector3(0, 0, 1F));
+                selected.objects[i][1].transform.Translate(new Vector3(0, 0, 1F));
+
             }
         }
         selected = t;
@@ -540,8 +684,10 @@ public class GameController : MonoBehaviour
             if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
             {
                 t.objects[i][0].GetComponent<Renderer>().material.color = colorsec;
+                
             }
-
+            selected.objects[i][0].transform.Translate(new Vector3(0, 0, -1F));
+            selected.objects[i][1].transform.Translate(new Vector3(0, 0, -1F));
 
         }
         if (t.objects[t.cursor][0].GetComponent<Renderer>().material.color != Color.green)
@@ -877,8 +1023,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        
-        notadmin();
+        StartCoroutine(CountCollection());
+        //notadmin();
         if(PlayerPrefs.GetInt("yarish") == 1)
         {
             yarish();
@@ -890,9 +1036,21 @@ public class GameController : MonoBehaviour
         }
         
     }
+    int kohne = DateTime.Now.Minute;
     void FixedUpdate()
     {
+
         StartCoroutine(online());
+        StartCoroutine(getvariables());
+        if(interfailed)
+        {
+            Debug.Log("call int");
+            interfailed = false;
+            this.RequestInterstitial();
+            
+        }
+        Debug.Log(DateTime.Now.Second);
+        
     }
     void Update()
     {

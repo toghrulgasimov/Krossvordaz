@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
 
 
 public class createOyuncu : MonoBehaviour {
@@ -50,12 +51,17 @@ public class createOyuncu : MonoBehaviour {
     {
         //PlayerPrefs.DeleteAll();
         //Application.OpenURL("market://details?id=com.by.connaction.connectionname");
+
+        
+
+
         input.shouldHideMobileInput = true;
         if (PlayerPrefs.HasKey("name"))
         {
             SceneManager.LoadScene(1);
         }
     }
+    
     
     void Start()
     {
