@@ -117,6 +117,8 @@ public class GameController : MonoBehaviour
     public RectTransform rat;
 
 
+    
+
     InterstitialAd interstitial;
 
     //public RawImage img;
@@ -285,6 +287,7 @@ public class GameController : MonoBehaviour
 
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
             StartCoroutine(UpdataServer());
+            StartCoroutine(UpdataServerreg());
             StartCoroutine(CountCollection());
             for (int i = 0; i < selected.objects.Length; i++)
             {
@@ -392,6 +395,33 @@ public class GameController : MonoBehaviour
             }
             AdamKec.gameObject.SetActive(false);
             AdamKecpanel.gameObject.SetActive(false);
+
+            //Debug.Log("score from server" + www.text);
+        }
+
+        //
+
+    }
+    IEnumerator UpdataServerreg()
+    {   //35.227.46.95
+        //127.0.0.1
+        if (PlayerPrefs.HasKey("muss"))
+        {
+            PlayerPrefs.SetInt("muss", PlayerPrefs.GetInt("muss") + 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("muss", 1);
+        }
+        string url = "http://35.227.46.95/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            if (!www.Equals(""))
+            {
+                PlayerPrefs.SetInt("muss", 0);
+            }
+
 
             //Debug.Log("score from server" + www.text);
         }
@@ -1024,7 +1054,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         StartCoroutine(CountCollection());
-        //notadmin();
+        notadmin();
         if(PlayerPrefs.GetInt("yarish") == 1)
         {
             yarish();

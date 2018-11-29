@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class Address : MonoBehaviour {
+    public GameObject but;
+    public RectTransform content;
+    IEnumerator axtar()
+    {
+
+        PlayerPrefs.SetString("versia", "2.8");
+        //35.227.46.95
+        //127.0.0.1
+        string url = "http://35.227.46.95/versia";
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+
+
+        }
+
+
+
+    }
+    void Start () {
+        string[] ar = new string[]{"Bakı","Gəncə","Xankəndi","Lənkəran","Mingəçevir","Naftalan","Sumqayıt","Şəki","Şirvan","Yevlax","Abşeron","Ağcabədi","Ağdam","Ağdaş","Ağstafa","Ağsu","Astara","Babək","Balakən","Beyləqan","Bərdə","Biləsuvar","Cəbrayıl","Cəlilabad","Culfa","Daşkəsən","Füzuli","Gədəbəy","Goranboy","Göyçay","Göygöl","Hacıqabul","Xaçmaz","Xızı","Xocalı","Xocavənd","İmişli","İsmayıllı","Kəlbəcər","Kəngərli","Kürdəmir","Qax","Qazax","Qəbələ","Qobustan","Quba","Qubadlı","Qusar","Laçın","Lerik","Lənkəran","Masallı","Neftçala","Oğuz","Ordubad","Saatlı","Sabirabad","Salyan","Samux","Sədərək","Şabran","Şahbuz","Şamaxı","Şəki","Şəmkir","Şərur","Şuşa","Tərtər","Tovuz","Ucar","Yardımlı","Yevlax","Zaqatala","Zəngilan","Zərdab",""};
+        for(int i = 0; i < 65; i++)
+        {
+            GameObject a = (GameObject)Instantiate(but);
+            a.transform.SetParent(content.transform, false);
+        }
+
+    }
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+}

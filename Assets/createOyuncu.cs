@@ -30,11 +30,18 @@ public class createOyuncu : MonoBehaviour {
                     PlayerPrefs.SetString("name", input.text);
                     PlayerPrefs.SetInt("score", 0);
                     PlayerPrefs.SetInt("level", 1);
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(3);
                 }
                 else
                 {
-                    info.text = input.text + " Mövcuddur başqa ad seçin";
+                    if(www.text.Equals(""))
+                    {
+                        info.text = "Sistemdə İş gedir Qeydiyyat dayandırılıb";
+                    }else
+                    {
+                        info.text = input.text + " Mövcuddur başqa ad seçin";
+                    }
+                    
                 }
 
             }
@@ -52,13 +59,22 @@ public class createOyuncu : MonoBehaviour {
         //PlayerPrefs.DeleteAll();
         //Application.OpenURL("market://details?id=com.by.connaction.connectionname");
 
-        
 
 
+        //PlayerPrefs.DeleteKey("reg");
         input.shouldHideMobileInput = true;
         if (PlayerPrefs.HasKey("name"))
         {
-            SceneManager.LoadScene(1);
+            if(PlayerPrefs.HasKey("reg"))
+            {
+                SceneManager.LoadScene(1);
+            }else
+            {
+                if (!PlayerPrefs.HasKey("score")) PlayerPrefs.SetInt("score", 0);
+                PlayerPrefs.SetInt("muss", PlayerPrefs.GetInt("score"));
+                SceneManager.LoadScene(3);
+            }
+            
         }
     }
     

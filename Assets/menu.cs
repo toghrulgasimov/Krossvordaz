@@ -14,12 +14,19 @@ public class menu : MonoBehaviour {
     public Button X;
     public RectTransform border;
     public GameObject prefab;
+    public Button statistika, Region;
     IEnumerator init()
     {
 
 
         //35.227.46.95
         //127.0.0.1
+        border.sizeDelta = new Vector2(0, 6530);
+        int childs = border.childCount;
+        for (int i = childs - 1; i >= 0; i--)
+        {
+            GameObject.Destroy(border.GetChild(i).gameObject);
+        }
         string url = "http://35.227.46.95/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
@@ -28,9 +35,9 @@ public class menu : MonoBehaviour {
             //Debug.Log(www.text);
             if (www.text.Equals(""))
             {
-                int rey = 0;
-                if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
-                reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+                //int rey = 0;
+                //if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
+                //reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
             }else
             {
                 string[] a = www.text.Split('^');
@@ -79,7 +86,80 @@ public class menu : MonoBehaviour {
         levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
 
     }
+    IEnumerator initreg()
+    {
 
+        border.sizeDelta = new Vector2(0, 3530);
+        //35.227.46.95
+        //127.0.0.1
+        int childs = border.childCount;
+        for (int i = childs - 1; i >= 0; i--)
+        {
+            GameObject.Destroy(border.GetChild(i).gameObject);
+        }
+        string url = "http://35.227.46.95/countregaz?score=" + PlayerPrefs.GetInt("score");
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+            //Debug.Log(www.text);
+            if (www.text.Equals(""))
+            {
+                int rey = 0;
+                if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
+                reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+            }
+            else
+            {
+                int rey = 0;
+                if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
+                reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+                Debug.Log(www.text);
+                string[] a = www.text.Split('^');
+
+                //int rey = int.Parse(a[0]) + 1;
+                int p = 45;
+                for (int i = 1; i < a.Length - 1; i += 2)
+                {
+                    GameObject o = Instantiate(prefab);
+                    o.transform.SetParent(border, false);
+                    Text t = o.GetComponent<Text>();
+                    t.fontSize = p;
+                    p -= 5;
+                    p = Mathf.Max(23, p);
+                    if (i == 1)
+                    {
+                        t.color = new Color(255, 0, 0, p);
+                    }
+                    else if (i == 3)
+                    {
+                        t.color = new Color(100, 0, 0, p);
+                    }
+                    else if (i == 5)
+                    {
+                        t.color = new Color(50, 0, 0, p);
+                    }
+                    else
+                    {
+                        t.color = new Color(0, 0, 0, p);
+                    }
+
+                    //p -= 30;
+                    string s = (i / 2 + 1) + ". " + a[i] + " " + a[i + 1] + " Xal";
+                    string[] ars = s.Split('\n');
+                    s = string.Join("AAAA", ars);
+                    t.text = s;
+                    //t.w
+                }
+                //PlayerPrefs.SetInt("reyting", rey);
+                //reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+            }
+
+        }
+        scoret.text = "Xal\n" + PlayerPrefs.GetInt("score");
+        levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
+
+    }
     IEnumerator callmission()
     {
 
@@ -148,7 +228,7 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "2.8");
+        PlayerPrefs.SetString("versia", "3.0");
         //35.227.46.95
         //127.0.0.1
         string url = "http://35.227.46.95/versia";
@@ -209,7 +289,18 @@ public class menu : MonoBehaviour {
         
         sr.Close();
     }
+    private void statf()
+    {
+        StartCoroutine(init());
+    }
+    private void regf()
+    {
+        StartCoroutine(initreg());
+    }
     void Start () {
+
+        statistika.onClick.AddListener(() => statf());
+        Region.onClick.AddListener(() => regf());
         Debug.Log(SystemInfo.deviceUniqueIdentifier);
         //PlayerPrefs.DeleteAll();
         //X.gameObject.SetActive(false);
@@ -218,7 +309,9 @@ public class menu : MonoBehaviour {
         StartCoroutine(callmission());
         StartCoroutine(callYarish());
         StartCoroutine(checkversia());
-        StartCoroutine(init());
+        if(!PlayerPrefs.HasKey("reyting"))
+            StartCoroutine(init());
+        else StartCoroutine(initreg());
     }
 	
 	// Update is called once per frame
