@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/math.unity
+    guid: 15dd0bd8e2654f74eae9cb9419e62e6c
+  - enabled: 1
+    path: Assets/Scenes/wow.unity
+    guid: 2c069f2197a0a334eb28d74523000da8
   m_configObjects: {}

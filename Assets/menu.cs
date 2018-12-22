@@ -13,8 +13,8 @@ public class menu : MonoBehaviour {
     public Text reytinqt, r1,r2,r3,r4,r5,r6,r7,r8;
     public Button X;
     public RectTransform border;
-    public GameObject prefab;
-    public Button statistika, Region;
+    public GameObject prefab, prefab2;
+    public Button statistika, Region, novbeti;
     IEnumerator init()
     {
 
@@ -47,10 +47,11 @@ public class menu : MonoBehaviour {
                 int p = 45;
                 for(int i = 1; i < a.Length-1; i += 2)
                 {
-                    GameObject o = Instantiate(prefab);
+                    GameObject o = Instantiate(prefab2);
                     o.transform.SetParent(border, false);
-                    Text t = o.GetComponent<Text>();
-                    t.fontSize = p;
+                    Button b = o.GetComponent<Button>();
+                    Text t = b.GetComponentInChildren<Text>();
+                    //t.fontSize = p;
                     p -= 5;
                     p = Mathf.Max(23, p);
                     if(i == 1)
@@ -67,7 +68,7 @@ public class menu : MonoBehaviour {
                     }
                     else
                     {
-                        t.color = new Color(0, 0, 0, p);
+                        //t.color = new Color(0, 0, 0, p);
                     }
 
                     //p -= 30;
@@ -121,10 +122,11 @@ public class menu : MonoBehaviour {
                 int p = 45;
                 for (int i = 1; i < a.Length - 1; i += 2)
                 {
-                    GameObject o = Instantiate(prefab);
+                    GameObject o = Instantiate(prefab2);
                     o.transform.SetParent(border, false);
-                    Text t = o.GetComponent<Text>();
-                    t.fontSize = p;
+                    Button b = o.GetComponent<Button>();
+                    Text t = b.GetComponentInChildren<Text>();
+                    //t.fontSize = p;
                     p -= 5;
                     p = Mathf.Max(23, p);
                     if (i == 1)
@@ -141,11 +143,13 @@ public class menu : MonoBehaviour {
                     }
                     else
                     {
-                        t.color = new Color(0, 0, 0, p);
+                        //t.color = new Color(0, 0, 0, p);
                     }
 
                     //p -= 30;
                     string s = (i / 2 + 1) + ". " + a[i] + " " + a[i + 1] + " Xal";
+                    string ai = a[i];
+                    b.onClick.AddListener(() => clickreg(ai)); ;
                     string[] ars = s.Split('\n');
                     s = string.Join("AAAA", ars);
                     t.text = s;
@@ -160,10 +164,90 @@ public class menu : MonoBehaviour {
         levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
 
     }
+    IEnumerator initreglist(string s)
+    {
+
+        border.sizeDelta = new Vector2(0, 3530);
+        //35.227.46.95
+        //127.0.0.1
+        int childs = border.childCount;
+        for (int i = childs - 1; i >= 0; i--)
+        {
+            GameObject.Destroy(border.GetChild(i).gameObject);
+        }
+        string url = "http://35.227.46.95/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+            //Debug.Log(www.text);
+            if (www.text.Equals(""))
+            {
+                int rey = 0;
+                if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
+                reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+            }
+            else
+            {
+                int rey = 0;
+                if (PlayerPrefs.HasKey("reyting")) rey = PlayerPrefs.GetInt("reyting");
+                reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+                Debug.Log(www.text);
+                string[] a = www.text.Split('^');
+
+                //int rey = int.Parse(a[0]) + 1;
+                int p = 45;
+                for (int i = 1; i < a.Length - 1; i += 2)
+                {
+                    GameObject o = Instantiate(prefab2);
+                    o.transform.SetParent(border, false);
+                    Button b = o.GetComponent<Button>();
+                    Text t = b.GetComponentInChildren<Text>();
+                    //t.fontSize = p;
+                    p -= 5;
+                    p = Mathf.Max(23, p);
+                    if (i == 1)
+                    {
+                        t.color = new Color(255, 0, 0, p);
+                    }
+                    else if (i == 3)
+                    {
+                        t.color = new Color(100, 0, 0, p);
+                    }
+                    else if (i == 5)
+                    {
+                        t.color = new Color(50, 0, 0, p);
+                    }
+                    else
+                    {
+                        //t.color = new Color(0, 0, 0, p);
+                    }
+
+                    //p -= 30;
+                    string ss = (i / 2 + 1) + ". " + a[i] + " " + a[i + 1] + " Xal";
+                    string[] ars = ss.Split('\n');
+                    ss = string.Join("AAAA", ars);
+                    t.text = ss;
+                    //t.w
+                }
+                //PlayerPrefs.SetInt("reyting", rey);
+                //reytinqt.text = "Azərbaycan üzrə Reyting\n" + rey;
+            }
+
+        }
+        scoret.text = "Xal\n" + PlayerPrefs.GetInt("score");
+        levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
+
+    }
+    private void clickreg(string s)
+    {
+        StartCoroutine(initreglist(s));
+        Debug.Log(s);
+    }
     IEnumerator callmission()
     {
 
-        X.gameObject.SetActive(false);
+        //X.gameObject.SetActive(false);
         //35.227.46.95
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
@@ -176,16 +260,19 @@ public class menu : MonoBehaviour {
                 {
                     if(www.text.Length > 100)
                     {
-                        
-                    //Debug.Log("--------------------------------------");
-                    PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
+
+                        //Debug.Log("--------------------------------------");
+                        novbeti.transform.gameObject.SetActive(false);
+                        PlayerPrefs.SetInt("novbeti", 0);
+                        PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
                     //write to file
                     //Debug.Log(www.text);
                     WriteToFile(Application.persistentDataPath + "/MYFILENAME.txt",www.text);
                     PlayerPrefs.SetString("game", "");
+                    WriteToFile(Application.persistentDataPath + "/game.txt", "");
+                        X.GetComponentInChildren<Text>().text = "Başla";
                     X.gameObject.SetActive(true);
-                    X.GetComponentInChildren<Text>().text = "Başla";
-                    X.gameObject.SetActive(true);
+                        levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
                     }
                 }
                 else
@@ -218,6 +305,7 @@ public class menu : MonoBehaviour {
             if (www.text.Length > 2)
             {
                 WriteToFile(Application.persistentDataPath + "/YARISH.txt", www.text);
+                Debug.Log("Yarisssssssss file yazildi");
             }
 
         }
@@ -228,7 +316,7 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "3.0");
+        PlayerPrefs.SetString("versia", "3.6");
         //35.227.46.95
         //127.0.0.1
         string url = "http://35.227.46.95/versia";
@@ -265,9 +353,15 @@ public class menu : MonoBehaviour {
         }
 
     }
+    int sec = 0;
     void FixedUpdate()
     {
-        StartCoroutine(online());
+        if(sec % 10 == 0)
+        {
+            StartCoroutine(online());
+        }
+        sec++;
+        
     }
     public void basla()
     {
@@ -297,8 +391,60 @@ public class menu : MonoBehaviour {
     {
         StartCoroutine(initreg());
     }
+    public void paylash()
+    {
+        //C# code in unity
+        //create intent for action send
+        AndroidJavaClass intentClass = new
+                         AndroidJavaClass("android.content.Intent");
+        AndroidJavaObject intentObject = new
+                         AndroidJavaObject("android.content.Intent");
+
+        //set action to that intent object   
+        intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
+
+        var shareSubject = "I challenge you to beat my high score in" +
+                   "Fire Block";
+        var shareMessage = "Krossvord yarışması\n https://play.google.com/store/apps/details?id=com.sadas.asdasd2";
+        //set the type as text and put extra subject and text to share
+        intentObject.Call<AndroidJavaObject>("setType", "text/plain");
+        intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), shareSubject);
+        intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), shareMessage);
+
+        AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
+
+        //call createChooser method of activity class     
+        AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, "Share your high score");
+        currentActivity.Call("startActivity", chooser);
+    }
+    public void math()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void novb()
+    {
+        if(PlayerPrefs.GetInt("level" + PlayerPrefs.GetInt("level")) == 1)
+        {
+            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+        }
+        StartCoroutine(callmission());
+        
+    }
+    public void wow()
+    {
+        SceneManager.LoadScene(5);
+    }
     void Start () {
 
+        if(!PlayerPrefs.HasKey("novbeti") || PlayerPrefs.GetInt("novbeti") == 0)
+        {
+            novbeti.transform.gameObject.SetActive(false);
+        }
+        else
+        {
+            novbeti.transform.gameObject.SetActive(true);
+        }
         statistika.onClick.AddListener(() => statf());
         Region.onClick.AddListener(() => regf());
         Debug.Log(SystemInfo.deviceUniqueIdentifier);

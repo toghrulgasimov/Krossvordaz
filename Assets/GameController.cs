@@ -77,14 +77,14 @@ public class GameController : MonoBehaviour
 
     }
     public GameObject enemy;
-    public GameObject cub;
+    public GameObject cub, gamecanvas, yarishcanvas;
     public GameObject[][][] Kvadratlar;
     private int N, M;
     public Button H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12;
     public Button[] B;
     public Tapmaca[] T;
     public Tapmaca selected;
-    public Text textSual, info;
+    public Text textSual, info, infoyarish;
 
     public static Color32 coloric = new Color32(255, 255, 255, 255);
     public static Color32 coloryazildi = new Color32(0, 255, 255, 255);
@@ -124,24 +124,7 @@ public class GameController : MonoBehaviour
     //public RawImage img;
 
     public bool interfailed = true;
-    public void Start()
-    {
-
-
-
-#if UNITY_ANDROID
-        string appId = "ca-app-pub-9026840340673035~9445396711";
-#elif UNITY_IPHONE
-            string appId = "ca-app-pub-3940256099942544~1458002511";
-#else
-            string appId = "unexpected_platform";
-#endif
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
-        RequestInterstitial();
-
-    }
+  
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
@@ -232,12 +215,23 @@ public class GameController : MonoBehaviour
         if (TAPILANLARL.Count >= T.Length * 84 / 100.0)
         {
             //next level;
-            if (PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
+            if (PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")) )
             {
-                PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+                //PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+                if(PlayerPrefs.GetInt("novbeti") == 0)
+                {
+                    if (avakebitib)
+                        Askecdi.PlayOneShot(Ackecdi);
+                }
+                else
+                {
+                    if (avakebitib)
+                        Askecdi.PlayOneShot(Actapdi);
+                }
+                
+                PlayerPrefs.SetInt("novbeti", 1);
                 //SceneManager.LoadScene(1);
-                if(avakebitib)
-                    Askecdi.PlayOneShot(Ackecdi);
+                
             }else
             {
                 if (avakebitib)
@@ -320,70 +314,17 @@ public class GameController : MonoBehaviour
         }
 
     }
-    public void saveGame()
-    {
-
-        string yaddas = "";
-        foreach (int x in TAPILANLARL)
-        {
-            yaddas += x + "@";
-        }
-        PlayerPrefs.SetString("game", yaddas);
-
-    }
-    public void saveGameYarish()
-    {
-
-        string yaddas = "";
-        foreach (int x in TAPILANLARL)
-        {
-            yaddas += x + "@";
-        }
-        PlayerPrefs.SetString("gameyarish", yaddas);
-
-    }
-    public void loadGame()
-    {
-        if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
-        string s = PlayerPrefs.GetString("game");
-        string[] ar = s.Split('@');
-        for (int i = 0; i < ar.Length - 1; i++)
-        {
-            int index = int.Parse(ar[i]);
-            TAPILANLARL.Add(index);
-            for (int j = 0; j < T[index].soz.Length; j++)
-            {
-                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.green;
-                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] + "";
-            }
-        }
-    }
-    public void loadGameYarish()
-    {
-        if (!PlayerPrefs.HasKey("gameyarish") || PlayerPrefs.GetString("gameyarish").Equals("")) return;
-        string s = PlayerPrefs.GetString("gameyarish");
-        string[] ar = s.Split('@');
-        for (int i = 0; i < ar.Length - 1; i++)
-        {
-            int index = int.Parse(ar[i]);
-            TAPILANLARL.Add(index);
-            for (int j = 0; j < T[index].soz.Length; j++)
-            {
-                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.green;
-                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] + "";
-            }
-        }
-    }
+    
     IEnumerator UpdataServer()
     {   //35.227.46.95
         //127.0.0.1
-        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
 
 
-            if (!www.text.Equals("0"))
+            if (!www.text.Equals("0") && !www.text.Equals(""))
             {
                 AdamKec.gameObject.SetActive(true);
                 AdamKecpanel.gameObject.SetActive(true);
@@ -569,9 +510,105 @@ public class GameController : MonoBehaviour
         //
 
     }
+
+    public void saveGame()
+    {
+
+        string yaddas = "";
+        foreach (int x in TAPILANLARL)
+        {
+            yaddas += x + "@";
+        }
+        //PlayerPrefs.SetString("game", yaddas);
+        WriteToFile(Application.persistentDataPath + "/game.txt", yaddas);
+    }
+    public void saveGameYarish()
+    {
+
+        string yaddas = "";
+        foreach (int x in TAPILANLARL)
+        {
+            yaddas += x + "@";
+        }
+        //PlayerPrefs.SetString("gameyarish", yaddas);
+        WriteToFile(Application.persistentDataPath + "/gameyarish.txt", yaddas);
+
+    }
+    public void loadGame()
+    {
+        //if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
+        //string s = PlayerPrefs.GetString("game");
+        //Application.persistentDataPath + "/YARISH.txt"
+        string s = "";
+        if(System.IO.File.Exists(Application.persistentDataPath + "/game.txt"))
+        {
+            Debug.Log("-----------------------------Existiret");
+            s = readFile(Application.persistentDataPath + "/game.txt");
+            Debug.Log("geleseeennnn");
+        }
+        else
+        {
+            if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
+            s = PlayerPrefs.GetString("game");
+        }
+        
+        if (s.Length < 2) return;
+        string[] ar = s.Split('@');
+        //return;
+        for (int i = 0; i < ar.Length - 1; i++)
+        {
+            int index = int.Parse(ar[i]);
+            TAPILANLARL.Add(index);
+            for (int j = 0; j < T[index].soz.Length; j++)
+            {
+                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.green;
+                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] + "";
+            }
+        }
+    }
+    public void loadGameYarish()
+    {
+        //if (!PlayerPrefs.HasKey("gameyarish") || PlayerPrefs.GetString("gameyarish").Equals("")) return;
+        //string s = PlayerPrefs.GetString("gameyarish");
+        string s = "";
+        
+
+        if (System.IO.File.Exists(Application.persistentDataPath + "/gameyarish.txt"))
+        {
+            Debug.Log("-----------------------------Existiret");
+            s = readFile(Application.persistentDataPath + "/gameyarish.txt");
+            Debug.Log("geleseeennnn");
+        }
+        else
+        {
+            if (!PlayerPrefs.HasKey("gameyarish") || PlayerPrefs.GetString("gameyarish").Equals("")) return;
+            s = PlayerPrefs.GetString("gameyarish");
+        }
+
+        if (s.Length < 2) return;
+        string[] ar = s.Split('@');
+        for (int i = 0; i < ar.Length - 1; i++)
+        {
+            int index = int.Parse(ar[i]);
+            TAPILANLARL.Add(index);
+            for (int j = 0; j < T[index].soz.Length; j++)
+            {
+                T[index].objects[j][0].GetComponent<Renderer>().material.color = Color.green;
+                T[index].objects[j][1].GetComponent<TextMesh>().text = T[index].soz[j] + "";
+            }
+        }
+    }
+    public void WriteToFile(string FILE_PATH, string str)
+    {
+
+        StreamWriter sr = System.IO.File.CreateText(FILE_PATH);
+        sr.Write(str);
+
+        sr.Close();
+    }
     string readFile(string FILE_PATH)
     {
-        
+
         StreamReader inp_stm = new StreamReader(FILE_PATH);
         string ans = "";
         while (!inp_stm.EndOfStream)
@@ -582,6 +619,8 @@ public class GameController : MonoBehaviour
         inp_stm.Close();
         return ans;
     }
+
+
     public void readMission()
     {
         string s = readFile(Application.persistentDataPath + "/MYFILENAME.txt");
@@ -624,11 +663,17 @@ public class GameController : MonoBehaviour
         string s = readFile(Application.persistentDataPath + "/YARISH.txt");
         if(s.IndexOf('{') == -1)
         {
-            yarishinfo = s;
-            PlayerPrefs.SetString("gameyarish", "");
+            infoyarish.text = s;
+
+            //PlayerPrefs.SetString("gameyarish", "");
+            WriteToFile(Application.persistentDataPath + "/gameyarish.txt", "");
             return;
         }
-        
+
+        infoyarish.text = "";
+        gamecanvas.SetActive(true);
+        yarishcanvas.SetActive(false);
+
         string ss = s.Substring(s.IndexOf('\n')+2);
         Debug.Log(ss);
         string[] kr = ss.Split('\n');
@@ -849,6 +894,9 @@ public class GameController : MonoBehaviour
     }
     public void begin()
     {
+
+        yarishcanvas.SetActive(false);
+        gamecanvas.SetActive(true);
         adminnext.onClick.AddListener(adminn1);
         adminnextl.onClick.AddListener(adminn2);
         adminnextl2.onClick.AddListener(adminn3);
@@ -944,6 +992,8 @@ public class GameController : MonoBehaviour
     }
     public void yarish()
     {
+        yarishcanvas.SetActive(true);
+        gamecanvas.SetActive(false);
         adminnext.onClick.AddListener(adminn1);
         adminnextl.onClick.AddListener(adminn2);
         adminnextl2.onClick.AddListener(adminn3);
@@ -971,14 +1021,14 @@ public class GameController : MonoBehaviour
             B[i].onClick.AddListener(() => keyclick(k));
         }
 
-        if (!yarishinfo.Equals(""))
+        if (!infoyarish.text.Equals(""))
         {
             p1.gameObject.SetActive(false);
             p2.gameObject.SetActive(false);
             p3.gameObject.SetActive(false);
             p4.gameObject.SetActive(false);
 
-            YarishText.text = yarishinfo;
+            //YarishText.text = yarishinfo;
             return;
         }
         avakebitib = true;
@@ -1049,41 +1099,106 @@ public class GameController : MonoBehaviour
         info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
         change(T[12], false);
     }
-
-
+    
+    
     void Awake()
     {
-        StartCoroutine(CountCollection());
-        notadmin();
-        if(PlayerPrefs.GetInt("yarish") == 1)
+        
+        try
         {
-            yarish();
-        }else
-        {
-            begin();
-            //string aa = JsonUtility.ToJson(selected);
-            //Debug.Log(aa);
+            if (PlayerPrefs.GetInt("yarish") == 1)
+            {
+                yarish();
+            }
+            else
+            {
+                begin();
+                //string aa = JsonUtility.ToJson(selected);
+                //Debug.Log(aa);
+            }
         }
+        catch(Exception e) {
+            PlayerPrefs.SetString("game", "");
+            PlayerPrefs.SetString("gameyarish", "");
+            WriteToFile(Application.persistentDataPath + "/game.txt", "");
+            WriteToFile(Application.persistentDataPath + "/gameyarish.txt", "");
+            PlayerPrefs.SetInt("novbeti", 1);
+        }
+        StartCoroutine(CountCollection());
+       notadmin();
+        
         
     }
     int kohne = DateTime.Now.Minute;
+    int sec = 0;
     void FixedUpdate()
     {
-
-        StartCoroutine(online());
-        StartCoroutine(getvariables());
-        if(interfailed)
+        if(sec % 10 == 0)
         {
-            Debug.Log("call int");
-            interfailed = false;
-            this.RequestInterstitial();
-            
+            Debug.Log("asdads");
+            StartCoroutine(online());
+            StartCoroutine(getvariables());
+            if (interfailed)
+            {
+                Debug.Log("call int");
+                interfailed = false;
+                this.RequestInterstitial();
+
+            }
         }
-        Debug.Log(DateTime.Now.Second);
+        
+        sec++;
         
     }
-    void Update()
+
+    public AudioSource source;
+    IEnumerator audio()
     {
+        source = GetComponent<AudioSource>();
+        using (var www = new WWW("http://35.227.46.95/audio"))
+        {
+            yield return www;
+            source.clip = www.GetAudioClip(true, false, AudioType.MPEG);
+            source.Play();
+            Debug.Log("asdasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+        }
+    }
+    
+
+    IEnumerator DownloadAndPlay()
+    {
+        WWW www = new WWW("http://35.227.46.95/audio");
+        yield return www;
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = www.GetAudioClip(true, true, AudioType.MPEG);
+        audio.Play();
+    }
+    public void Start()
+    {
+
+        //StartCoroutine(audio());
+
+#if UNITY_ANDROID
+        string appId = "ca-app-pub-9026840340673035~9445396711";
+#elif UNITY_IPHONE
+            string appId = "ca-app-pub-3940256099942544~1458002511";
+#else
+            string appId = "unexpected_platform";
+#endif
+
+        // Initialize the Google Mobile Ads SDK.
+        MobileAds.Initialize(appId);
+        RequestInterstitial();
+
+    }
+    void Update() {
+
+        //Debug.Log(source);
+        if (source != null)
+        {
+           // source.Play();
+        }
+            
         if (Input.GetMouseButtonDown(0))
         //Input.GetMouseButtonDown(0)
         //Input.mousePosition
