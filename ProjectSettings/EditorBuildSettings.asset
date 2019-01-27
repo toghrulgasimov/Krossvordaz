@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Sample.unity
+    guid: 601338337e4155741a8d460686a6fa33
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Giris.unity
     guid: b84ac0bfbf315224cb53c6ffab5e1390
