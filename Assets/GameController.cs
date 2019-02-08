@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9026840340673035/4960879307";
+        string adUnitId = "ca-app-pub-2317424106273587/8919528582";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -187,6 +187,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(reklamload());
     }
 
+    
     public void sil()
     {
 
@@ -316,9 +317,9 @@ public class GameController : MonoBehaviour
     }
     
     IEnumerator UpdataServer()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
+        string url = "http://35.231.39.26/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -344,7 +345,7 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerreg()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
         if (PlayerPrefs.HasKey("muss"))
         {
@@ -354,7 +355,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("muss", 1);
         }
-        string url = "http://35.227.46.95/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
+        string url = "http://35.231.39.26/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -371,9 +372,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerYarish()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+        string url = "http://35.231.39.26/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -397,9 +398,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator online()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -411,9 +412,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator getvariables()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/variable?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/variable?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -429,9 +430,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamfail()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamfail?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -440,9 +441,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamsucces()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -451,9 +452,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamopen()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamopen?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -462,9 +463,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamload()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamload?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -473,9 +474,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator CountCollection()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.231.39.26/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -1155,7 +1156,7 @@ public class GameController : MonoBehaviour
     IEnumerator audio()
     {
         source = GetComponent<AudioSource>();
-        using (var www = new WWW("http://35.227.46.95/audio"))
+        using (var www = new WWW("http://35.231.39.26/audio"))
         {
             yield return www;
             source.clip = www.GetAudioClip(true, false, AudioType.MPEG);
@@ -1167,7 +1168,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator DownloadAndPlay()
     {
-        WWW www = new WWW("http://35.227.46.95/audio");
+        WWW www = new WWW("http://35.231.39.26/audio");
         yield return www;
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = www.GetAudioClip(true, true, AudioType.MPEG);
@@ -1179,7 +1180,7 @@ public class GameController : MonoBehaviour
         //StartCoroutine(audio());
 
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-9026840340673035~9445396711";
+        string appId = "ca-app-pub-2317424106273587~1262699727";
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else

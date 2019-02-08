@@ -38,7 +38,7 @@ public class wow : MonoBehaviour {
     {
 
 
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
         Debug.Log("initBorderrr");
         border.sizeDelta = new Vector2(0, 6530);
@@ -48,8 +48,8 @@ public class wow : MonoBehaviour {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
         //127.0.0.1
-        //35.227.46.95
-        //string url = "http://35.227.46.95/Wowcount?score=" + PlayerPrefs.GetInt("score");
+        //35.231.39.26
+        //string url = "http://35.231.39.26/Wowcount?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -127,16 +127,16 @@ public class wow : MonoBehaviour {
         ResultInfo.text = "Nəticələr Hazırlanır..";
         yield return new WaitForSeconds(10);
         //127.0.0.1
-        //35.227.46.95
-        StartCoroutine(initborder("http://35.227.46.95/wowresultb?name=" + PlayerPrefs.GetString("name"), Borderres));
+        //35.231.39.26
+        StartCoroutine(initborder("http://35.231.39.26/wowresultb?name=" + PlayerPrefs.GetString("name"), Borderres));
     }
     IEnumerator callGame()
     {
         //127.0.0.1
-        //35.227.46.95
+        //35.231.39.26
         SozSayiInfo.text = "0 Söz";
         Debug.Log("call game");
-        string url = "http://35.227.46.95/wow";
+        string url = "http://35.231.39.26/wow";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -159,9 +159,9 @@ public class wow : MonoBehaviour {
     IEnumerator sendServer()
     {
 
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/Wowresult?score=" + game.Tapilanlar.Count+"&name="+PlayerPrefs.GetString("name")+"&lasttime="+game.lasttime + "&reg=" + PlayerPrefs.GetString("reg");
+        string url = "http://35.231.39.26/Wowresult?score=" + game.Tapilanlar.Count+"&name="+PlayerPrefs.GetString("name")+"&lasttime="+game.lasttime + "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -182,9 +182,9 @@ public class wow : MonoBehaviour {
     {
 
         Debug.Log("Send Server LASTTTT");
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/Wowresultlast?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetString("name") + "&reg=" + PlayerPrefs.GetString("reg");
+        string url = "http://35.231.39.26/Wowresultlast?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetString("name") + "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -367,7 +367,7 @@ public class wow : MonoBehaviour {
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9026840340673035/4960879307";
+        string adUnitId = "ca-app-pub-2317424106273587/8919528582";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -386,9 +386,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamfail()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamfail?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -397,9 +397,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamsucces()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -408,9 +408,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamopen()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamopen?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -419,9 +419,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamload()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamload?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -473,7 +473,7 @@ public class wow : MonoBehaviour {
     void Start () {
 
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-9026840340673035~9445396711";
+        string appId = "ca-app-pub-2317424106273587~1262699727";
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -490,7 +490,7 @@ public class wow : MonoBehaviour {
         {
             PlayerPrefs.SetInt("wowelo", 500);
         }
-        urlall = "http://35.227.46.95/Wowcount?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetInt("name");
+        urlall = "http://35.231.39.26/Wowcount?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetInt("name");
         menuStart();
     }
     int SECOND = 0;

@@ -91,7 +91,7 @@ public class GameControllerMath : MonoBehaviour {
     {
 
 
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
         Debug.Log("initBorderrr");
         border.sizeDelta = new Vector2(0, 6530);
@@ -101,8 +101,8 @@ public class GameControllerMath : MonoBehaviour {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
         //127.0.0.1
-        //35.227.46.95
-        //string url = "http://35.227.46.95/countaz?score=" + PlayerPrefs.GetInt("score");
+        //35.231.39.26
+        //string url = "http://35.231.39.26/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -172,9 +172,9 @@ public class GameControllerMath : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "3.6");
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/versia";
+        string url = "http://35.231.39.26/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -197,9 +197,9 @@ public class GameControllerMath : MonoBehaviour {
     IEnumerator callgame()
     {
         //127.0.0.1
-        //35.227.46.95
+        //35.231.39.26
         Debug.Log("calll");
-        string url = "http://35.227.46.95/Math";
+        string url = "http://35.231.39.26/Math";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -229,9 +229,9 @@ public class GameControllerMath : MonoBehaviour {
     IEnumerator sendResult()
     {
         //127.0.0.1
-        //35.227.46.95
+        //35.231.39.26
         string a = "name=" + PlayerPrefs.GetString("name") + "&score=" + currgame.point + "&lasttime=" + currgame.lastTime+"&elo=" + PlayerPrefs.GetInt("elo");
-        string url = "http://35.227.46.95/Mathresult?" + a;
+        string url = "http://35.231.39.26/Mathresult?" + a;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -258,13 +258,13 @@ public class GameControllerMath : MonoBehaviour {
         }
         yield return new WaitForSeconds(10);
         //127.0.0.1
-        //35.227.46.95
-        StartCoroutine(initborder("http://35.227.46.95/Mathresultb?name=" + PlayerPrefs.GetString("name"), borderres));
+        //35.231.39.26
+        StartCoroutine(initborder("http://35.231.39.26/Mathresultb?name=" + PlayerPrefs.GetString("name"), borderres));
     }
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9026840340673035/4960879307";
+        string adUnitId = "ca-app-pub-2317424106273587/8919528582";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -283,9 +283,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamfail()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamfail?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -294,9 +294,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamsucces()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -305,9 +305,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamopen()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamopen?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -316,9 +316,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamload()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/reklamload?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -364,7 +364,7 @@ public class GameControllerMath : MonoBehaviour {
     }
     void Start () {
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-9026840340673035~9445396711";
+        string appId = "ca-app-pub-2317424106273587~1262699727";
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -375,7 +375,7 @@ public class GameControllerMath : MonoBehaviour {
         MobileAds.Initialize(appId);
         RequestInterstitial();
         //127.0.0.1
-        //35.227.46.95
+        //35.231.39.26
         if (!PlayerPrefs.HasKey("elo"))
         {
             PlayerPrefs.SetInt("elo", 500);
@@ -385,7 +385,7 @@ public class GameControllerMath : MonoBehaviour {
         {
             //SceneManager.LoadScene(1);
         }
-        urlall = "http://35.227.46.95/Mathcount?elo=" + PlayerPrefs.GetInt("elo") + "&name="+ PlayerPrefs.GetInt("name");
+        urlall = "http://35.231.39.26/Mathcount?elo=" + PlayerPrefs.GetInt("elo") + "&name="+ PlayerPrefs.GetInt("name");
         waiting.SetActive(false);
         game.SetActive(false);
         result.SetActive(false);

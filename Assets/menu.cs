@@ -15,11 +15,16 @@ public class menu : MonoBehaviour {
     public RectTransform border;
     public GameObject prefab, prefab2;
     public Button statistika, Region, novbeti;
+    public void openGames()
+    {
+        //PlayerPrefs.DeleteAll();
+        Application.OpenURL("market://details?id=com.teg.azerioyunlar");
+    }
     IEnumerator init()
     {
 
 
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
@@ -27,7 +32,7 @@ public class menu : MonoBehaviour {
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.227.46.95/countaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.231.39.26/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -91,14 +96,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.227.46.95/countregaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://35.231.39.26/countregaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -168,14 +173,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.227.46.95/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
+        string url = "http://35.231.39.26/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -248,10 +253,10 @@ public class menu : MonoBehaviour {
     {
 
         //X.gameObject.SetActive(false);
-        //35.227.46.95
+        //35.231.39.26
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
-            string url = "http://35.227.46.95/newmissia?l=" + PlayerPrefs.GetInt("level");
+            string url = "http://35.231.39.26/newmissia?l=" + PlayerPrefs.GetInt("level");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -295,9 +300,9 @@ public class menu : MonoBehaviour {
     IEnumerator callYarish()
     {
 
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/yarish";
+        string url = "http://35.231.39.26/yarish";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -317,9 +322,9 @@ public class menu : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "3.6");
-        //35.227.46.95
+        //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/versia";
+        string url = "http://35.231.39.26/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -340,9 +345,9 @@ public class menu : MonoBehaviour {
     }
 
     IEnumerator online()
-    {   //35.227.46.95
+    {   //35.231.39.26
         //127.0.0.1
-        string url = "http://35.227.46.95/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://35.231.39.26/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;

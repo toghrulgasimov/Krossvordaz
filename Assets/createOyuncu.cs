@@ -19,7 +19,7 @@ public class createOyuncu : MonoBehaviour {
         }else
         {
             //
-            string url = "35.227.46.95/?name=" + input.text;
+            string url = "35.231.39.26/?name=" + input.text;
             using (WWW www = new WWW(url))
             {
                 yield return www;

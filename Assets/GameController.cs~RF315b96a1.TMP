@@ -133,7 +133,7 @@ public class GameController : MonoBehaviour {
 
 
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-9026840340673035~9445396711";
+        string appId = "ca-app-pub-2317424106273587~1262699727";
         #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
         #else
@@ -148,7 +148,7 @@ public class GameController : MonoBehaviour {
     private void RequestInterstitial()
     {
         #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9026840340673035/4960879307";
+        string adUnitId = "ca-app-pub-2317424106273587/8919528582";
         #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
         #else
@@ -290,7 +290,7 @@ public class GameController : MonoBehaviour {
         }
     }
     IEnumerator UpdataServer()
-    {   //35.227.46.95
+    {   //35.231.39.26
         string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score="+PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
