@@ -12,9 +12,9 @@ public class Address : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "2.8");
-        //35.231.39.26
+        //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/versia";
+        string url = "http://teggames.tk/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;

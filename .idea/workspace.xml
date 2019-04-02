@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b0a2877-dddf-4bc8-b280-d722d50930d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/Krossvordaz/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Krossvordaz/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Krossvordaz/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Krossvordaz/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Krossvordaz/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Krossvordaz/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Address.cs~RF362f07b4.TMP" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Address.cs~RF362f07b4.TMP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameController.cs~RF315b96a1.TMP" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameController.cs~RF315b96a1.TMP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Giris.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Giris.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/createOyuncu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/createOyuncu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/math.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/math/GameControllerMath.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/math/GameControllerMath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/line.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/line.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/sontext.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/sontext.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/wow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/wow/wow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Krossvordaz.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Krossvordaz.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/LastBuild.buildreport" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastBuild.buildreport" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/CHANGELOG.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-DetailsPane.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-DocSite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-ExternalPackageButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-Main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-SearchResults.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-StatusBar_Network.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-StatusBar_Update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-checkmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-downloadicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/Images/PackageManagerUI-errorflag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Documentation~/package-manager-ui.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/AssemblyInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/download.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/error.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/loading.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Dark/loading.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/download.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/error.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/loading.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Images/Light/loading.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Dark.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Dark.scss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Dark.uss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Dark.uss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Light.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Light.scss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Light.uss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/Main_Light.uss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/_common.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Styles/_common.scss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/Alert.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/Alert.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageAddFromUrlField.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageAddFromUrlField.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageDetails.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageDetails.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageGroup.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageGroup.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageItem.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageItem.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageList.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageList.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageManagerToolbar.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageManagerToolbar.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageManagerWindow.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageManagerWindow.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageSearchToolbar.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageSearchToolbar.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageStatusBar.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/PackageStatusBar.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UIElements.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UIElements.xsd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEditor.Experimental.UIElements.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEditor.Experimental.UIElements.xsd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEditor.PackageManager.UI.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEditor.PackageManager.UI.xsd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEngine.Experimental.UIElements.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Resources/Templates/UIElementsSchema/UnityEngine.Experimental.UIElements.xsd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/External.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/External/SemVersion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/External/SemVersion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/External/SemVersionExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/External/SemVersionExtension.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/ApplicationUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/ApplicationUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/OperationSignal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/OperationSignal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/Resources.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/Resources.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/ThreadedDelay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Common/ThreadedDelay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IAddOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IAddOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IBaseOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IBaseOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IListOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IListOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IOperationFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IOperationFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IRemoveOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/IRemoveOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/ISearchOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Interfaces/ISearchOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/OperationFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/OperationFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/Package.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/Package.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageAssetPostprocessor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageAssetPostprocessor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageCollection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageCollection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageError.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageError.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageFilter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageGroupOrigins.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageGroupOrigins.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageInfoListExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageInfoListExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageJsonHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageJsonHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageListExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageListExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageOrigin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageOrigin.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageSearchFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageSearchFilter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageTag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Packages/PackageTag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmAddOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmAddOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmBaseOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmBaseOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmListOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmListOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmOperationFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmOperationFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmRemoveOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmRemoveOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmSearchOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/Services/Upm/UpmSearchOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/Alert.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/Alert.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/LoadingSpinner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/LoadingSpinner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/PopupField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/PopupField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/UIUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/UIUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/VersionItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Common/VersionItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Interfaces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Interfaces/IPackageManagerExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/Interfaces/IPackageManagerExtension.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageAddFromUrlField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageAddFromUrlField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageDetails.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageDetails.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageFiltering.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageFiltering.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageGroup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageGroup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerPrefs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerPrefs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerToolbar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerToolbar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageManagerWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageSearchToolbar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageSearchToolbar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageStatusBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Sources/UI/PackageStatusBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Unity.PackageManagerUI.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Editor/Unity.PackageManagerUI.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/LICENSE.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/AssemblyInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Common/PackageSets.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Common/PackageSets.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Common/UITests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Common/UITests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockAddOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockAddOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockListOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockListOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockRemoveOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockRemoveOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockSearchOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Mock/MockSearchOperation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/MockOperationFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/MockOperationFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageBaseTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageBaseTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageCollectionTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageCollectionTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageInfoTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageInfoTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageSearchTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageSearchTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Services/Packages/PackageTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/UI/PackageDetailsTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/UI/PackageDetailsTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/UI/PackageManagerWindowTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/UI/PackageManagerWindowTests.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Unity.PackageManagerUI.EditorTests.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Tests/Editor/Unity.PackageManagerUI.EditorTests.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Third Party Notices.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/Third Party Notices.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.3/package.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/128e987d567d4e2c824d754223b3f3b0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/128e987d567d4e2c824d754223b3f3b0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/1e3b057af24249748ff873be7fafee47" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/1e3b057af24249748ff873be7fafee47" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/3997e2241185407d80309a82f9148466" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/3997e2241185407d80309a82f9148466" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/3f5b5dff67a942289a9defa416b206f3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/3f5b5dff67a942289a9defa416b206f3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/407bc68d299748449bbf7f48ee690f8d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/407bc68d299748449bbf7f48ee690f8d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/48bb5f55d8670e349b6e614913f9d910" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/48bb5f55d8670e349b6e614913f9d910" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/68e6db2ebdc24f95958faec2be5558d6" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/68e6db2ebdc24f95958faec2be5558d6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/79459efec17a4d00a321bdcc27bbc385" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/79459efec17a4d00a321bdcc27bbc385" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/85187c2149c549c5b33f0cdb02836b17" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/85187c2149c549c5b33f0cdb02836b17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/8f586378b4e144a9851e7b34d9b748ee" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/8f586378b4e144a9851e7b34d9b748ee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/ChannelPurchase.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Mono.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Mono.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.ComponentModel.Composition.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Data.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Diagnostics.StackTrace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Diagnostics.StackTrace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Drawing.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.EnterpriseServices.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Globalization.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Globalization.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.IO.Compression.FileSystem.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.IO.Compression.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Net.Http.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Numerics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Runtime.Serialization.Xml.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Runtime.Serialization.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.ServiceModel.Internals.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Transactions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Xml.Linq.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Xml.XPath.XDocument.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/System.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Unity.Analytics.DataPrivacy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ARModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AccessibilityModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Advertisements.Android.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Advertisements.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AnimationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AssetBundleModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AssetBundleModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.AudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.BaselibModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ClothModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.CoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.CrashReportingModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.DirectorModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.DirectorModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.FileSystemHttpModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.GameCenterModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.GridModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.GridModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.HotReloadModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.IMGUIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.IMGUIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ImageConversionModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ImageConversionModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.InputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.InputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.JSONSerializeModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.LocalizationModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Networking.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ParticleSystemModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ParticleSystemModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.PerformanceReportingModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Physics2DModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Physics2DModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.PhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ProfilerModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.ScreenCaptureModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SharedInternalsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SharedInternalsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SpatialTracking.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SpatialTrackingModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SpriteMaskModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SpriteShapeModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.StreamingModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.StyleSheetsModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.SubstanceModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TLSModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TerrainModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TerrainModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TerrainPhysicsModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TextCoreModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TextRenderingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TextRenderingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TilemapModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TilemapModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.Timeline.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.TimelineModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UIElementsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UIElementsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UNETModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UmbraModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityAnalyticsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityAnalyticsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityConnectModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityTestProtocolModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VFXModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VFXModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VehiclesModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VideoModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.VideoModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.WindModule.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.XRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.XRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityEngine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityStore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/UnityStore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/XiaomiSupport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/XiaomiSupport.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/mscorlib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/mscorlib.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/netstandard.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Managed/netstandard.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Resources/unity_builtin_extra" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/Resources/unity_builtin_extra" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/a02a7d8c237544f1962732b55a9aebf1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/a02a7d8c237544f1962732b55a9aebf1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/bc1ede39bf3643ee8e493720e4259791" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/bc1ede39bf3643ee8e493720e4259791" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/c41005c129ba4d66911b75229fd70b45" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/c41005c129ba4d66911b75229fd70b45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/cf81c85f95fe47e1a27f6ae460cf182c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/cf81c85f95fe47e1a27f6ae460cf182c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/d82c1b31c7e74239bff1220585707d2b" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/d82c1b31c7e74239bff1220585707d2b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/d930090c0cd643c7b55f19a38538c162" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/d930090c0cd643c7b55f19a38538c162" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/dd89cf5b9246416f84610a006f916af7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/dd89cf5b9246416f84610a006f916af7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/dffef66376be4fa480fb02b19edbe903" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/dffef66376be4fa480fb02b19edbe903" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/e73a58f6e2794ae7b1b7e50b7fb811b0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/e73a58f6e2794ae7b1b7e50b7fb811b0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f448e31b84961486cb016732285b1496" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f448e31b84961486cb016732285b1496" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f7ada0af4f174f0694ca6a487b8f543d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f7ada0af4f174f0694ca6a487b8f543d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f952c082cb03451daed3ee968ac6c63e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/f952c082cb03451daed3ee968ac6c63e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/fade42e8bc714b018fac513c043d323b" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/fade42e8bc714b018fac513c043d323b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/fe393ace9b354375a9cb14cdbbc28be4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/fe393ace9b354375a9cb14cdbbc28be4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/level3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets3.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/Data/sharedassets3.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Android/ScriptLayoutHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Android/ScriptLayoutHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/XiaomiSupport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/XiaomiSupport.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/350081-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/350081-mainStage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a100000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/00/005c4d80949154e5c87348bb9f5d15eb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/005c4d80949154e5c87348bb9f5d15eb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/03/03e96fc5475154376a9744dc2f6ab46d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/03/03e96fc5475154376a9744dc2f6ab46d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/03/03e96fc5475154376a9744dc2f6ab46d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/03/03e96fc5475154376a9744dc2f6ab46d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/06/06b575597b644fe8ba88495149d01b66" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/06/06b575597b644fe8ba88495149d01b66" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0a/0a6253761f8804645a2ab74d916284ed" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0a/0a6253761f8804645a2ab74d916284ed" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0d/0de15b956fe424835a3adc74de6e677d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0d/0de15b956fe424835a3adc74de6e677d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/10/1067213df0c64b319bc81e73be809b1a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/10/1067213df0c64b319bc81e73be809b1a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1c/1cf679539c5e5499e8856aaacf1fc32f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1c/1cf679539c5e5499e8856aaacf1fc32f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1e/1e16a5ae359514f3ba0f1471a9d96744" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1e/1e16a5ae359514f3ba0f1471a9d96744" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1e/1e16a5ae359514f3ba0f1471a9d96744.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1e/1e16a5ae359514f3ba0f1471a9d96744.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/24/2425e016351594c53942029c254ba820" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/24/2425e016351594c53942029c254ba820" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c9357ed17521401bb7b6733145ebcd9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2c/2c9357ed17521401bb7b6733145ebcd9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2e223930b947b4631aad0c53aa6fb8ba" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2e/2e223930b947b4631aad0c53aa6fb8ba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/30/301fbaa0e62e44fd2a7383bd338a2898" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/30/301fbaa0e62e44fd2a7383bd338a2898" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/33/3385f7527e5be4c65b3a5294e8995ff8" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/33/3385f7527e5be4c65b3a5294e8995ff8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/39482316a80234c968714f1959838123" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/39/39482316a80234c968714f1959838123" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3a/3a2bf0128e2dd664f91dfba49e36a012" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3a/3a2bf0128e2dd664f91dfba49e36a012" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3c/3c61c79a991f84470843243e9710743e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3c/3c61c79a991f84470843243e9710743e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3e/3e9c3522c966c4c2cadfb64f2b984bbb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3e/3e9c3522c966c4c2cadfb64f2b984bbb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/40/405b9b51bb344a128608d968297df79c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/40/405b9b51bb344a128608d968297df79c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/40/40cedae85009a44909a4517c105e3259" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/40/40cedae85009a44909a4517c105e3259" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/41/4113173d5e95493ab8765d7b08371de4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/41/4113173d5e95493ab8765d7b08371de4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/42/42064bc130be4c44b288d249a44b356f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/42/42064bc130be4c44b288d249a44b356f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/45/45adb5cd8be674c93bed0f4d40a6deec" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/45/45adb5cd8be674c93bed0f4d40a6deec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/45/45adb5cd8be674c93bed0f4d40a6deec.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/45/45adb5cd8be674c93bed0f4d40a6deec.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/46/46ef69ffd7df07447b1366e2d3f9b291" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/46/46ef69ffd7df07447b1366e2d3f9b291.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/46/46f795be579d09b478f168e5297e301c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/46/46f795be579d09b478f168e5297e301c.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/47/47051d8b7ddc740e0b6b0810061c8872" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/47/47051d8b7ddc740e0b6b0810061c8872" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/49/49640e8601cf2402d96b1b4bad2921df" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/49/49640e8601cf2402d96b1b4bad2921df" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/51/5188b1fa1a1b148ce8e88835595e660d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/51/5188b1fa1a1b148ce8e88835595e660d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/57/574593b9659a74b2289baf1760b0a016" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/57/574593b9659a74b2289baf1760b0a016" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/57/574593b9659a74b2289baf1760b0a016.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/57/574593b9659a74b2289baf1760b0a016.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/5858abc6dbdeb46fabb82d3296604951" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/58/5858abc6dbdeb46fabb82d3296604951" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5a/5a8d8a8af9c7540899a0ca681a8c6ac3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5a/5a8d8a8af9c7540899a0ca681a8c6ac3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5b/5bc0a5f7f000d4027bd3e5192cc1269a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5b/5bc0a5f7f000d4027bd3e5192cc1269a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5c/5c1fdac85e0d64c298684a5ee009e19e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5c/5c1fdac85e0d64c298684a5ee009e19e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/61/613e5f324478242909ace8f1b8bc0790" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/61/613e5f324478242909ace8f1b8bc0790" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/622f4e1f14d7c4b889ca12eb78235e05" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/62/622f4e1f14d7c4b889ca12eb78235e05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/622f4e1f14d7c4b889ca12eb78235e05.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/62/622f4e1f14d7c4b889ca12eb78235e05.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/6277a751c6c9f46359fc7004b3ee12f0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/62/6277a751c6c9f46359fc7004b3ee12f0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/6282c3acdf4eb41cebb4eae72326ba2e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/62/6282c3acdf4eb41cebb4eae72326ba2e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/64/6424fd4b648494541a9372eafd21197f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/64/6424fd4b648494541a9372eafd21197f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/66/669717f3193a457b9bad9665ebcae836" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/66/669717f3193a457b9bad9665ebcae836" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6c/6cd5369c800189644a0568e1650d40ec" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6c/6cd5369c800189644a0568e1650d40ec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6c/6cdc5afff21d6462390f1e3fc01cdcf1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6c/6cdc5afff21d6462390f1e3fc01cdcf1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6d/6d6f82a762acb4417b895d3babc790f9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6d/6d6f82a762acb4417b895d3babc790f9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6e/6e84aff9643a4452e934d1efe6ed0323" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6e/6e84aff9643a4452e934d1efe6ed0323" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6f029b4086c1141ffad2e59dd23f14f4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6f/6f029b4086c1141ffad2e59dd23f14f4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/72/724408e8ee9ad4648943237d7f339bd4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/72/724408e8ee9ad4648943237d7f339bd4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/76/7668179ede524d6396c8b7d84461ea29" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/76/7668179ede524d6396c8b7d84461ea29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/78/781449620de7e4db0b357e23b1a0fb58" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/78/781449620de7e4db0b357e23b1a0fb58" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/79/797cf0c5f1b7e4e1ab17481bd9b698eb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/79/797cf0c5f1b7e4e1ab17481bd9b698eb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7b/7b87dac66d6e74d5f848d26f169bbe89" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7b/7b87dac66d6e74d5f848d26f169bbe89" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7e/7e76e9223a0d64aa7972f18446dab8ff" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7e/7e76e9223a0d64aa7972f18446dab8ff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/844f815391db42d49455cbf1a7bfc434" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/84/844f815391db42d49455cbf1a7bfc434" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/87/87738e82a4f047cc947cff8a2ccea594" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/87/87738e82a4f047cc947cff8a2ccea594" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/87/87d720faa37005c08600090e04d8c739" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/87/87d720faa37005c08600090e04d8c739" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8c/8c25f8b5c9da143328c516248414b95d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/8c/8c25f8b5c9da143328c516248414b95d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8e/8e2900126dc684a6aaa9b7afc920845a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/8e/8e2900126dc684a6aaa9b7afc920845a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/90/907731821455c4fa989ac14278e02251" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/90/907731821455c4fa989ac14278e02251" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/90/90ca57af4a5ca48cda96227b0a69ffdc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/90/90ca57af4a5ca48cda96227b0a69ffdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9a/9a286a90e882c4cd59f81ee4dc9d41ca" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9a/9a286a90e882c4cd59f81ee4dc9d41ca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9e/9efbe79a398474b1fb942b960e7367b4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9e/9efbe79a398474b1fb942b960e7367b4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a1/a1e210d603a434d7ba2021f95f0d666c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a1/a1e210d603a434d7ba2021f95f0d666c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a6/a6deaa0d81683441a9cdd72c265e2503" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a6/a6deaa0d81683441a9cdd72c265e2503" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ab/ab866bd39382069418f5c179c1e1ab3e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ab/ab866bd39382069418f5c179c1e1ab3e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/acb993bb890b5d443ba8041779addbe2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/acb993bb890b5d443ba8041779addbe2.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/af/afd7697844f4142f9aa91471c1fba506" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/af/afd7697844f4142f9aa91471c1fba506" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b0/b0c12f0066bd444a1b3a900679169f30" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b0/b0c12f0066bd444a1b3a900679169f30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b0/b0daa0b491f270848a5d94ae6ea18e1b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b0/b0daa0b491f270848a5d94ae6ea18e1b.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b5/b5da970776034f77a070d99423d68791" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b5/b5da970776034f77a070d99423d68791" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b8/b84ac0bfbf315224cb53c6ffab5e1390" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b8/b84ac0bfbf315224cb53c6ffab5e1390" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b9f324f08cd904ec986357c98dd9eaa6" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b9/b9f324f08cd904ec986357c98dd9eaa6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ba/bac185a28e198c1419b649ca946942ea" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ba/bac185a28e198c1419b649ca946942ea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb68307de959fe34396b13c77d1e321e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb68307de959fe34396b13c77d1e321e.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/be/be2a17637371048e5a2dd415ba22514b" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/be/be2a17637371048e5a2dd415ba22514b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bf/bfd715cd54ab84c22b128149c12b516c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/bf/bfd715cd54ab84c22b128149c12b516c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c1/c1ed679d145ef4aa6beec9fdab3505fd" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c1/c1ed679d145ef4aa6beec9fdab3505fd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c223413fd650846c1b3c07959a4429ef" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c223413fd650846c1b3c07959a4429ef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c223413fd650846c1b3c07959a4429ef.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c223413fd650846c1b3c07959a4429ef.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c23272b29f0a84084a2f13f05389c1fc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c23272b29f0a84084a2f13f05389c1fc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c23272b29f0a84084a2f13f05389c1fc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c23272b29f0a84084a2f13f05389c1fc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c3/c37b2a1ea20574580af643f02302c484" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c3/c37b2a1ea20574580af643f02302c484" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c3/c3adcf5ae777f49baac270e65cb1305f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c3/c3adcf5ae777f49baac270e65cb1305f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c5/c59631c955ded4938a66f755225b7dc5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c5/c59631c955ded4938a66f755225b7dc5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cb/cbcede52fe50e9d478a40b8efc98e57b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cb/cbcede52fe50e9d478a40b8efc98e57b.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cd/cd0003e7fdcd843daa86113292ce0446" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/cd/cd0003e7fdcd843daa86113292ce0446" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce05cbc3a6796e24fadd874fc303882f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce05cbc3a6796e24fadd874fc303882f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/da/da0b41deddf0a4414b09681018c171f1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/da/da0b41deddf0a4414b09681018c171f1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e1/e17a17026dc1549e090ee48995b0a982" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e1/e17a17026dc1549e090ee48995b0a982" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e5/e53bc96d2d054b8cbc811f0d73e761eb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e5/e53bc96d2d054b8cbc811f0d73e761eb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e6/e6d6c8bcba39440abae1c5ccc063c635" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e6/e6d6c8bcba39440abae1c5ccc063c635" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e7/e703b22fc2fa4419585d4be4933b84f9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e7/e703b22fc2fa4419585d4be4933b84f9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e7/e703b22fc2fa4419585d4be4933b84f9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e7/e703b22fc2fa4419585d4be4933b84f9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ee/ee63b83f3912b2a46913686bd9de5543" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ee/ee63b83f3912b2a46913686bd9de5543" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ee/eefb12e1ce2cb9048ac229a7261c3c1e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ee/eefb12e1ce2cb9048ac229a7261c3c1e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f2/f26cbb3b0cc0446fe97c7b9328638d83" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f2/f26cbb3b0cc0446fe97c7b9328638d83" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f5/f5474196001554b6da135319d9475e61" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f5/f5474196001554b6da135319d9475e61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f68d88b9933cd4204925b22192bf15b4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f6/f68d88b9933cd4204925b22192bf15b4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f7/f70555f144d8491a825f0804e09c671c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f7/f70555f144d8491a825f0804e09c671c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f851ca8f9604f442aafccf60a6713ce9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f8/f851ca8f9604f442aafccf60a6713ce9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f880d05e2a7979b43887cb869c959c29" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f8/f880d05e2a7979b43887cb869c959c29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fe/fe684bbd80eab45778b9eb316893ff7c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fe/fe684bbd80eab45778b9eb316893ff7c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fe/fe6a614daebd20a478d7ac68d24efcc2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fe/fe6a614daebd20a478d7ac68d24efcc2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fe/fee51398a978042a2971e3a9ce328ba0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fe/fee51398a978042a2971e3a9ce328ba0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/GameController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1666">
+              <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/menu.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="387" column="8" lean-forward="true" selection-start-line="387" selection-start-column="8" selection-end-line="387" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ca-app-pub-2317424106273587/8919528582</find>
+      <find>35.231.39.26</find>
+      <find>Krossvo</find>
+      <find>change</find>
+      <find>version</find>
+      <find>asdads</find>
+      <find>versia</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>teggames.tk</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\toghr\UnityProjects\Krossvordaz</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/Assets/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/menu.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-155" />
+    <option name="y" value="25" />
+    <option name="width" value="1295" />
+    <option name="height" value="785" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/NodejsProjects/KrossvordServer" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b0a2877-dddf-4bc8-b280-d722d50930d7" name="Default Changelist" comment="" />
+      <created>1549634051755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549634051755</updated>
+      <workItem from="1549634053699" duration="125000" />
+      <workItem from="1549706910474" duration="85000" />
+      <workItem from="1553245706463" duration="7888000" />
+      <workItem from="1553257776112" duration="80000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8178000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/res/xml/network_security_config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/Assets/GameController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/menu.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="387" column="8" lean-forward="true" selection-start-line="387" selection-start-column="8" selection-end-line="387" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

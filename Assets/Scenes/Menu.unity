@@ -516,6 +516,13 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114776321395600050, guid: b04d88b381d8b874c850dace4ccefdd4,
+        type: 2}
+      propertyPath: m_Text
+      value: "H\u0259ft\u0259nin c\xFCt g\xFCnl\u0259ri yeni krossvord (Saat 21:00)\nYeni
+        Krossvorda ke\xE7id \xFC\xE7\xFCn 92% s\xF6z h\u0259ll edilm\u0259lidir.Oyunu
+        sils\u0259niz \u0259vv\u0259ld\u0259n oynamal\u0131 olacaqs\u0131z"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b04d88b381d8b874c850dace4ccefdd4, type: 2}
 --- !u!1 &472959932
@@ -1446,7 +1453,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "H\u0259ft\u0259nin c\xFCt g\xFCnl\u0259ri yeni krossvord (Saat 21:00)\nYeni
-    Krossvorda ke\xE7id \xFC\xE7\xFCn 87% s\xF6z h\u0259ll edilm\u0259lidir.Oyunu
+    Krossvorda ke\xE7id \xFC\xE7\xFCn 92% s\xF6z h\u0259ll edilm\u0259lidir.Oyunu
     sils\u0259niz \u0259vv\u0259ld\u0259n oynamal\u0131 olacaqs\u0131z"
 --- !u!222 &1144244269
 CanvasRenderer:
@@ -1536,7 +1543,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1783080759}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1658,8 +1665,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1439276395}
   m_HandleRect: {fileID: 1439276394}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2956,7 +2963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000028055733}
+  m_AnchoredPosition: {x: 0, y: -0.000032527358}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2078688431

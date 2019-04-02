@@ -24,7 +24,7 @@ public class menu : MonoBehaviour {
     {
 
 
-        //35.231.39.26
+        //teggames.tk
         //127.0.0.1
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
@@ -32,7 +32,7 @@ public class menu : MonoBehaviour {
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.231.39.26/countaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://teggames.tk/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -96,14 +96,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //35.231.39.26
+        //teggames.tk
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.231.39.26/countregaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://teggames.tk/countregaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -173,14 +173,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //35.231.39.26
+        //teggames.tk
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://35.231.39.26/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
+        string url = "http://teggames.tk/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -253,10 +253,10 @@ public class menu : MonoBehaviour {
     {
 
         //X.gameObject.SetActive(false);
-        //35.231.39.26
+        //teggames.tk
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
-            string url = "http://35.231.39.26/newmissia?l=" + PlayerPrefs.GetInt("level");
+            string url = "http://teggames.tk/newmissia?l=" + PlayerPrefs.GetInt("level");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -300,9 +300,9 @@ public class menu : MonoBehaviour {
     IEnumerator callYarish()
     {
 
-        //35.231.39.26
+        //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/yarish";
+        string url = "http://teggames.tk/yarish";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -321,10 +321,10 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "3.6");
-        //35.231.39.26
+        PlayerPrefs.SetString("versia", "3.8");
+        //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/versia";
+        string url = "http://teggames.tk/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -345,9 +345,9 @@ public class menu : MonoBehaviour {
     }
 
     IEnumerator online()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -410,7 +410,7 @@ public class menu : MonoBehaviour {
 
         var shareSubject = "I challenge you to beat my high score in" +
                    "Fire Block";
-        var shareMessage = "Krossvord yarışması\n https://play.google.com/store/apps/details?id=com.sadas.asdasd2";
+        var shareMessage = "Krossvord yarışması\nhttps://play.google.com/store/apps/details?id=com.sadas.asdasd2";
         //set the type as text and put extra subject and text to share
         intentObject.Call<AndroidJavaObject>("setType", "text/plain");
         intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), shareSubject);

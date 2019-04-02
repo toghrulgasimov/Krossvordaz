@@ -290,7 +290,7 @@ public class GameController : MonoBehaviour {
         }
     }
     IEnumerator UpdataServer()
-    {   //35.231.39.26
+    {   //teggames.tk
         string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score="+PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {

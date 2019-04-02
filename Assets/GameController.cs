@@ -170,7 +170,7 @@ public class GameController : MonoBehaviour
     {
        Debug.Log(args.Message+"fffffffffffffffffffffffffff");
         interfailed = true;
-        StartCoroutine(reklamfail());
+        //StartCoroutine(reklamfail());
     }
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
@@ -184,7 +184,7 @@ public class GameController : MonoBehaviour
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
         interfailed = false;
-        StartCoroutine(reklamload());
+        //StartCoroutine(reklamload());
     }
 
     
@@ -213,7 +213,7 @@ public class GameController : MonoBehaviour
     public bool avakebitib = false;
     public void nextMissia()
     {
-        if (TAPILANLARL.Count >= T.Length * 84 / 100.0)
+        if (TAPILANLARL.Count >= T.Length * 92 / 100.0)
         {
             //next level;
             if (PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")) )
@@ -317,9 +317,9 @@ public class GameController : MonoBehaviour
     }
     
     IEnumerator UpdataServer()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
+        string url = "http://teggames.tk/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -345,7 +345,7 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerreg()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
         if (PlayerPrefs.HasKey("muss"))
         {
@@ -355,7 +355,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("muss", 1);
         }
-        string url = "http://35.231.39.26/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
+        string url = "http://teggames.tk/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -372,9 +372,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerYarish()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+        string url = "http://teggames.tk/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -398,9 +398,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator online()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -412,9 +412,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator getvariables()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/variable?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/variable?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -430,9 +430,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamfail()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/reklamfail?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -441,9 +441,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamsucces()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -452,9 +452,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamopen()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/reklamopen?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -463,9 +463,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamload()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/reklamload?name=" + PlayerPrefs.GetString("name");
+        string url = "http://teggames.tk/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -474,9 +474,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator CountCollection()
-    {   //35.231.39.26
+    {   //teggames.tk
         //127.0.0.1
-        string url = "http://35.231.39.26/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://teggames.tk/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -1137,7 +1137,7 @@ public class GameController : MonoBehaviour
         if(sec % 10 == 0)
         {
             Debug.Log("asdads");
-            StartCoroutine(online());
+            //StartCoroutine(online());
             StartCoroutine(getvariables());
             if (interfailed)
             {
@@ -1156,7 +1156,7 @@ public class GameController : MonoBehaviour
     IEnumerator audio()
     {
         source = GetComponent<AudioSource>();
-        using (var www = new WWW("http://35.231.39.26/audio"))
+        using (var www = new WWW("http://teggames.tk/audio"))
         {
             yield return www;
             source.clip = www.GetAudioClip(true, false, AudioType.MPEG);
@@ -1168,7 +1168,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator DownloadAndPlay()
     {
-        WWW www = new WWW("http://35.231.39.26/audio");
+        WWW www = new WWW("http://teggames.tk/audio");
         yield return www;
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = www.GetAudioClip(true, true, AudioType.MPEG);

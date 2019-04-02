@@ -19,7 +19,7 @@ public class createOyuncu : MonoBehaviour {
         }else
         {
             //
-            string url = "35.231.39.26/?name=" + input.text;
+            string url = "teggames.tk/?name=" + input.text;
             using (WWW www = new WWW(url))
             {
                 yield return www;
