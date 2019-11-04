@@ -14,7 +14,14 @@ public class menu : MonoBehaviour {
     public Button X;
     public RectTransform border;
     public GameObject prefab, prefab2;
-    public Button statistika, Region, novbeti;
+    public Button statistika, Region, novbeti, reybutton, yarishButton, Bashlabutton;
+
+    public void reybildir() {
+        reybutton.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("reybildirdi", 1);
+        Application.OpenURL("market://details?id=com.sadas.asdasd2");
+
+    }
     public void openGames()
     {
         //PlayerPrefs.DeleteAll();
@@ -24,7 +31,7 @@ public class menu : MonoBehaviour {
     {
 
 
-        //teggames.tk
+        //tmhgame.tk
         //127.0.0.1
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
@@ -32,7 +39,7 @@ public class menu : MonoBehaviour {
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://teggames.tk/countaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://tmhgame.tk/countaz?score=" + PlayerPrefs.GetInt("score")+"&device="+SystemInfo.deviceUniqueIdentifier + "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -96,14 +103,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //teggames.tk
+        //tmhgame.tk
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://teggames.tk/countregaz?score=" + PlayerPrefs.GetInt("score");
+        string url = "http://tmhgame.tk/countregaz?score=" + PlayerPrefs.GetInt("score")+ "&name="+PlayerPrefs.GetString("name")+"&device="+SystemInfo.deviceUniqueIdentifier;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -173,14 +180,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //teggames.tk
+        //tmhgame.tk
         //127.0.0.1
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://teggames.tk/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s;
+        string url = "http://tmhgame.tk/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s+ "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -252,11 +259,14 @@ public class menu : MonoBehaviour {
     IEnumerator callmission()
     {
 
-        //X.gameObject.SetActive(false);
-        //teggames.tk
+
+
+
+        X.gameObject.SetActive(false);
+        //tmhgame.tk
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
-            string url = "http://teggames.tk/newmissia?l=" + PlayerPrefs.GetInt("level");
+            string url = "http://tmhgame.tk/newmissia?l=" + PlayerPrefs.GetInt("level") + "&name="+PlayerPrefs.GetString("name");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -268,16 +278,26 @@ public class menu : MonoBehaviour {
 
                         //Debug.Log("--------------------------------------");
                         novbeti.transform.gameObject.SetActive(false);
+
                         PlayerPrefs.SetInt("novbeti", 0);
                         PlayerPrefs.SetInt("level" + PlayerPrefs.GetInt("level"), 1);
+
+                        if(PlayerPrefs.GetInt("level") == 2 || (!PlayerPrefs.HasKey("reybildirdi") && PlayerPrefs.GetInt("level")>2)) {
+                                    reybutton.gameObject.SetActive(true);
+                                }
+
                     //write to file
                     //Debug.Log(www.text);
+
                     WriteToFile(Application.persistentDataPath + "/MYFILENAME.txt",www.text);
                     PlayerPrefs.SetString("game", "");
                     WriteToFile(Application.persistentDataPath + "/game.txt", "");
-                        X.GetComponentInChildren<Text>().text = "Başla";
+                    X.GetComponentInChildren<Text>().text = "Başla";
                     X.gameObject.SetActive(true);
                         levelt.text = "Səviyyə\n" + PlayerPrefs.GetInt("level");
+                    }else {
+                        X.gameObject.SetActive(true);
+                        X.GetComponentInChildren<Text>().text = "İnternet..";
                     }
                 }
                 else
@@ -287,7 +307,7 @@ public class menu : MonoBehaviour {
                 }
 
             }
-            
+
         }
         else
         {
@@ -300,17 +320,23 @@ public class menu : MonoBehaviour {
     IEnumerator callYarish()
     {
 
-        //teggames.tk
+        //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/yarish";
+        yarishButton.gameObject.SetActive(false);
+        string url = "http://tmhgame.tk/yarish?"+ "name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
 
             if (www.text.Length > 2)
             {
+
+
                 WriteToFile(Application.persistentDataPath + "/YARISH.txt", www.text);
+                yarishButton.gameObject.SetActive(true);
                 Debug.Log("Yarisssssssss file yazildi");
+            }else {
+                yarishButton.gameObject.SetActive(true);
             }
 
         }
@@ -321,10 +347,10 @@ public class menu : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "3.8");
-        //teggames.tk
+        PlayerPrefs.SetString("versia", "4.6");
+        //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/versia";
+        string url = "http://tmhgame.tk/versia?"+ "name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -334,20 +360,41 @@ public class menu : MonoBehaviour {
             }else
             {
                 if(www.text.Length >=2)
+                if(www.text.Length >=2)
                 admin.gameObject.SetActive(true);
             }
 
 
         }
-
-
-
     }
+    IEnumerator changescore()
+        {
+
+            //tmhgame.tk
+            //127.0.0.1
+            string url = "http://tmhgame.tk/changescore?"+ "name="+PlayerPrefs.GetString("name");
+            using (WWW www = new WWW(url))
+            {
+                yield return www;
+                if("no".Equals(www.text))
+                {
+                    admin.gameObject.SetActive(false);
+                }else
+                {
+                    if(!www.text.Equals("")) {
+                        int newscore = int.Parse(www.text);
+                        PlayerPrefs.SetInt("score", newscore);
+                    }
+                }
+
+
+            }
+        }
 
     IEnumerator online()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -433,6 +480,7 @@ public class menu : MonoBehaviour {
         {
             PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
         }
+
         StartCoroutine(callmission());
         
     }
@@ -460,6 +508,7 @@ public class menu : MonoBehaviour {
         StartCoroutine(callmission());
         StartCoroutine(callYarish());
         StartCoroutine(checkversia());
+        StartCoroutine(changescore());
         if(!PlayerPrefs.HasKey("reyting"))
             StartCoroutine(init());
         else StartCoroutine(initreg());
@@ -469,4 +518,7 @@ public class menu : MonoBehaviour {
 	void Update () {
 		
 	}
+	public void adminn() {
+            SceneManager.LoadScene(6);
+        }
 }

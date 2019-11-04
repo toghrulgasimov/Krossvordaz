@@ -17,10 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/address.unity
     guid: 43d8a0eef96316844a92783a0fe4aab9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/math.unity
+    guid: c8d88db4501b8b343b84ab59d7b8c029
+  - enabled: 1
+    path: Assets/Scenes/wow.unity
+    guid: 679086cf7edb8e44589e215ab9ceedfc
+  - enabled: 1
+    path: Assets/Scenes/Admin.unity
+    guid: ce369a8cfff7b304a85534d19c4f66f2
+  - enabled: 1
+    path: Assets/Scenes/Profil.unity
+    guid: de3d7d6c164040742a8b4e309ab4e704
+  - enabled: 0
+    path: 
     guid: 15dd0bd8e2654f74eae9cb9419e62e6c
   - enabled: 0
-    path: Assets/Scenes/wow.unity
+    path: 
     guid: 2c069f2197a0a334eb28d74523000da8
   m_configObjects: {}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "695867571119",
+    "firebase_url": "https://krossvord-45715.firebaseio.com",
+    "project_id": "krossvord-45715",
+    "storage_bucket": "krossvord-45715.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695867571119:android:238586d872da1d4a",
+        "android_client_info": {
+          "package_name": "com.sadas.asdasd2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695867571119-c4aaq2gui6agjermf78o1bveo6anup2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_FUxSaGpLCr5Icn-bCh_KQboeIJ99QjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695867571119-c4aaq2gui6agjermf78o1bveo6anup2k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,9 +15,9 @@ public class Address : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "2.8");
-        //teggames.tk
+        //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/versia";
+        string url = "http://tmhgame.tk/versia"+ "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -31,9 +31,9 @@ public class Address : MonoBehaviour {
     }
     void Start () {
         davamButton.onClick.AddListener(() => davam());
-        string[] ar = new string[]{"Gəncə","Xankəndi","Lənkəran","Mingəçevir", "Naxçıvan", "Naftalan","Sumqayıt","Şəki","Şirvan","Yevlax","Abşeron","Ağcabədi","Ağdam","Ağdaş","Ağstafa","Ağsu","Astara","Babək-Naxçıvan","Balakən", "Bakı", "Beyləqan","Bərdə","Biləsuvar","Cəbrayıl","Cəlilabad","Culfa-Naxçıvan","Daşkəsən","Füzuli","Gədəbəy","Goranboy","Göyçay","Göygöl","Hacıqabul","Xaçmaz","Xızı","Xocalı","Xocavənd","İmişli","İsmayıllı","Kəlbəcər","Kəngərli-Naxçıvan","Kürdəmir","Qax","Qazax","Qəbələ","Qobustan","Quba","Qubadlı","Qusar","Laçın","Lerik","Lənkəran","Masallı","Neftçala","Oğuz","Ordubad-Naxçıvan","Saatlı","Sabirabad","Salyan","Samux","Sədərək-Naxçıvan","Şabran","Şahbuz-Naxçıvan","Şamaxı","Şəki","Şəmkir","Şərur-Naxçıvan","Şuşa","Tərtər","Tovuz","Ucar","Yardımlı","Yevlax","Zaqatala","Zəngilan","Zərdab",""};
+        string[] ar = new string[]{"Gəncə","Xankəndi","Lənkəran","Ağdərə","Mingəçevir", "Naxçıvan", "Naftalan","Sumqayıt","Şəki","Şirvan","Yevlax","Abşeron","Ağcabədi","Ağdam","Ağdaş","Ağstafa","Ağsu","Astara","Babək-Naxçıvan","Balakən", "Bakı", "Beyləqan","Bərdə","Biləsuvar","Cəbrayıl","Cəlilabad","Culfa-Naxçıvan","Daşkəsən","Füzuli","Gədəbəy","Goranboy","Göyçay","Göygöl","Hacıqabul","Xaçmaz","Xızı","Xocalı","Xocavənd","İmişli","İsmayıllı","Kəlbəcər","Kəngərli-Naxçıvan","Kürdəmir","Qax","Qazax","Qəbələ","Qobustan","Quba","Qubadlı","Qusar","Laçın","Lerik","Lənkəran","Masallı","Neftçala","Oğuz","Ordubad-Naxçıvan","Saatlı","Sabirabad","Salyan","Samux","Sədərək-Naxçıvan","Şabran","Şahbuz-Naxçıvan","Şamaxı","Şəki","Şəmkir","Şərur-Naxçıvan","Şuşa","Tərtər","Tovuz","Ucar","Yardımlı","Yevlax","Zaqatala","Zəngilan","Zərdab",""};
         Button[] B = new Button[ar.Length];
-        for (int i = 0; i <= 75; i++)
+        for (int i = 0; i <= 76; i++)
         {
             GameObject a = (GameObject)Instantiate(but);
             B[i] = a.GetComponent<Button>();

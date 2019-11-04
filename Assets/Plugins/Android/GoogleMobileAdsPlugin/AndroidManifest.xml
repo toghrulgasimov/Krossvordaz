@@ -11,8 +11,10 @@ required for displaying ads.
   <uses-sdk android:minSdkVersion="14"
       android:targetSdkVersion="19" />
   <application>
+    <uses-library android:required="false" android:name="org.apache.http.legacy"/>
+    <!-- Your AdMob App ID will look similar to this sample ID: ca-app-pub-3940256099942544~3347511713 -->
     <meta-data
-           android:name="com.google.android.gms.ads.APPLICATION_ID"
-           android:value="ca-app-pub-2317424106273587~1262699727"/>
+    android:name="com.google.android.gms.ads.APPLICATION_ID"
+    android:value="ca-app-pub-2317424106273587~1262699727"/>
   </application>
 </manifest>

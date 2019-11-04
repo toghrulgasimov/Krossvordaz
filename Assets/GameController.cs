@@ -6,11 +6,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 using System.IO;
+using UnityEngine.Networking;
+using System.Text;
 
 
 public class GameController : MonoBehaviour
 {
-    
+
+    public class Info {
+        public int score, missiascore, sozSecond;
+        public String name, soz;
+    }
     public class Tapmaca
     {
         public string soz;
@@ -23,6 +29,7 @@ public class GameController : MonoBehaviour
         public string komekci = "";
         public Stack<int> ButtonStack = new Stack<int>();
         public String StringRandomized;
+        public int sozSecond = 0;
 
         public String generateRandomList(String s)
         {
@@ -117,14 +124,49 @@ public class GameController : MonoBehaviour
     public RectTransform rat;
 
 
-    
+
 
     InterstitialAd interstitial;
 
     //public RawImage img;
 
     public bool interfailed = true;
-  
+
+
+    IEnumerator update2(String soz, int sozSecond)
+        {
+        Info myObject = new Info();
+            myObject.score = PlayerPrefs.GetInt("score");
+            myObject.name = PlayerPrefs.GetString("name");
+            myObject.sozSecond = sozSecond;
+            myObject.soz = soz;
+            myObject.missiascore = TAPILANLARL.Count;
+            string bodyJsonString = JsonUtility.ToJson(myObject);
+            string url = "http://tmhgame.tk/update2";
+
+            var www  = new UnityWebRequest(url, "POST");
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
+            www.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/json");
+
+            yield return www.Send();
+
+
+            Debug.Log(www.downloadHandler.text);
+            if (!www.downloadHandler.text.Equals("0") && !www.downloadHandler.text.Equals(""))
+                        {
+                            AdamKec.gameObject.SetActive(true);
+                            AdamKecpanel.gameObject.SetActive(true);
+                            AdamKec.text = www.downloadHandler.text + " Adamı Keçdiniz";
+                            int rey = int.Parse(www.downloadHandler.text);
+                            PlayerPrefs.SetInt("reyting", PlayerPrefs.GetInt("reyting") - rey);
+                            yield return new WaitForSeconds(2);
+
+                        }
+                        AdamKec.gameObject.SetActive(false);
+                        AdamKecpanel.gameObject.SetActive(false);
+        }
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
@@ -147,7 +189,7 @@ public class GameController : MonoBehaviour
     }
     private void showi()
     {
-        Debug.Log("showiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+        //Debug.Log("showiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         int dif = 4;
         if(PlayerPrefs.HasKey("reklam"))
         {
@@ -168,7 +210,7 @@ public class GameController : MonoBehaviour
     }
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-       Debug.Log(args.Message+"fffffffffffffffffffffffffff");
+       //Debug.Log(args.Message+"fffffffffffffffffffffffffff");
         interfailed = true;
         //StartCoroutine(reklamfail());
     }
@@ -187,7 +229,7 @@ public class GameController : MonoBehaviour
         //StartCoroutine(reklamload());
     }
 
-    
+
     public void sil()
     {
 
@@ -210,10 +252,13 @@ public class GameController : MonoBehaviour
             selected.objects[selected.cursor][1].GetComponent<TextMesh>().text = "";
         }
     }
+    public void sil2() {
+        //String ch =
+    }
     public bool avakebitib = false;
     public void nextMissia()
     {
-        if (TAPILANLARL.Count >= T.Length * 92 / 100.0)
+        if (TAPILANLARL.Count >= T.Length - 3)
         {
             //next level;
             if (PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")) )
@@ -229,10 +274,10 @@ public class GameController : MonoBehaviour
                     if (avakebitib)
                         Askecdi.PlayOneShot(Actapdi);
                 }
-                
+
                 PlayerPrefs.SetInt("novbeti", 1);
                 //SceneManager.LoadScene(1);
-                
+
             }else
             {
                 if (avakebitib)
@@ -266,7 +311,7 @@ public class GameController : MonoBehaviour
         }
         if (w.Equals(selected.soz) && !TAPILANLARL.Contains(selected.index))
         {
-            
+
             for (int i = 0; i < selected.soz.Length; i++)
             {
                 selected.objects[i][0].transform.Translate(new Vector3(0, 0, 1F));
@@ -278,10 +323,13 @@ public class GameController : MonoBehaviour
             {
                 StartCoroutine(showi2());
             }
-            
 
-            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
-            StartCoroutine(UpdataServer());
+
+            if(PlayerPrefs.GetInt("yarish") == 0) {
+                   PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
+             }
+
+            StartCoroutine(update2(selected.soz, selected.sozSecond));
             StartCoroutine(UpdataServerreg());
             StartCoroutine(CountCollection());
             for (int i = 0; i < selected.objects.Length; i++)
@@ -315,11 +363,11 @@ public class GameController : MonoBehaviour
         }
 
     }
-    
+
     IEnumerator UpdataServer()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg");
+        string url = "http://tmhgame.tk/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg")+"&missiascore=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -332,7 +380,7 @@ public class GameController : MonoBehaviour
                 AdamKec.text = www.text + " Adamı Keçdiniz";
                 int rey = int.Parse(www.text);
                 PlayerPrefs.SetInt("reyting", PlayerPrefs.GetInt("reyting") - rey);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(3);
 
             }
             AdamKec.gameObject.SetActive(false);
@@ -345,7 +393,7 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerreg()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
         if (PlayerPrefs.HasKey("muss"))
         {
@@ -355,7 +403,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("muss", 1);
         }
-        string url = "http://teggames.tk/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
+        string url = "http://tmhgame.tk/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -372,9 +420,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerYarish()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+        string url = "http://tmhgame.tk/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -385,7 +433,7 @@ public class GameController : MonoBehaviour
                 AdamKec.gameObject.SetActive(true);
                 AdamKecpanel.gameObject.SetActive(true);
                 AdamKec.text = www.text + " Adamı Keçdiniz";
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(2);
 
             }
             AdamKec.gameObject.SetActive(false);
@@ -398,9 +446,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator online()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/online?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -411,10 +459,24 @@ public class GameController : MonoBehaviour
         }
 
     }
+    IEnumerator xeta(String s)
+        {   //tmhgame.tk
+            //127.0.0.1
+            string url = "http://tmhgame.tk/xeta?xx=" + s+ "&name="+PlayerPrefs.GetString("name");
+            using (WWW www = new WWW(url))
+            {
+                yield return www;
+                if(www.text.StartsWith("com"))
+                {
+                    Application.OpenURL("market://details?id="+www.text);
+                }
+            }
+
+        }
     IEnumerator getvariables()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/variable?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/variable?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -430,20 +492,20 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamfail()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
-            
+
         }
 
     }
     IEnumerator reklamsucces()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -452,9 +514,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamopen()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -463,9 +525,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamload()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/reklamload?name=" + PlayerPrefs.GetString("name");
+        string url = "http://tmhgame.tk/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -474,9 +536,9 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator CountCollection()
-    {   //teggames.tk
+    {   //tmhgame.tk
         //127.0.0.1
-        string url = "http://teggames.tk/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+        string url = "http://tmhgame.tk/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -486,15 +548,15 @@ public class GameController : MonoBehaviour
             {
                 double si = int.Parse(www.text + "") * 1.0;
                 double rating = PlayerPrefs.GetInt("reyting") * 1.0;
-                
+
                 //0 -350
                 double t = 1 - rating / si;
                 t = 350 * t;
-                Debug.Log("RAAAAATING" + "----" + PlayerPrefs.GetInt("reyting"));
-                Debug.Log("size" + "----" + si);
-                Debug.Log("RAAAAATING" + "----" + t);
+                //Debug.Log("RAAAAATING" + "----" + PlayerPrefs.GetInt("reyting"));
+                //Debug.Log("size" + "----" + si);
+                //Debug.Log("RAAAAATING" + "----" + t);
                 int ans = 350 - (int)t;
-                Debug.Log("RAAAAATING" + "----" + t);
+                //Debug.Log("RAAAAATING" + "----" + t);
                 rat.offsetMax = new Vector2(rat.offsetMax.x, -ans);
                 Image img = rat.gameObject.GetComponent<Image>();
                 img.color = Color.Lerp(Color.red, Color.green, ans * 1f / 350f);
@@ -503,7 +565,7 @@ public class GameController : MonoBehaviour
                 Intelekt.text = "İntellekt " + pr + "%";
 
             }
-            
+
 
             //Debug.Log("score from server" + www.text);
         }
@@ -543,16 +605,16 @@ public class GameController : MonoBehaviour
         string s = "";
         if(System.IO.File.Exists(Application.persistentDataPath + "/game.txt"))
         {
-            Debug.Log("-----------------------------Existiret");
+            //Debug.Log("-----------------------------Existiret");
             s = readFile(Application.persistentDataPath + "/game.txt");
-            Debug.Log("geleseeennnn");
+            //Debug.Log("geleseeennnn");
         }
         else
         {
             if (!PlayerPrefs.HasKey("game") || PlayerPrefs.GetString("game").Equals("")) return;
             s = PlayerPrefs.GetString("game");
         }
-        
+
         if (s.Length < 2) return;
         string[] ar = s.Split('@');
         //return;
@@ -572,13 +634,13 @@ public class GameController : MonoBehaviour
         //if (!PlayerPrefs.HasKey("gameyarish") || PlayerPrefs.GetString("gameyarish").Equals("")) return;
         //string s = PlayerPrefs.GetString("gameyarish");
         string s = "";
-        
+
 
         if (System.IO.File.Exists(Application.persistentDataPath + "/gameyarish.txt"))
         {
-            Debug.Log("-----------------------------Existiret");
+            //Debug.Log("-----------------------------Existiret");
             s = readFile(Application.persistentDataPath + "/gameyarish.txt");
-            Debug.Log("geleseeennnn");
+            //Debug.Log("geleseeennnn");
         }
         else
         {
@@ -601,6 +663,7 @@ public class GameController : MonoBehaviour
     }
     public void WriteToFile(string FILE_PATH, string str)
     {
+
 
         StreamWriter sr = System.IO.File.CreateText(FILE_PATH);
         sr.Write(str);
@@ -676,11 +739,11 @@ public class GameController : MonoBehaviour
         yarishcanvas.SetActive(false);
 
         string ss = s.Substring(s.IndexOf('\n')+2);
-        Debug.Log(ss);
+        //Debug.Log(ss);
         string[] kr = ss.Split('\n');
         T = new Tapmaca[kr.Length - 2];
         string[] nm = kr[0].Split(' ');
-        Debug.Log(nm[0].Length + "----" + nm[1].Length);
+        //Debug.Log(nm[0].Length + "----" + nm[1].Length);
         N = int.Parse(nm[0]);
         M = int.Parse(nm[1]);
         for (int i = 0; i < T.Length; i++)
@@ -710,7 +773,7 @@ public class GameController : MonoBehaviour
             //TAPILANLARL.Add(i);
         }
     }
-    public void change(Tapmaca t, bool v)
+    public void change2(Tapmaca t, bool v)
     {
 
         //step.enabled = true;
@@ -742,7 +805,7 @@ public class GameController : MonoBehaviour
 
         if (selected != null && !TAPILANLARL.Contains(selected.index))
         {
-            Debug.Log(selected.objects);
+            //Debug.Log(selected.objects);
             for (int i = 0; i < selected.objects.Length; i++)
             {
                 if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
@@ -760,7 +823,7 @@ public class GameController : MonoBehaviour
             if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
             {
                 t.objects[i][0].GetComponent<Renderer>().material.color = colorsec;
-                
+
             }
             selected.objects[i][0].transform.Translate(new Vector3(0, 0, -1F));
             selected.objects[i][1].transform.Translate(new Vector3(0, 0, -1F));
@@ -786,7 +849,7 @@ public class GameController : MonoBehaviour
         {
             //B[i].GetComponent<Text>().text = selected.soz[i]+"";
             B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
-            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.green && false)
+            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.green && true)
             {
                 String h = selected.objects[i][1].GetComponent<TextMesh>().text;
                 for (int j = 0; j < 11; j++)
@@ -814,14 +877,167 @@ public class GameController : MonoBehaviour
                 //cursora qeder yazilan butun herfleri gizle
             }
         }
-        
+
         for (int k = selected.soz.Length; k < 11; k++)
         {
             B[k].gameObject.SetActive(false);
         }
-        
+
     }
-    
+    public void change(Tapmaca t, bool v) {
+        if (TAPILANLARL.Contains(t.index)) return;
+                if (t.sual.StartsWith("/da"))
+                {
+                    textSual.text = "";
+                    string url = "https://4bilder-1wort.net" + t.sual;
+                    //StartCoroutine(imgf(url));
+                }
+                else
+                {
+                    textSual.text = t.sual;
+                }
+                for (int k = 0; k < 11; k++)
+                        {
+                            B[k].gameObject.SetActive(true);
+                        }
+
+                for (int i = t.cursor; i < t.objects.Length; i++)
+                    {
+                            if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                            {
+                                t.cursor = i;
+                                break;
+                            }
+                        }
+                 if (v)
+                         {
+                             As.PlayOneShot(Ac);
+                         }
+
+                         if (selected != null && !TAPILANLARL.Contains(selected.index))
+                         {
+                             //Debug.Log(selected.objects);
+                             for (int i = 0; i < selected.objects.Length; i++)
+                             {
+                                 if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                                 {
+                                     selected.objects[i][0].GetComponent<Renderer>().material.color = coloric;
+                                 }
+                                 selected.objects[i][0].transform.Translate(new Vector3(0, 0, 1F));
+                                 selected.objects[i][1].transform.Translate(new Vector3(0, 0, 1F));
+
+                             }
+                         }
+                         selected = t;
+                         selected.ButtonStack.Clear();
+                         for (int i = 0; i < t.objects.Length; i++)
+                         {
+                             if (t.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+                             {
+                                 t.objects[i][0].GetComponent<Renderer>().material.color = colorsec;
+
+                             }
+                             selected.objects[i][0].transform.Translate(new Vector3(0, 0, -1F));
+                             selected.objects[i][1].transform.Translate(new Vector3(0, 0, -1F));
+
+                         }
+                         if (t.objects[t.cursor][0].GetComponent<Renderer>().material.color != Color.green)
+                             t.objects[t.cursor][0].GetComponent<Renderer>().material.color = colorcur;
+                         else
+                         {
+//                             for (int i = 0; i < selected.soz.Length; i++)
+//                             {
+//                                 if (selected.objects[i][0].GetComponent<Renderer>().material.color != Color.green)
+//                                 {
+//                                     selected.cursor = i;
+//                                     break;
+//                                 }
+//                             }
+                         }
+
+
+
+
+                 for(int i = 0; i < selected.soz.Length; i++) {
+                    B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
+                 }
+                 for(int i = 0; i < selected.soz.Length; i++) {
+                                    //B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
+                                    String h = selected.objects[i][1].GetComponent<TextMesh>().text;
+                                    //Debug.Log(h);
+                                    for (int j = 0; j < selected.soz.Length; j++)
+                                    {
+                                        //Debug.Log(B[j].GetComponentInChildren<Text>().text + " " + h);
+                                        if (B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h) && i <= selected.cursor)
+                                        {
+                                            //Debug.Log(B[j].GetComponentInChildren<Text>().text + " " + h);
+                                            //Debug.Log("DONDDDDDDDDDDDDDDDDDD");
+                                            B[j].gameObject.SetActive(false);
+                                            break;
+                                        }
+                                    }
+                 }
+//                 String ss = "";
+//                 for(int i = 0; i < selected.soz.Length; i++) {
+//                    if(B[i].gameObject.activeSelf)
+//                        ss += B[i].GetComponentInChildren<Text>().text;
+//                 }
+//                 Debug.Log(ss + "AAAAAAA");
+                 for (int k = selected.soz.Length; k < 11; k++)
+                                    {
+                                         B[k].gameObject.SetActive(false);
+                                    }
+//                 for (int k = 0; k < ss.Length; k++)
+//                     {
+//                          B[k].gameObject.SetActive(true);
+//                          B[k].GetComponentInChildren<Text>().text = ss[k] + "";
+//                      }
+
+
+
+
+
+
+
+//-------------------------------------------------
+//                for (int i = 0; i < selected.soz.Length; i++)
+//                        {
+//                            //B[i].GetComponent<Text>().text = selected.soz[i]+"";
+//                            B[i].GetComponentInChildren<Text>().text = selected.StringRandomized[i] + "";
+//                            if (selected.objects[i][0].GetComponent<Renderer>().material.color == Color.green && true)
+//                            {
+//                                String h = selected.objects[i][1].GetComponent<TextMesh>().text;
+//                                for (int j = 0; j < 11; j++)
+//                                {
+//                                    if (!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
+//                                    {
+//                                        //B[j].gameObject.SetActive(false);
+//                                    }
+//                                }
+//                            }
+//                            else
+//                            {
+//                                if (i > selected.cursor)
+//                                    B[i].gameObject.SetActive(true);
+//
+//                                if (selected.objects[i][1].GetComponent<TextMesh>().text == "") B[i].gameObject.SetActive(true);
+//                                String h = selected.objects[i][1].GetComponent<TextMesh>().text;
+//                                for (int j = 0; j < 11; j++)
+//                                {
+//                                    if (!B[j].gameObject.activeSelf && B[j].GetComponentInChildren<Text>().text.Equals(h))
+//                                    {
+//                                        B[j].gameObject.SetActive(true);
+//                                    }
+//                                }
+//                                //cursora qeder yazilan butun herfleri gizle
+//                            }
+//                        }
+//
+//                        for (int k = selected.soz.Length; k < 11; k++)
+//                        {
+//                            B[k].gameObject.SetActive(false);
+//                        }
+    }
 
     public void menuload()
     {
@@ -848,6 +1064,14 @@ public class GameController : MonoBehaviour
                     p.gameObject.SetActive(true);
                 }
 
+            }else {
+                for(int i = 0; i < selected.soz.Length; i++) {
+                    if(!B[i].gameObject.activeSelf) {
+                        B[i].gameObject.SetActive(true);
+                        B[i].GetComponentInChildren<Text>().text = selected.objects[index][1].GetComponent<TextMesh>().text;
+                        break;
+                    }
+                }
             }
         }
         else
@@ -989,7 +1213,15 @@ public class GameController : MonoBehaviour
 
         loadGame();
         info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
-        change(T[1], false);
+        //change(T[1], false);
+        for (int i = T.Length - 2; i >= 0; i--)
+                    {
+                        if (!TAPILANLARL.Contains(i))
+                        {
+                            change(T[i], false);
+                            break;
+                        }
+                    }
     }
     public void yarish()
     {
@@ -1034,7 +1266,7 @@ public class GameController : MonoBehaviour
         }
         avakebitib = true;
         //Debug.Log("Tapmacalarin sayi------------------------------" + T.Length);
-        
+
 
 
         Kvadratlar = new GameObject[N][][];
@@ -1068,7 +1300,7 @@ public class GameController : MonoBehaviour
             {
                 //Debug.Log(x + " " + y + " " + T[i].soz + " " + );
                 T[i].objects[j] = Kvadratlar[x][y];
-                Debug.Log(x + "," + y+","+i+","+j);
+                //Debug.Log(x + "," + y+","+i+","+j);
                 //T[i].byttons[j].GetComponentInChildren<Text>().text = T[i].soz[j] + "";
                 //T[i].objects[j].GetComponentInChildren<Image>().color = coloric;
                 Tapmaca para = T[i];
@@ -1098,13 +1330,21 @@ public class GameController : MonoBehaviour
 
         loadGameYarish();
         info.text = "Səviyyə " + PlayerPrefs.GetInt("level") + "    Cavab " + ((TAPILANLARL.Count * 100.0 / (T.Length - 1))).ToString("F0") + "%";
-        change(T[12], false);
+        //change(T[12], false);
+        for (int i = T.Length - 2; i >= 0; i--)
+                    {
+                        if (!TAPILANLARL.Contains(i))
+                        {
+                            change(T[i], false);
+                            break;
+                        }
+                    }
     }
-    
-    
+
+
     void Awake()
     {
-        
+
         try
         {
             if (PlayerPrefs.GetInt("yarish") == 1)
@@ -1117,8 +1357,13 @@ public class GameController : MonoBehaviour
                 //string aa = JsonUtility.ToJson(selected);
                 //Debug.Log(aa);
             }
+//            int test = 0;
+//            test = 1 / test;
         }
         catch(Exception e) {
+        Debug.Log("------------------------------------");
+        Debug.Log(e.ToString());
+            StartCoroutine(xeta(e.ToString()));
             PlayerPrefs.SetString("game", "");
             PlayerPrefs.SetString("gameyarish", "");
             WriteToFile(Application.persistentDataPath + "/game.txt", "");
@@ -1127,57 +1372,90 @@ public class GameController : MonoBehaviour
         }
         StartCoroutine(CountCollection());
        notadmin();
-        
-        
+
+
     }
     int kohne = DateTime.Now.Minute;
     int sec = 0;
     void FixedUpdate()
     {
-        if(sec % 10 == 0)
+
+    if(selected != null) {
+        selected.sozSecond = selected.sozSecond + 1;
+    }
+
+
+
+
+    if(sec%120 == 0) {
+        StartCoroutine(getvariables());
+    }
+    int waitt = 10;
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+            {
+
+            }else if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
+             {
+                    waitt = 10;
+             }else
+             {
+                    waitt = 3;
+             }
+        if(sec % waitt == 0)
         {
             Debug.Log("asdads");
             //StartCoroutine(online());
-            StartCoroutine(getvariables());
+
             if (interfailed)
             {
-                Debug.Log("call int");
+                //Debug.Log("call int");
                 interfailed = false;
                 this.RequestInterstitial();
 
             }
         }
-        
+
         sec++;
-        
+
     }
 
     public AudioSource source;
     IEnumerator audio()
     {
+        AudioListener.volume = 0.5f;
         source = GetComponent<AudioSource>();
-        using (var www = new WWW("http://teggames.tk/audio"))
+        using (var www = new WWW("http://tmhgame.tk/audio"+ "?name="+PlayerPrefs.GetString("name")))
         {
             yield return www;
-            source.clip = www.GetAudioClip(true, false, AudioType.MPEG);
+            source.clip = www.GetAudioClip(true, true, AudioType.MPEG);
+            source.loop = true;
             source.Play();
-            Debug.Log("asdasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+            //Debug.Log("asdasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
         }
     }
-    
+
 
     IEnumerator DownloadAndPlay()
     {
-        WWW www = new WWW("http://teggames.tk/audio");
+        WWW www = new WWW("http://tmhgame.tk/audio"+ "?name="+PlayerPrefs.GetString("name"));
         yield return www;
         AudioSource audio = GetComponent<AudioSource>();
-        audio.clip = www.GetAudioClip(true, true, AudioType.MPEG);
+        audio.clip = www.GetAudioClip(true, false, AudioType.MPEG);
+        audio.loop = true;
         audio.Play();
     }
     public void Start()
     {
 
-        //StartCoroutine(audio());
+        if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+                {
+                    StartCoroutine(audio());
+                    //StartCoroutine(DownloadAndPlay());
+                }else {
+                    Askecdi.PlayOneShot(Ackecdi);
+                }
+
+        //StartCoroutine(DownloadAndPlay());
 
 #if UNITY_ANDROID
         string appId = "ca-app-pub-2317424106273587~1262699727";
@@ -1190,6 +1468,22 @@ public class GameController : MonoBehaviour
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
         RequestInterstitial();
+        StartCoroutine(getvariables());
+
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+          var dependencyStatus = task.Result;
+          if (dependencyStatus == Firebase.DependencyStatus.Available) {
+            // Create and hold a reference to your FirebaseApp,
+            // where app is a Firebase.FirebaseApp property of your application class.
+            //   app = Firebase.FirebaseApp.DefaultInstance;
+            Debug.Log("Firebasse isledi");
+            // Set a flag here to indicate whether Firebase is ready to use by your app.
+          } else {
+            UnityEngine.Debug.LogError(System.String.Format(
+              "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+            // Firebase Unity SDK is not safe to use here.
+          }
+        });
 
     }
     void Update() {
@@ -1199,7 +1493,7 @@ public class GameController : MonoBehaviour
         {
            // source.Play();
         }
-            
+
         if (Input.GetMouseButtonDown(0))
         //Input.GetMouseButtonDown(0)
         //Input.mousePosition
