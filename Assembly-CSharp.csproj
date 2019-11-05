@@ -151,7 +151,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\wow\wow.cs" />
+    <Compile Include="Assets\wow\wowsilindi.cs" />
     <Compile Include="Assets\zoom.cs" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -181,6 +181,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -192,6 +195,9 @@
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
@@ -219,12 +225,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>C:/Users/toghr/UnityProjects/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
