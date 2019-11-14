@@ -1371,7 +1371,7 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt("novbeti", 1);
         }
         StartCoroutine(CountCollection());
-       notadmin();
+       //notadmin();
 
 
     }

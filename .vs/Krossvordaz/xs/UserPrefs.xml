@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DDD1F1AA-1399-3580-8A42-BD8BB5F521DF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController.cs">
+    <Files>
+      <File FileName="Assets/GameController.cs" Line="1374" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Krossvordaz" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="GameController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fe06616f-2d7e-460d-8699-8437c4a865bd" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
