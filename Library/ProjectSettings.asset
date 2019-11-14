@@ -167,7 +167,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.sadas.asdasd2
   buildNumber: {}
-  AndroidBundleVersionCode: 161
+  AndroidBundleVersionCode: 163
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -257,7 +257,7 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  AndroidTargetArchitectures: 3
+  AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: e02d4945734fa2649956ef726f05e983, type: 3}
   AndroidKeystoreName: C:/Users/toghr/UnityProjects/Krossvordaz/Krossvor2.keystore
