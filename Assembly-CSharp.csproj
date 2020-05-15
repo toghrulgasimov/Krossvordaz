@@ -179,6 +179,12 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <None Include="Assets\Firebase\Plugins\link.xml" />
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -193,9 +199,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
@@ -217,9 +220,6 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>/Users/toghrulgasimov/Documents/GitHub/Krossvordaz/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
