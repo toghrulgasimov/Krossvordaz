@@ -131,6 +131,7 @@ public class GameController : MonoBehaviour
     //public RawImage img;
 
     public bool interfailed = true;
+    public string SERVER_URL = "https://tmhgame.com";
 
 
     IEnumerator update2(String soz, int sozSecond)
@@ -142,7 +143,7 @@ public class GameController : MonoBehaviour
             myObject.soz = soz;
             myObject.missiascore = TAPILANLARL.Count;
             string bodyJsonString = JsonUtility.ToJson(myObject);
-            string url = "http://tmhgame.tk/update2";
+            string url = SERVER_URL + "/update2";
 
             var www  = new UnityWebRequest(url, "POST");
             byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
@@ -365,9 +366,8 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator UpdataServer()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg")+"&missiascore=" + TAPILANLARL.Count;
+    {
+        string url = SERVER_URL + "/update?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score")+"&reg="+PlayerPrefs.GetString("reg")+"&missiascore=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -393,8 +393,7 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerreg()
-    {   //tmhgame.tk
-        //127.0.0.1
+    {
         if (PlayerPrefs.HasKey("muss"))
         {
             PlayerPrefs.SetInt("muss", PlayerPrefs.GetInt("muss") + 1);
@@ -403,7 +402,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("muss", 1);
         }
-        string url = "http://tmhgame.tk/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
+        string url = SERVER_URL + "/updatereg?name=" + PlayerPrefs.GetString("name") + "&muss=" + PlayerPrefs.GetInt("muss")+ "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -420,9 +419,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator UpdataServerYarish()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
+    {
+        string url = SERVER_URL + "/updateyarish?name=" + PlayerPrefs.GetString("name") + "&score=" + TAPILANLARL.Count;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -446,9 +444,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator online()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/online?name=" + PlayerPrefs.GetString("name");
+    {
+        string url = SERVER_URL + "/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -460,9 +457,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator xeta(String s)
-        {   //tmhgame.tk
-            //127.0.0.1
-            string url = "http://tmhgame.tk/xeta?xx=" + s+ "&name="+PlayerPrefs.GetString("name");
+        {
+            string url = SERVER_URL + "/xeta?xx=" + s+ "&name="+PlayerPrefs.GetString("name");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -474,9 +470,8 @@ public class GameController : MonoBehaviour
 
         }
     IEnumerator getvariables()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/variable?name=" + PlayerPrefs.GetString("name");
+    {
+        string url = SERVER_URL + "/variable?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -492,9 +487,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamfail()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
+    {   
+        string url = SERVER_URL + "/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -503,9 +497,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamsucces()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
+    {   
+        string url = SERVER_URL + "/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -514,9 +507,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamopen()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
+    {   
+        string url = SERVER_URL + "/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -525,9 +517,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator reklamload()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamload?name=" + PlayerPrefs.GetString("name");
+    {   
+        string url = SERVER_URL + "/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -536,9 +527,8 @@ public class GameController : MonoBehaviour
 
     }
     IEnumerator CountCollection()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
+    {   
+        string url = SERVER_URL + "/countcollection?name=" + PlayerPrefs.GetString("name") + "&score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -1371,7 +1361,7 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt("novbeti", 1);
         }
         StartCoroutine(CountCollection());
-       //notadmin();
+       notadmin();
 
 
     }
@@ -1424,7 +1414,7 @@ public class GameController : MonoBehaviour
     {
         AudioListener.volume = 0.5f;
         source = GetComponent<AudioSource>();
-        using (var www = new WWW("http://tmhgame.tk/audio"+ "?name="+PlayerPrefs.GetString("name")))
+        using (var www = new WWW(SERVER_URL + "/audio"+ "?name="+PlayerPrefs.GetString("name")))
         {
             yield return www;
             source.clip = www.GetAudioClip(true, true, AudioType.MPEG);
@@ -1437,7 +1427,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator DownloadAndPlay()
     {
-        WWW www = new WWW("http://tmhgame.tk/audio"+ "?name="+PlayerPrefs.GetString("name"));
+        WWW www = new WWW(SERVER_URL + "/audio"+ "?name="+PlayerPrefs.GetString("name"));
         yield return www;
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = www.GetAudioClip(true, false, AudioType.MPEG);

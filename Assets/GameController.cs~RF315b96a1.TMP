@@ -290,7 +290,7 @@ public class GameController : MonoBehaviour {
         }
     }
     IEnumerator UpdataServer()
-    {   //tmhgame.tk
+    {   //34.125.242.46
         string url = "http://127.0.0.1/update?name=" + PlayerPrefs.GetString("name") + "&score="+PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {

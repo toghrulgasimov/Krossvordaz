@@ -11,20 +11,22 @@ public class createOyuncu : MonoBehaviour {
     // Use this for initialization
     public InputField input;
     public Text info;
+    public string SERVER_URL = "https://tmhgame.com";
     IEnumerator yoxla()
         {
+            Debug.Log("-----------------");
 
             if (input.text.Equals("")) {
                 info.text = "Adınızı daxil edin";
             }else
             {
                 //
-                string url = "tmhgame.tk/g41?name=" + input.text+"&device="+SystemInfo.deviceUniqueIdentifier;
+                string url = SERVER_URL + "/g41?name=" + input.text+"&device="+SystemInfo.deviceUniqueIdentifier;
                 using (WWW www = new WWW(url))
                 {
                     yield return www;
 
-                    Debug.Log(www.text);
+                    Debug.Log(www.text.ToString());
                     if (www.text.IndexOf("5601373") != -1)
                     {
                         string[] t = www.text.Split('|');
@@ -59,7 +61,7 @@ public class createOyuncu : MonoBehaviour {
             }else
             {
                 //
-                string url = "tmhgame.tk/?name=" + input.text+"&device="+SystemInfo.deviceUniqueIdentifier;
+                string url = SERVER_URL + "/?name=" + input.text+"&device="+SystemInfo.deviceUniqueIdentifier;
                 using (WWW www = new WWW(url))
                 {
                     yield return www;

@@ -30,6 +30,8 @@ public class wow : MonoBehaviour {
     public static GameObject lineo;
     public static Material mat;
 
+    public string SERVER_URL = "https://tmhgame.com";
+
 
     private static Game game;
 
@@ -38,8 +40,8 @@ public class wow : MonoBehaviour {
     {
 
 
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         Debug.Log("initBorderrr");
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
@@ -47,9 +49,9 @@ public class wow : MonoBehaviour {
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        //127.0.0.1
-        //tmhgame.tk
-        //string url = "http://tmhgame.tk/Wowcount?score=" + PlayerPrefs.GetInt("score");
+        
+        
+        //string url = SERVER_URL + "/Wowcount?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -126,17 +128,17 @@ public class wow : MonoBehaviour {
         }
         ResultInfo.text = "Nəticələr Hazırlanır..";
         yield return new WaitForSeconds(10);
-        //127.0.0.1
-        //tmhgame.tk
-        StartCoroutine(initborder("http://tmhgame.tk/wowresultb?name=" + PlayerPrefs.GetString("name"), Borderres));
+        
+        
+        StartCoroutine(initborder(SERVER_URL + "/wowresultb?name=" + PlayerPrefs.GetString("name"), Borderres));
     }
     IEnumerator callGame()
     {
-        //127.0.0.1
-        //tmhgame.tk
+        
+        
         SozSayiInfo.text = "0 Söz";
         Debug.Log("call game");
-        string url = "http://tmhgame.tk/wow";
+        string url = SERVER_URL + "/wow";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -159,9 +161,9 @@ public class wow : MonoBehaviour {
     IEnumerator sendServer()
     {
 
-        //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/Wowresult?score=" + game.Tapilanlar.Count+"&name="+PlayerPrefs.GetString("name")+"&lasttime="+game.lasttime + "&reg=" + PlayerPrefs.GetString("reg");
+        
+        
+        string url = SERVER_URL + "/Wowresult?score=" + game.Tapilanlar.Count+"&name="+PlayerPrefs.GetString("name")+"&lasttime="+game.lasttime + "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -182,9 +184,9 @@ public class wow : MonoBehaviour {
     {
 
         Debug.Log("Send Server LASTTTT");
-        //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/Wowresultlast?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetString("name") + "&reg=" + PlayerPrefs.GetString("reg");
+        
+        
+        string url = SERVER_URL + "/Wowresultlast?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetString("name") + "&reg=" + PlayerPrefs.GetString("reg");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -386,9 +388,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamfail()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -397,9 +399,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamsucces()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -408,9 +410,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamopen()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -419,9 +421,9 @@ public class wow : MonoBehaviour {
 
     }
     IEnumerator reklamload()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamload?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -490,7 +492,7 @@ public class wow : MonoBehaviour {
         {
             PlayerPrefs.SetInt("wowelo", 500);
         }
-        urlall = "http://tmhgame.tk/Wowcount?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetInt("name");
+        urlall = SERVER_URL + "/Wowcount?wowelo=" + PlayerPrefs.GetInt("wowelo") + "&name=" + PlayerPrefs.GetInt("name");
         menuStart();
     }
     int SECOND = 0;

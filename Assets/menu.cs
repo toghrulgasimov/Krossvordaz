@@ -14,32 +14,33 @@ public class menu : MonoBehaviour {
     public Button X;
     public RectTransform border;
     public GameObject prefab, prefab2;
+    public string SERVER_URL = "https://tmhgame.com";
     public Button statistika, Region, novbeti, reybutton, yarishButton, Bashlabutton;
 
     public void reybildir() {
         reybutton.gameObject.SetActive(false);
         PlayerPrefs.SetInt("reybildirdi", 1);
-        Application.OpenURL("market://details?id=com.sadas.asdasd2");
+        //Application.OpenURL("market://details?id=com.sadas.asdasd2");
 
     }
     public void openGames()
     {
         //PlayerPrefs.DeleteAll();
-        Application.OpenURL("market://details?id=com.teg.azerioyunlar");
+        //Application.OpenURL("market://details?id=com.teg.azerioyunlar");
     }
     IEnumerator init()
     {
 
 
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://tmhgame.tk/countaz?score=" + PlayerPrefs.GetInt("score")+"&device="+SystemInfo.deviceUniqueIdentifier + "&name="+PlayerPrefs.GetString("name");
+        string url = SERVER_URL + "/countaz?score=" + PlayerPrefs.GetInt("score")+"&device="+SystemInfo.deviceUniqueIdentifier + "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -103,14 +104,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://tmhgame.tk/countregaz?score=" + PlayerPrefs.GetInt("score")+ "&name="+PlayerPrefs.GetString("name")+"&device="+SystemInfo.deviceUniqueIdentifier;
+        string url = SERVER_URL + "/countregaz?score=" + PlayerPrefs.GetInt("score")+ "&name="+PlayerPrefs.GetString("name")+"&device="+SystemInfo.deviceUniqueIdentifier;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -180,14 +181,14 @@ public class menu : MonoBehaviour {
     {
 
         border.sizeDelta = new Vector2(0, 3530);
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         int childs = border.childCount;
         for (int i = childs - 1; i >= 0; i--)
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        string url = "http://tmhgame.tk/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s+ "&name="+PlayerPrefs.GetString("name");
+        string url = SERVER_URL + "/countreglistaz?score=" + PlayerPrefs.GetInt("score") + "&reg="+ s+ "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -263,10 +264,10 @@ public class menu : MonoBehaviour {
 
 
         X.gameObject.SetActive(false);
-        //tmhgame.tk
+        
         if (!PlayerPrefs.HasKey("level" + PlayerPrefs.GetInt("level")))
         {
-            string url = "http://tmhgame.tk/newmissia?l=" + PlayerPrefs.GetInt("level") + "&name="+PlayerPrefs.GetString("name");
+            string url = SERVER_URL + "/newmissia?l=" + PlayerPrefs.GetInt("level") + "&name="+PlayerPrefs.GetString("name");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -320,10 +321,10 @@ public class menu : MonoBehaviour {
     IEnumerator callYarish()
     {
 
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         yarishButton.gameObject.SetActive(false);
-        string url = "http://tmhgame.tk/yarish?"+ "name="+PlayerPrefs.GetString("name");
+        string url = SERVER_URL + "/yarish?"+ "name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -348,9 +349,9 @@ public class menu : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "4.6");
-        //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/versia?"+ "name="+PlayerPrefs.GetString("name");
+        
+        
+        string url = SERVER_URL + "/versia?"+ "name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -370,9 +371,9 @@ public class menu : MonoBehaviour {
     IEnumerator changescore()
         {
 
-            //tmhgame.tk
-            //127.0.0.1
-            string url = "http://tmhgame.tk/changescore?"+ "name="+PlayerPrefs.GetString("name");
+            
+            
+            string url = SERVER_URL + "/changescore?"+ "name="+PlayerPrefs.GetString("name");
             using (WWW www = new WWW(url))
             {
                 yield return www;
@@ -393,7 +394,7 @@ public class menu : MonoBehaviour {
 
     IEnumerator online()
     {   //tmhgame.tk
-        //127.0.0.1
+        
         string url = "http://tmhgame.tk/online?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {

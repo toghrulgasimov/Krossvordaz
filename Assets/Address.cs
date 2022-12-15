@@ -11,13 +11,12 @@ public class Address : MonoBehaviour {
     public RectTransform content;
     public Button selected;
     public Button davamButton;
+    public string SERVER_URL = "https://tmhgame.com";
     IEnumerator axtar()
     {
 
         PlayerPrefs.SetString("versia", "2.8");
-        //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/versia"+ "&name="+PlayerPrefs.GetString("name");
+        string url = SERVER_URL + "/versia" + "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;

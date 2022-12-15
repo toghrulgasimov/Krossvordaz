@@ -12,6 +12,7 @@ public class Profil : MonoBehaviour
     public InputField ad, soyad, dogum, rayon, kend;
     public Button saxla;
     public Text info;
+    public string SERVER_URL = "https://tmhgame.com";
     void Start()
     {
         ad.text = PlayerPrefs.GetString("adp");
@@ -28,7 +29,7 @@ public class Profil : MonoBehaviour
     }
     IEnumerator saveinServer()
      {
-      string url = "tmhgame.tk/profil?ad=" + ad.text+"&device="+SystemInfo.deviceUniqueIdentifier+"&soyad="+soyad.text+"&dogum="+dogum.text+"&rayon2="+rayon.text+"&kend="+kend.text;
+      string url = SERVER_URL + "/profil?ad=" + ad.text+"&device="+SystemInfo.deviceUniqueIdentifier+"&soyad="+soyad.text+"&dogum="+dogum.text+"&rayon2="+rayon.text+"&kend="+kend.text;
                       using (WWW www = new WWW(url))
                       {
                           yield return www;

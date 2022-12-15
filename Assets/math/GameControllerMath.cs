@@ -24,6 +24,8 @@ public class GameControllerMath : MonoBehaviour {
     private string download = "";
     public bool startCount = false;
 
+    public string SERVER_URL = "https://tmhgame.com";
+
 
     InterstitialAd interstitial;
 
@@ -91,8 +93,8 @@ public class GameControllerMath : MonoBehaviour {
     {
 
 
-        //tmhgame.tk
-        //127.0.0.1
+        
+        
         Debug.Log("initBorderrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
         border.sizeDelta = new Vector2(0, 6530);
         int childs = border.childCount;
@@ -100,9 +102,9 @@ public class GameControllerMath : MonoBehaviour {
         {
             GameObject.Destroy(border.GetChild(i).gameObject);
         }
-        //127.0.0.1
-        //tmhgame.tk
-        //string url = "http://tmhgame.tk/countaz?score=" + PlayerPrefs.GetInt("score");
+        
+        
+        //string url = SERVER_URL + "/countaz?score=" + PlayerPrefs.GetInt("score");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -173,9 +175,9 @@ public class GameControllerMath : MonoBehaviour {
     {
 
         PlayerPrefs.SetString("versia", "4.1");
-        //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/versia";
+        
+        
+        string url = SERVER_URL + "/versia";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -197,10 +199,10 @@ public class GameControllerMath : MonoBehaviour {
     }
     IEnumerator callgame()
     {
-        //127.0.0.1
-        //tmhgame.tk
+        
+        
         Debug.Log("calll");
-        string url = "http://tmhgame.tk/Math";
+        string url = SERVER_URL + "/Math";
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -229,10 +231,10 @@ public class GameControllerMath : MonoBehaviour {
     }
     IEnumerator sendResult()
     {
-        //127.0.0.1
-        //tmhgame.tk
+        
+        
         string a = "name=" + PlayerPrefs.GetString("name") + "&score=" + currgame.point + "&lasttime=" + currgame.lastTime+"&elo=" + PlayerPrefs.GetInt("elo");
-        string url = "http://tmhgame.tk/Mathresult?" + a;
+        string url = SERVER_URL + "/Mathresult?" + a;
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -258,9 +260,9 @@ public class GameControllerMath : MonoBehaviour {
             GameObject.Destroy(borderres.GetChild(i).gameObject);
         }
         yield return new WaitForSeconds(10);
-        //127.0.0.1
-        //tmhgame.tk
-        StartCoroutine(initborder("http://tmhgame.tk/Mathresultb?name=" + PlayerPrefs.GetString("name"), borderres));
+        
+        
+        StartCoroutine(initborder(SERVER_URL + "/Mathresultb?name=" + PlayerPrefs.GetString("name"), borderres));
     }
     private void RequestInterstitial()
     {
@@ -284,9 +286,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamfail()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamfail?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamfail?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -295,9 +297,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamsucces()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamsucces?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamsucces?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -306,9 +308,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamopen()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamopen?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamopen?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -317,9 +319,9 @@ public class GameControllerMath : MonoBehaviour {
 
     }
     IEnumerator reklamload()
-    {   //tmhgame.tk
-        //127.0.0.1
-        string url = "http://tmhgame.tk/reklamload?name=" + PlayerPrefs.GetString("name");
+    {   
+        
+        string url = SERVER_URL + "/reklamload?name=" + PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {
             yield return www;
@@ -375,8 +377,8 @@ public class GameControllerMath : MonoBehaviour {
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
         RequestInterstitial();
-        //127.0.0.1
-        //tmhgame.tk
+        
+        
         if (!PlayerPrefs.HasKey("elo"))
         {
             PlayerPrefs.SetInt("elo", 500);
@@ -386,7 +388,7 @@ public class GameControllerMath : MonoBehaviour {
         {
             //SceneManager.LoadScene(1);
         }
-        urlall = "http://tmhgame.tk/Mathcount?elo=" + PlayerPrefs.GetInt("elo") + "&name="+ PlayerPrefs.GetInt("name");
+        urlall = SERVER_URL + "/Mathcount?elo=" + PlayerPrefs.GetInt("elo") + "&name="+ PlayerPrefs.GetInt("name");
         waiting.SetActive(false);
         game.SetActive(false);
         result.SetActive(false);

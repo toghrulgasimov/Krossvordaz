@@ -12,6 +12,7 @@ public class Admin : MonoBehaviour
     public InputField soz, cavab;
     public Button teklifb;
     public Text info, xal;
+    public string SERVER_URL = "https://tmhgame.com";
     void Start()
     {
         StartCoroutine(getXal());
@@ -34,7 +35,7 @@ public class Admin : MonoBehaviour
      }
      IEnumerator teklifserver()
           {
-           string url = "tmhgame.tk/teklif?device="+SystemInfo.deviceUniqueIdentifier+"&soz="+soz.text+"&cavab="+cavab.text;
+           string url = SERVER_URL + "/teklif?device=" + SystemInfo.deviceUniqueIdentifier+"&soz="+soz.text+"&cavab="+cavab.text;
                            using (WWW www = new WWW(url))
                            {
                                yield return www;
@@ -60,7 +61,7 @@ public class Admin : MonoBehaviour
           }
           IEnumerator getXal()
                     {
-                     string url = "tmhgame.tk/xal?device="+SystemInfo.deviceUniqueIdentifier;
+                     string url = SERVER_URL + "/xal?device=" + SystemInfo.deviceUniqueIdentifier;
                                      using (WWW www = new WWW(url))
                                      {
                                          yield return www;
