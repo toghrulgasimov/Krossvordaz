@@ -97,7 +97,7 @@ public class createOyuncu : MonoBehaviour {
     }
     private void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         //Application.OpenURL("market://details?id=com.by.connaction.connectionname");
 
 

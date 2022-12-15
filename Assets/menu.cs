@@ -62,6 +62,7 @@ public class menu : MonoBehaviour {
                 {
                     GameObject o = Instantiate(prefab2);
                     o.transform.SetParent(border, false);
+                    o.GetComponent<Image>().color = new Color(0, 0, 90);
                     Button b = o.GetComponent<Button>();
                     Text t = b.GetComponentInChildren<Text>();
                     //t.fontSize = p;
@@ -69,19 +70,19 @@ public class menu : MonoBehaviour {
                     p = Mathf.Max(23, p);
                     if(i == 1)
                     {
-                        t.color = new Color(255, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if(i == 3)
                     {
-                        t.color = new Color(100, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if(i == 5)
                     {
-                        t.color = new Color(50, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else
                     {
-                        //t.color = new Color(0, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
 
                     //p -= 30;
@@ -137,6 +138,7 @@ public class menu : MonoBehaviour {
                 {
                     GameObject o = Instantiate(prefab2);
                     o.transform.SetParent(border, false);
+                    o.GetComponent<Image>().color = new Color(0, 0, 90);
                     Button b = o.GetComponent<Button>();
                     Text t = b.GetComponentInChildren<Text>();
                     //t.fontSize = p;
@@ -144,19 +146,19 @@ public class menu : MonoBehaviour {
                     p = Mathf.Max(23, p);
                     if (i == 1)
                     {
-                        t.color = new Color(255, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 3)
                     {
-                        t.color = new Color(100, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 5)
                     {
-                        t.color = new Color(50, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else
                     {
-                        //t.color = new Color(0, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
 
                     //p -= 30;
@@ -213,27 +215,37 @@ public class menu : MonoBehaviour {
                 for (int i = 1; i < a.Length - 1; i += 2)
                 {
                     GameObject o = Instantiate(prefab2);
+                    o.GetComponent<Image>().color = Color.blue;
+
                     o.transform.SetParent(border, false);
                     Button b = o.GetComponent<Button>();
+
+                    var colors = b.colors;
+                    colors.normalColor = Color.red;
+                    colors.pressedColor = Color.red;
+                    b.colors = colors;
+
                     Text t = b.GetComponentInChildren<Text>();
+                    //var colors = b.colors;
+                    //colors.
                     //t.fontSize = p;
                     p -= 5;
                     p = Mathf.Max(23, p);
                     if (i == 1)
                     {
-                        t.color = new Color(255, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 3)
                     {
-                        t.color = new Color(100, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 5)
                     {
-                        t.color = new Color(50, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else
                     {
-                        //t.color = new Color(0, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
 
                     //p -= 30;
@@ -409,11 +421,11 @@ public class menu : MonoBehaviour {
     int sec = 0;
     void FixedUpdate()
     {
-        if(sec % 10 == 0)
-        {
-            StartCoroutine(online());
-        }
-        sec++;
+        // if(sec % 10 == 0)
+        // {
+        //     StartCoroutine(online());
+        // }
+        // sec++;
         
     }
     public void basla()

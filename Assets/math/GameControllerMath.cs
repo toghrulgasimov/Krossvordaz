@@ -129,6 +129,7 @@ public class GameControllerMath : MonoBehaviour {
                 {
                     GameObject o = Instantiate(prefab);
                     o.transform.SetParent(border, false);
+                    o.GetComponent<Image>().color = new Color(0, 0, 90);
                     Button b = o.GetComponent<Button>();
                     Text t = b.GetComponentInChildren<Text>();
                     //t.fontSize = p;
@@ -136,19 +137,19 @@ public class GameControllerMath : MonoBehaviour {
                     p = Mathf.Max(23, p);
                     if (i == 0)
                     {
-                        t.color = new Color(255, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 1)
                     {
-                        t.color = new Color(100, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else if (i == 2)
                     {
-                        t.color = new Color(50, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
                     else
                     {
-                        //t.color = new Color(0, 0, 0, p);
+                        t.color = new Color(255, 255, 255, p);
                     }
 
                     //p -= 30;
