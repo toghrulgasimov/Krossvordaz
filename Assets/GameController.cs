@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System.IO;
 using UnityEngine.Networking;
 using System.Text;
@@ -126,7 +126,7 @@ public class GameController : MonoBehaviour
 
 
 
-    InterstitialAd interstitial;
+    //InterstitialAd interstitial;
 
     //public RawImage img;
 
@@ -178,14 +178,14 @@ public class GameController : MonoBehaviour
         string adUnitId = "unexpected_platform";
 #endif
         // Initialize an InterstitialAd.
-        interstitial = new InterstitialAd(adUnitId);
-        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
-        interstitial.OnAdOpening += HandleOnAdOpened;
-        interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+        //interstitial = new InterstitialAd(adUnitId);
+        //interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        //interstitial.OnAdOpening += HandleOnAdOpened;
+        //interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
+        //AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
-        interstitial.LoadAd(request);
+        //interstitial.LoadAd(request);
 
     }
     private void showi()
@@ -196,25 +196,25 @@ public class GameController : MonoBehaviour
         {
             dif = PlayerPrefs.GetInt("reklam");
         }
-        if (interstitial.IsLoaded() && Math.Abs(DateTime.Now.Minute - kohne) >= dif)
-        {
-            kohne = DateTime.Now.Minute;
-            interstitial.Show();
-            interstitial.Destroy();
-            this.RequestInterstitial();
-        }
+        //if (interstitial.IsLoaded() && Math.Abs(DateTime.Now.Minute - kohne) >= dif)
+        //{
+          //  kohne = DateTime.Now.Minute;
+            //interstitial.Show();
+            //interstitial.Destroy();
+            //this.RequestInterstitial();
+        //}
     }
     IEnumerator showi2()
     {
         yield return new WaitForSeconds(3);
         showi();
     }
-    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-       //Debug.Log(args.Message+"fffffffffffffffffffffffffff");
-        interfailed = true;
+ //   public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+ //   {
+  //     //Debug.Log(args.Message+"fffffffffffffffffffffffffff");
+   //     interfailed = true;
         //StartCoroutine(reklamfail());
-    }
+   // }
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         StartCoroutine(reklamsucces());
@@ -1456,24 +1456,24 @@ public class GameController : MonoBehaviour
 #endif
 
         // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
-        RequestInterstitial();
+        //MobileAds.Initialize(appId);
+        //RequestInterstitial();
         StartCoroutine(getvariables());
 
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-          var dependencyStatus = task.Result;
-          if (dependencyStatus == Firebase.DependencyStatus.Available) {
+        //Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+          //var dependencyStatus = task.Result;
+          //if (dependencyStatus == Firebase.DependencyStatus.Available) {
             // Create and hold a reference to your FirebaseApp,
             // where app is a Firebase.FirebaseApp property of your application class.
             //   app = Firebase.FirebaseApp.DefaultInstance;
-            Debug.Log("Firebasse isledi");
+           // Debug.Log("Firebasse isledi");
             // Set a flag here to indicate whether Firebase is ready to use by your app.
-          } else {
-            UnityEngine.Debug.LogError(System.String.Format(
-              "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+          //} else {
+            //UnityEngine.Debug.LogError(System.String.Format(
+              //"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
             // Firebase Unity SDK is not safe to use here.
-          }
-        });
+          //}
+        //});
 
     }
     void Update() {

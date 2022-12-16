@@ -1,1 +1,1 @@
-# Krossvord2
+# upload.keystore, aliasupload pass: salam123

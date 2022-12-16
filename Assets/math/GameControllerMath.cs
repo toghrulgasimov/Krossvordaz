@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System.IO;
 
 public class GameControllerMath : MonoBehaviour {
@@ -27,7 +27,7 @@ public class GameControllerMath : MonoBehaviour {
     public string SERVER_URL = "https://tmhgame.com";
 
 
-    InterstitialAd interstitial;
+    //InterstitialAd interstitial;
 
     //public RawImage img;
 
@@ -275,15 +275,15 @@ public class GameControllerMath : MonoBehaviour {
         string adUnitId = "unexpected_platform";
 #endif
         // Initialize an InterstitialAd.
-        interstitial = new InterstitialAd(adUnitId);
-        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
-        interstitial.OnAdOpening += HandleOnAdOpened;
+        //interstitial = new InterstitialAd(adUnitId);
+        //interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        //interstitial.OnAdOpening += HandleOnAdOpened;
 
-        interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+        //interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
+        //AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
-        interstitial.LoadAd(request);
+        //interstitial.LoadAd(request);
 
     }
     IEnumerator reklamfail()
@@ -334,24 +334,24 @@ public class GameControllerMath : MonoBehaviour {
     {
         Debug.Log("showiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         
-        if (interstitial.IsLoaded())
-        {
-            interstitial.Show();
-            interstitial.Destroy();
-            this.RequestInterstitial();
-        }
+        //if (interstitial.IsLoaded())
+        //{
+            //interstitial.Show();
+            //interstitial.Destroy();
+          //  this.RequestInterstitial();
+        //}
     }
     IEnumerator showi2()
     {
         yield return new WaitForSeconds(3);
         showi();
     }
-    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-        Debug.Log(args.Message + "fffffffffffffffffffffffffff");
-        interfailed = true;
-        StartCoroutine(reklamfail());
-    }
+    //public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    //{
+     //   Debug.Log(args.Message + "fffffffffffffffffffffffffff");
+      //  interfailed = true;
+       // StartCoroutine(reklamfail());
+    //}
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         StartCoroutine(reklamsucces());
@@ -376,7 +376,7 @@ public class GameControllerMath : MonoBehaviour {
 #endif
 
         // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
+        //MobileAds.Initialize(appId);
         RequestInterstitial();
         
         

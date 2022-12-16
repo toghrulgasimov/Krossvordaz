@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System.IO;
 
 public class Banner : MonoBehaviour {
 
-    private BannerView bannerView;
+    //private BannerView bannerView;
     public Text bannerinfo;
 public bool interfailed = true;
     public void Start()
@@ -28,7 +28,7 @@ public bool interfailed = true;
     #endif
 
         // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
+        //MobileAds.Initialize(appId);
         
 
         this.RequestBanner();
@@ -46,25 +46,25 @@ public bool interfailed = true;
     #endif
 
         // Create a 320x50 banner at the top of the screen.
-        bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Top);
+        //bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Top);
 
         // Called when an ad request has successfully loaded.
-                bannerView.OnAdLoaded += HandleOnAdLoaded;
+        //        bannerView.OnAdLoaded += HandleOnAdLoaded;
                 // Called when an ad request failed to load.
-                bannerView.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        //        bannerView.OnAdFailedToLoad += HandleOnAdFailedToLoad;
                 // Called when an ad is clicked.
-                bannerView.OnAdOpening += HandleOnAdOpened;
+         //       bannerView.OnAdOpening += HandleOnAdOpened;
                 // Called when the user returned from the app after an ad click.
-                bannerView.OnAdClosed += HandleOnAdClosed;
+         //       bannerView.OnAdClosed += HandleOnAdClosed;
                 // Called when the ad click caused the user to leave the application.
-                bannerView.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+         //       bannerView.OnAdLeavingApplication += HandleOnAdLeavingApplication;
 
 
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
+        //AdRequest request = new AdRequest.Builder().Build();
 
         // Load the banner with the request.
-        bannerView.LoadAd(request);
+        //bannerView.LoadAd(request);
 
     }
     public void HandleOnAdLoaded(object sender, EventArgs args)
@@ -75,12 +75,12 @@ public bool interfailed = true;
 
         }
 
-        public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-        {
-
-interfailed = true;
-bannerinfo.text = "fail load";
-        }
+ //       public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+ //       {
+//
+//interfailed = true;
+//bannerinfo.text = "fail load";
+ //       }
 
         public void HandleOnAdOpened(object sender, EventArgs args)
         {

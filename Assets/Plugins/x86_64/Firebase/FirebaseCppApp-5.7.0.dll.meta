@@ -15,24 +15,24 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      '': OSXIntel
+      : OSXIntel
     second:
       enabled: 0
       settings:
         CPU: None
   - first:
-      '': OSXIntel64
+      : OSXIntel64
     second:
       enabled: 0
       settings:
         CPU: None
   - first:
-      '': Web
+      : Web
     second:
       enabled: 0
       settings: {}
   - first:
-      '': WebStreamed
+      : WebStreamed
     second:
       enabled: 0
       settings: {}
