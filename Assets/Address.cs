@@ -12,10 +12,11 @@ public class Address : MonoBehaviour {
     public Button selected;
     public Button davamButton;
     public string SERVER_URL = "https://tmhgame.com";
+    public string APP_VERSION = "5.0";
     IEnumerator axtar()
     {
 
-        PlayerPrefs.SetString("versia", "2.8");
+        PlayerPrefs.SetString("versia", APP_VERSION);
         string url = SERVER_URL + "/versia" + "&name="+PlayerPrefs.GetString("name");
         using (WWW www = new WWW(url))
         {

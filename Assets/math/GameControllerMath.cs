@@ -24,6 +24,8 @@ public class GameControllerMath : MonoBehaviour {
     private string download = "";
     public bool startCount = false;
 
+    public string APP_VERSION = "5.0";
+
     public string SERVER_URL = "https://tmhgame.com";
 
 
@@ -175,7 +177,7 @@ public class GameControllerMath : MonoBehaviour {
     IEnumerator checkversia()
     {
 
-        PlayerPrefs.SetString("versia", "4.1");
+        PlayerPrefs.SetString("versia", APP_VERSION);
         
         
         string url = SERVER_URL + "/versia";
